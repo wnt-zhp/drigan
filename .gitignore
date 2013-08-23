@@ -1,2 +1,4 @@
 drigan/settings.py
 *.pyc
+*.swp
+.sass-cache
