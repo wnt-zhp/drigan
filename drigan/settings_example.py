@@ -57,3 +57,5 @@ STATIC_URL = '/static/'
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'ylrj^s(5o452zczlei!6*t3zuv)1z)(idq2c^vsof7s81t!s$9'
 
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
