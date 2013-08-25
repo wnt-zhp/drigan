@@ -1,3 +1,5 @@
+from django.contrib import messages
+
 # Django settings for drigan project.
 
 SITE_ID = 1
@@ -119,3 +121,8 @@ LOGGING = {
 #django-registration
 ACCOUNT_ACTIVATION_DAYS = 3
 LOGIN_REDIRECT_URL = '/'
+
+#messages, bootstrap compability
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
