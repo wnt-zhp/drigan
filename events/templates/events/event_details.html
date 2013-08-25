@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+    {{ event.event_name|capfirst }}
+{% endblock %}
+{% block content %}
+    <div>
+        {{ event.event_name|capfirst }}
+    </div>
+    <div>
+        {{ event.event_start_date|date:"d.m.Y" }} 
+        {% ifnotequal event.event_start_date event.event_end_date %}
+            - {{ event.event_end_date|date:"d.m.Y" }}
+        {% endifnotequal %}
+    </div>
+    <div> 
+        {% if event.event_website %}
+            {{ event.event_website }}
+        {% endif %}
+    </div>
+    <div> 
+        {% trans "Organizer: " %}{{ event.organizer.username }}
+    </div>
+    <div>
+        {% trans "Categories: " %}
+        {% for category in event.categories.all %}
+            {{ category }}{% if not forloop.last %}, 
+                {% else %}.
+                {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -66,8 +66,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'events',
     'drigan',
+    'categories',
+    'categories.editor',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

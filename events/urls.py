@@ -2,5 +2,6 @@ from django.conf.urls import patterns, include, url
 from events import views
 
 urlpatterns = patterns('',
-    url(r'^add/$', views.add_event),
+    (r'^(?P<event_id>\d+)/$', views.event_details),
+    (r'^add/$', views.add_event),
 )

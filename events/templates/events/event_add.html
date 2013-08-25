@@ -1,6 +1,10 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Add event" %}{% endblock %}
 {% block content %}
-<div>
-    Dodajemy event.
-</div>
+    <form method='post' action='.'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='{% trans "Save" %}'>
+    </form>
 {% endblock %}
