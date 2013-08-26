@@ -5,6 +5,9 @@
 {% endblock %}
 {% block content %}
     <div>
+        <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit" %}</a>
+    </div>
+    <div>
         {{ event.event_name|capfirst }}
     </div>
     <div>
@@ -13,13 +16,26 @@
             - {{ event.event_end_date|date:"d.m.Y" }}
         {% endifnotequal %}
     </div>
+    <div>
+        {% if event.event_description %}
+            {{ event.event_description }}
+        {% endif %}
+    </div>
     <div> 
         {% if event.event_website %}
             {{ event.event_website }}
         {% endif %}
     </div>
     <div> 
-        {% trans "Organizer: " %}{{ event.organizer.username }}
+        {% trans "Organizer: " %}{{ organizer.organizer_name }}
+    </div>
+    <div>
+        {% trans "Attractions: " %}
+        {% for attraction in all_attractions %}
+            <a href="{% url "events.views.attraction_details" event.id attraction.id %}">{{ attraction }}</a>{% if not forloop.last %}, 
+                {% else %}.
+                {% endif %}
+        {% endfor %}
     </div>
     <div>
         {% trans "Categories: " %}

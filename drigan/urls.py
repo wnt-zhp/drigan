@@ -7,7 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
     url(r'^events/', include('events.urls')),
-    
+
     # Examples:
     # url(r'^$', 'drigan.views.home', name='home'),
     # url(r'^drigan/', include('drigan.foo.urls')),
