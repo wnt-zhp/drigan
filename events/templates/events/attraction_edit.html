@@ -3,7 +3,7 @@
 {% block title %}{% trans "Edit attraction" %}{% endblock %}
 {% block content %}
     <div>
-        <form method='post' action='{% url "events.views.delete_attraction" event.id attraction.id %}'>
+        <form method='post' action='{% url "events.views.delete_attraction" attraction.event.id attraction.id %}'>
             {% csrf_token %}
             <input type='submit' value='{% trans "Delete" %}'>
         </form>
