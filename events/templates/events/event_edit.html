@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Edit event" %}{% endblock %}
+{% block content %}
+    <div>
+        <form method='post' action='{% url "events.views.delete_event" event.id %}'>
+            {% csrf_token %}
+            <input type='submit' value='{% trans "Delete" %}'>
+        </form>
+    </div>
+    <div>
+        <a href="{% url "events.views.add_attraction" event.id %}">{% trans "Add attraction" %}</a>
+    </div>
+    <form method='post' action='.'>
+        {% csrf_token %}
+        {% trans "Edit event:" %}
+        {{ form.as_p }}
+        {% trans "Edit organizer:" %}
+        {{ organizer_form.as_p }}
+        <input type='submit' value='{% trans "Save" %}'>
+    </form>
+{% endblock %}

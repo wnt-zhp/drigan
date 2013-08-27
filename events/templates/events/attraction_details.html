@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+{% block title %}
+    {{ attraction.name }}
+{% endblock %}
+{% block content %}
+    <div>
+        <a href="{% url "events.views.edit_attraction" event.id attraction.id %}">{% trans "Edit" %}</a>
+    </div>
+    <div>
+        <a href="{% url "events.views.event_details" event.id %}">{% trans "Back to the event" %}</a>
+    </div>
+    <div>
+        {{ attraction.name }}
+    </div>
+    <div>
+        {% if attraction.description  %}
+            {{ attraction.description }}
+        {% endif %}
+    </div>
+    <div>
+        {{ attraction.place }}
+    </div>
+    <div>
+        {{ attraction.start_date }} 
+        {% ifnotequal attraction.start_date attraction.end_date %}
+            - {{ attraction.end_date }}
+        {% endifnotequal %}
+    </div>
+    <div>
+        {% trans "Category: " %}
+        {{ attraction.category }}
+    </div>
+{% endblock %}

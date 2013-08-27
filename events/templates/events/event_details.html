@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+    {{ event.name }}
+{% endblock %}
+{% block content %}
+    <div>
+        <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit" %}</a>
+    </div>
+    <div>
+        {{ event.name }}
+    </div>
+    <div>
+        {{ event.start_date }} 
+        {% ifnotequal event.start_date event.end_date %}
+            - {{ event.end_date }}
+        {% endifnotequal %}
+    </div>
+    <div>
+        {% if event.description %}
+            {{ event.description }}
+        {% endif %}
+    </div>
+    <div> 
+        {% if event.website %}
+            {{ event.website }}
+        {% endif %}
+    </div>
+    <div> 
+        {% trans "Organizer: " %}{{ event.organizer.name }}
+    </div>
+    <div>
+        {% trans "Attractions: " %}
+        {% for attraction in all_attractions %}
+            <a href="{% url "events.views.attraction_details" event.id attraction.id %}">{{ attraction }}</a>{% if not forloop.last %}, 
+                {% else %}.
+                {% endif %}
+        {% endfor %}
+    </div>
+    <div>
+        {% trans "Category: " %}
+        {{ event.category }}
+    </div>
+{% endblock %}
