@@ -2,7 +2,7 @@
 {% load url from future %}
 {% load i18n %}
 {% block title %}
-    {{ attraction.attraction_name|capfirst }}
+    {{ attraction.name }}
 {% endblock %}
 {% block content %}
     <div>
@@ -12,28 +12,24 @@
         <a href="{% url "events.views.event_details" event.id %}">{% trans "Back to the event" %}</a>
     </div>
     <div>
-        {{ attraction.attraction_name|capfirst }}
+        {{ attraction.name }}
     </div>
     <div>
-        {% if attraction.attraction_description  %}
-            {{ attraction.attraction_description }}
+        {% if attraction.description  %}
+            {{ attraction.description }}
         {% endif %}
     </div>
     <div>
-        {{ attraction.attraction_place }}
+        {{ attraction.place }}
     </div>
     <div>
-        {{ attraction.attraction_start_date|date:"d.m.Y" }} 
-        {% ifnotequal attraction.attraction_start_date attraction.attraction_end_date %}
-            - {{ attraction.attraction_end_date|date:"d.m.Y" }}
+        {{ attraction.start_date }} 
+        {% ifnotequal attraction.start_date attraction.end_date %}
+            - {{ attraction.end_date }}
         {% endifnotequal %}
     </div>
     <div>
-        {% trans "Categories: " %}
-        {% for category in attraction.attraction_categories.all %}
-            {{ category }}{% if not forloop.last %}, 
-                {% else %}.
-                {% endif %}
-        {% endfor %}
+        {% trans "Category: " %}
+        {{ attraction.category }}
     </div>
 {% endblock %}

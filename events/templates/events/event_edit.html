@@ -3,7 +3,10 @@
 {% block title %}{% trans "Edit event" %}{% endblock %}
 {% block content %}
     <div>
-        <a href="{% url "events.views.delete_event" event.id %}">{% trans "Delete" %}</a>
+        <form method='post' action='{% url "events.views.delete_event" event.id %}'>
+            {% csrf_token %}
+            <input type='submit' value='{% trans "Delete" %}'>
+        </form>
     </div>
     <div>
         <a href="{% url "events.views.add_attraction" event.id %}">{% trans "Add attraction" %}</a>
@@ -12,7 +15,7 @@
         {% csrf_token %}
         {% trans "Edit event:" %}
         {{ form.as_p }}
-        {% trans "Edit organizator:" %}
+        {% trans "Edit organizer:" %}
         {{ organizer_form.as_p }}
         <input type='submit' value='{% trans "Save" %}'>
     </form>

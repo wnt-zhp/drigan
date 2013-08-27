@@ -2,8 +2,11 @@
 {% load i18n %}
 {% block title %}{% trans "Edit attraction" %}{% endblock %}
 {% block content %}
-    <div>    
-        <a href="{% url "events.views.delete_attraction" event.id attraction.id %}">{% trans "Delete" %}</a>
+    <div>
+        <form method='post' action='{% url "events.views.delete_attraction" event.id attraction.id %}'>
+            {% csrf_token %}
+            <input type='submit' value='{% trans "Delete" %}'>
+        </form>
     </div>
     <form method='post' action='.'>
         {% csrf_token %}

@@ -6,7 +6,7 @@
         {% csrf_token %}
         {% trans "Add event:" %}
         {{ form.as_p }}
-        {% trans "Add organizator:" %}
+        {% trans "Add organizer:" %}
         {{ organizer_form.as_p }}
         <input type='submit' value='{% trans "Save" %}'>
     </form>
