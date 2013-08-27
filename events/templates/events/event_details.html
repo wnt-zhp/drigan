@@ -1,32 +1,44 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}
-    {{ event.event_name|capfirst }}
+    {{ event.name }}
 {% endblock %}
 {% block content %}
     <div>
-        {{ event.event_name|capfirst }}
+        <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit" %}</a>
     </div>
     <div>
-        {{ event.event_start_date|date:"d.m.Y" }} 
-        {% ifnotequal event.event_start_date event.event_end_date %}
-            - {{ event.event_end_date|date:"d.m.Y" }}
+        {{ event.name }}
+    </div>
+    <div>
+        {{ event.start_date }} 
+        {% ifnotequal event.start_date event.end_date %}
+            - {{ event.end_date }}
         {% endifnotequal %}
     </div>
-    <div> 
-        {% if event.event_website %}
-            {{ event.event_website }}
+    <div>
+        {% if event.description %}
+            {{ event.description }}
         {% endif %}
     </div>
     <div> 
-        {% trans "Organizer: " %}{{ event.organizer.username }}
+        {% if event.website %}
+            {{ event.website }}
+        {% endif %}
+    </div>
+    <div> 
+        {% trans "Organizer: " %}{{ event.organizer.name }}
     </div>
     <div>
-        {% trans "Categories: " %}
-        {% for category in event.categories.all %}
-            {{ category }}{% if not forloop.last %}, 
+        {% trans "Attractions: " %}
+        {% for attraction in all_attractions %}
+            <a href="{% url "events.views.attraction_details" event.id attraction.id %}">{{ attraction }}</a>{% if not forloop.last %}, 
                 {% else %}.
                 {% endif %}
         {% endfor %}
+    </div>
+    <div>
+        {% trans "Category: " %}
+        {{ event.category }}
     </div>
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Edit attraction" %}{% endblock %}
+{% block content %}
+    <div>
+        <form method='post' action='{% url "events.views.delete_attraction" event.id attraction.id %}'>
+            {% csrf_token %}
+            <input type='submit' value='{% trans "Delete" %}'>
+        </form>
+    </div>
+    <form method='post' action='.'>
+        {% csrf_token %}
+        {% trans "Edit attraction:" %}
+        {{ form.as_p }}
+        <input type='submit' value='{% trans "Save" %}'>
+    </form>
+{% endblock %}
