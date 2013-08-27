@@ -31,7 +31,7 @@
     </div>
     <div>
         {% trans "Attractions: " %}
-        {% for attraction in all_attractions %}
+        {% for attraction in event.attraction_set.all %}
             <a href="{% url "events.views.attraction_details" event.id attraction.id %}">{{ attraction }}</a>{% if not forloop.last %}, 
                 {% else %}.
                 {% endif %}

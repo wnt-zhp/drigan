@@ -6,16 +6,15 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.utils.translation import ugettext as _
 from events.forms import *
 from events.models import *
 
 
 def event_details(request, event_id):
     event = get_object_or_404(Event, id=event_id)
-    all_attractions = event.attraction_set.all()
     return render_to_response("events/event_details.html",
-                              {"event": event,
-                               "all_attractions": all_attractions},
+                              {"event": event},
                               context_instance=RequestContext(request))
 
 
@@ -36,7 +35,8 @@ def add_event(request):
                 event.organizer = organizer
                 event.save()
                 form.save()
-                messages.success(request, 'Event has been added successfully.')
+                messages.success(request,
+                                 _('Event has been added successfully.'))
                 return http.HttpResponseRedirect(reverse(
                     'events.views.event_details',
                     args=(event.id,)))
@@ -61,7 +61,8 @@ def edit_event(request, event_id):
         if form.is_valid() and organizer_form.is_valid():
             event = form.save()
             organizer = organizer_form.save()
-            messages.success(request, 'Event has been changed successfully.')
+            messages.success(request,
+                             _('Event has been changed successfully.'))
             return http.HttpResponseRedirect(reverse(
                 'events.views.event_details',
                 args=(event.id,)))
@@ -81,7 +82,7 @@ def delete_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     if request.method == "POST":
         event.delete()
-        messages.success(request, 'Event has been deleted.')
+        messages.success(request, _('Event has been deleted.'))
     return http.HttpResponseRedirect('/')
 
 
@@ -96,7 +97,7 @@ def add_attraction(request, event_id):
             attraction.save()
             form.save()
             messages.success(request,
-                             'Attraction has been added successfully.')
+                             _('Attraction has been added successfully.'))
             return http.HttpResponseRedirect(reverse(
                 'events.views.attraction_details',
                 args=(event.id, attraction.id,)))
@@ -122,7 +123,7 @@ def edit_attraction(request, event_id, attraction_id):
         if form.is_valid():
             attraction = form.save()
             messages.success(request,
-                             'Attraction has been changed successfully.')
+                             _('Attraction has been changed successfully.'))
             return http.HttpResponseRedirect(reverse(
                 'events.views.attraction_details',
                 args=(attraction.event.id, attraction.id,)))
@@ -140,6 +141,6 @@ def delete_attraction(request, event_id, attraction_id):
     event = attraction.event
     if request.method == "POST":
         attraction.delete()
-        messages.success(request, 'Attraction has been deleted.')
+        messages.success(request, _('Attraction has been deleted.'))
     return http.HttpResponseRedirect(reverse('events.views.event_details',
                                              args=(event.id,)))
