@@ -20,7 +20,7 @@ class EditEventForm(ModelForm):
 class AddOrganizerForm(ModelForm):
     class Meta:
         model = Organizer
-        fields = ('name', 'mail', 'phone')
+        fields = ('name', 'mail', 'phone', 'address')
 
 
 class AddAttractionForm(ModelForm):
