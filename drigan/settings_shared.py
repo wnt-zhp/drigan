@@ -1,3 +1,5 @@
+from django.contrib import messages
+
 # Django settings for drigan project.
 
 SITE_ID = 1
@@ -36,6 +38,16 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
+    "django.core.context_processors.static",
+    "django.contrib.messages.context_processors.messages",
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -64,6 +76,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration',
+    'drigan_registration',
     'events',
     'drigan',
     'categories',
@@ -101,4 +115,14 @@ LOGGING = {
             'propagate': True,
         },
     }
+}
+
+
+#django-registration
+ACCOUNT_ACTIVATION_DAYS = 3
+LOGIN_REDIRECT_URL = '/'
+
+#messages, bootstrap compability
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
 }
