@@ -33675,7 +33675,7 @@ label {
   display: block;
   margin-bottom: 0;
 }
-form input:not([type="checkbox"]),
+form.form-small input:not([type="checkbox"]),
 form textarea,
 select {
   display: block;
@@ -33694,87 +33694,87 @@ select {
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -33782,7 +33782,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -33790,7 +33790,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -33798,7 +33798,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -33806,104 +33806,104 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"])[disabled],
+form.form-small input:not([type="checkbox"])[disabled],
 form textarea[disabled],
 select[disabled],
-form input:not([type="checkbox"])[readonly],
+form.form-small input:not([type="checkbox"])[readonly],
 form textarea[readonly],
 select[readonly],
-fieldset[disabled] form input:not([type="checkbox"]),
+fieldset[disabled] form.form-small input:not([type="checkbox"]),
 fieldset[disabled] form textarea,
 fieldset[disabled] select {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
-textareaform input:not([type="checkbox"]),
+textareaform.form-small input:not([type="checkbox"]),
 textareaform textarea,
 textareaselect {
   height: auto;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -33911,7 +33911,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -33919,7 +33919,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -33927,7 +33927,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -33935,104 +33935,104 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"])[disabled],
+form.form-small input:not([type="checkbox"])[disabled],
 form textarea[disabled],
 select[disabled],
-form input:not([type="checkbox"])[readonly],
+form.form-small input:not([type="checkbox"])[readonly],
 form textarea[readonly],
 select[readonly],
-fieldset[disabled] form input:not([type="checkbox"]),
+fieldset[disabled] form.form-small input:not([type="checkbox"]),
 fieldset[disabled] form textarea,
 fieldset[disabled] select {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
-textareaform input:not([type="checkbox"]),
+textareaform.form-small input:not([type="checkbox"]),
 textareaform textarea,
 textareaselect {
   height: auto;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder,
+form.form-small input:not([type="checkbox"]):-moz-placeholder,
 form textarea:-moz-placeholder,
 select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder,
+form.form-small input:not([type="checkbox"])::-moz-placeholder,
 form textarea::-moz-placeholder,
 select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder,
+form.form-small input:not([type="checkbox"]):-ms-input-placeholder,
 form textarea:-ms-input-placeholder,
 select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder,
+form.form-small input:not([type="checkbox"])::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder,
 select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -34040,7 +34040,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -34048,7 +34048,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -34056,7 +34056,7 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus,
+form.form-small input:not([type="checkbox"]):focus,
 form textarea:focus,
 select:focus {
   border-color: #66afe9;
@@ -34064,24 +34064,24 @@ select:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"])[disabled],
+form.form-small input:not([type="checkbox"])[disabled],
 form textarea[disabled],
 select[disabled],
-form input:not([type="checkbox"])[readonly],
+form.form-small input:not([type="checkbox"])[readonly],
 form textarea[readonly],
 select[readonly],
-fieldset[disabled] form input:not([type="checkbox"]),
+fieldset[disabled] form.form-small input:not([type="checkbox"]),
 fieldset[disabled] form textarea,
 fieldset[disabled] select {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
-textareaform input:not([type="checkbox"]),
+textareaform.form-small input:not([type="checkbox"]),
 textareaform textarea,
 textareaselect {
   height: auto;
 }
-form textarea {
+form.form-small textarea {
   height: 100px;
 }
 .form-alone {
@@ -34091,7 +34091,7 @@ form textarea {
   margin: 60px auto 0;
   max-width: 300px;
 }
-form button[type="submit"] {
+form.form-small button[type="submit"] {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -34127,26 +34127,26 @@ form button[type="submit"] {
   padding-left: 0;
   padding-right: 0;
 }
-form button[type="submit"]:focus {
+form.form-small button[type="submit"]:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus {
   color: #333333;
   text-decoration: none;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"] {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"] {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -34154,26 +34154,26 @@ fieldset[disabled] form button[type="submit"] {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-form button[type="submit"]:focus {
+form.form-small button[type="submit"]:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus {
   color: #333333;
   text-decoration: none;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"] {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"] {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -34181,273 +34181,273 @@ fieldset[disabled] form button[type="submit"] {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active {
   background-image: none;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus,
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   background-image: none;
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"],
-form button[type="submit"].disabled:hover,
-form button[type="submit"][disabled]:hover,
-fieldset[disabled] form button[type="submit"]:hover,
-form button[type="submit"].disabled:focus,
-form button[type="submit"][disabled]:focus,
-fieldset[disabled] form button[type="submit"]:focus,
-form button[type="submit"].disabled:active,
-form button[type="submit"][disabled]:active,
-fieldset[disabled] form button[type="submit"]:active,
-form button[type="submit"].disabled.active,
-form button[type="submit"][disabled].active,
-fieldset[disabled] form button[type="submit"].active {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"],
+form.form-small button[type="submit"].disabled:hover,
+form.form-small button[type="submit"][disabled]:hover,
+fieldset[disabled] form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"].disabled:focus,
+form.form-small button[type="submit"][disabled]:focus,
+fieldset[disabled] form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"].disabled:active,
+form.form-small button[type="submit"][disabled]:active,
+fieldset[disabled] form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].disabled.active,
+form.form-small button[type="submit"][disabled].active,
+fieldset[disabled] form.form-small button[type="submit"].active {
   background-color: #428bca;
   border-color: #357ebd;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus,
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   background-image: none;
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"],
-form button[type="submit"].disabled:hover,
-form button[type="submit"][disabled]:hover,
-fieldset[disabled] form button[type="submit"]:hover,
-form button[type="submit"].disabled:focus,
-form button[type="submit"][disabled]:focus,
-fieldset[disabled] form button[type="submit"]:focus,
-form button[type="submit"].disabled:active,
-form button[type="submit"][disabled]:active,
-fieldset[disabled] form button[type="submit"]:active,
-form button[type="submit"].disabled.active,
-form button[type="submit"][disabled].active,
-fieldset[disabled] form button[type="submit"].active {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"],
+form.form-small button[type="submit"].disabled:hover,
+form.form-small button[type="submit"][disabled]:hover,
+fieldset[disabled] form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"].disabled:focus,
+form.form-small button[type="submit"][disabled]:focus,
+fieldset[disabled] form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"].disabled:active,
+form.form-small button[type="submit"][disabled]:active,
+fieldset[disabled] form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].disabled.active,
+form.form-small button[type="submit"][disabled].active,
+fieldset[disabled] form.form-small button[type="submit"].active {
   background-color: #428bca;
   border-color: #357ebd;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus,
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   background-image: none;
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"],
-form button[type="submit"].disabled:hover,
-form button[type="submit"][disabled]:hover,
-fieldset[disabled] form button[type="submit"]:hover,
-form button[type="submit"].disabled:focus,
-form button[type="submit"][disabled]:focus,
-fieldset[disabled] form button[type="submit"]:focus,
-form button[type="submit"].disabled:active,
-form button[type="submit"][disabled]:active,
-fieldset[disabled] form button[type="submit"]:active,
-form button[type="submit"].disabled.active,
-form button[type="submit"][disabled].active,
-fieldset[disabled] form button[type="submit"].active {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"],
+form.form-small button[type="submit"].disabled:hover,
+form.form-small button[type="submit"][disabled]:hover,
+fieldset[disabled] form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"].disabled:focus,
+form.form-small button[type="submit"][disabled]:focus,
+fieldset[disabled] form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"].disabled:active,
+form.form-small button[type="submit"][disabled]:active,
+fieldset[disabled] form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].disabled.active,
+form.form-small button[type="submit"][disabled].active,
+fieldset[disabled] form.form-small button[type="submit"].active {
   background-color: #428bca;
   border-color: #357ebd;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus,
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   background-image: none;
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"],
-form button[type="submit"].disabled:hover,
-form button[type="submit"][disabled]:hover,
-fieldset[disabled] form button[type="submit"]:hover,
-form button[type="submit"].disabled:focus,
-form button[type="submit"][disabled]:focus,
-fieldset[disabled] form button[type="submit"]:focus,
-form button[type="submit"].disabled:active,
-form button[type="submit"][disabled]:active,
-fieldset[disabled] form button[type="submit"]:active,
-form button[type="submit"].disabled.active,
-form button[type="submit"][disabled].active,
-fieldset[disabled] form button[type="submit"].active {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"],
+form.form-small button[type="submit"].disabled:hover,
+form.form-small button[type="submit"][disabled]:hover,
+fieldset[disabled] form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"].disabled:focus,
+form.form-small button[type="submit"][disabled]:focus,
+fieldset[disabled] form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"].disabled:active,
+form.form-small button[type="submit"][disabled]:active,
+fieldset[disabled] form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].disabled.active,
+form.form-small button[type="submit"][disabled].active,
+fieldset[disabled] form.form-small button[type="submit"].active {
   background-color: #428bca;
   border-color: #357ebd;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus,
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   background-image: none;
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"],
-form button[type="submit"].disabled:hover,
-form button[type="submit"][disabled]:hover,
-fieldset[disabled] form button[type="submit"]:hover,
-form button[type="submit"].disabled:focus,
-form button[type="submit"][disabled]:focus,
-fieldset[disabled] form button[type="submit"]:focus,
-form button[type="submit"].disabled:active,
-form button[type="submit"][disabled]:active,
-fieldset[disabled] form button[type="submit"]:active,
-form button[type="submit"].disabled.active,
-form button[type="submit"][disabled].active,
-fieldset[disabled] form button[type="submit"].active {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"],
+form.form-small button[type="submit"].disabled:hover,
+form.form-small button[type="submit"][disabled]:hover,
+fieldset[disabled] form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"].disabled:focus,
+form.form-small button[type="submit"][disabled]:focus,
+fieldset[disabled] form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"].disabled:active,
+form.form-small button[type="submit"][disabled]:active,
+fieldset[disabled] form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].disabled.active,
+form.form-small button[type="submit"][disabled].active,
+fieldset[disabled] form.form-small button[type="submit"].active {
   background-color: #428bca;
   border-color: #357ebd;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus,
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   background-image: none;
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"],
-form button[type="submit"].disabled:hover,
-form button[type="submit"][disabled]:hover,
-fieldset[disabled] form button[type="submit"]:hover,
-form button[type="submit"].disabled:focus,
-form button[type="submit"][disabled]:focus,
-fieldset[disabled] form button[type="submit"]:focus,
-form button[type="submit"].disabled:active,
-form button[type="submit"][disabled]:active,
-fieldset[disabled] form button[type="submit"]:active,
-form button[type="submit"].disabled.active,
-form button[type="submit"][disabled].active,
-fieldset[disabled] form button[type="submit"].active {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"],
+form.form-small button[type="submit"].disabled:hover,
+form.form-small button[type="submit"][disabled]:hover,
+fieldset[disabled] form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"].disabled:focus,
+form.form-small button[type="submit"][disabled]:focus,
+fieldset[disabled] form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"].disabled:active,
+form.form-small button[type="submit"][disabled]:active,
+fieldset[disabled] form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].disabled.active,
+form.form-small button[type="submit"][disabled].active,
+fieldset[disabled] form.form-small button[type="submit"].active {
   background-color: #428bca;
   border-color: #357ebd;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus,
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   background-image: none;
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"],
-form button[type="submit"].disabled:hover,
-form button[type="submit"][disabled]:hover,
-fieldset[disabled] form button[type="submit"]:hover,
-form button[type="submit"].disabled:focus,
-form button[type="submit"][disabled]:focus,
-fieldset[disabled] form button[type="submit"]:focus,
-form button[type="submit"].disabled:active,
-form button[type="submit"][disabled]:active,
-fieldset[disabled] form button[type="submit"]:active,
-form button[type="submit"].disabled.active,
-form button[type="submit"][disabled].active,
-fieldset[disabled] form button[type="submit"].active {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"],
+form.form-small button[type="submit"].disabled:hover,
+form.form-small button[type="submit"][disabled]:hover,
+fieldset[disabled] form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"].disabled:focus,
+form.form-small button[type="submit"][disabled]:focus,
+fieldset[disabled] form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"].disabled:active,
+form.form-small button[type="submit"][disabled]:active,
+fieldset[disabled] form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].disabled.active,
+form.form-small button[type="submit"][disabled].active,
+fieldset[disabled] form.form-small button[type="submit"].active {
   background-color: #428bca;
   border-color: #357ebd;
 }
-form button[type="submit"]:hover,
-form button[type="submit"]:focus,
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active,
-.open .dropdown-toggleform button[type="submit"] {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active,
+.open .dropdown-toggleform.form-small button[type="submit"] {
   background-image: none;
 }
-form button[type="submit"].disabled,
-form button[type="submit"][disabled],
-fieldset[disabled] form button[type="submit"],
-form button[type="submit"].disabled:hover,
-form button[type="submit"][disabled]:hover,
-fieldset[disabled] form button[type="submit"]:hover,
-form button[type="submit"].disabled:focus,
-form button[type="submit"][disabled]:focus,
-fieldset[disabled] form button[type="submit"]:focus,
-form button[type="submit"].disabled:active,
-form button[type="submit"][disabled]:active,
-fieldset[disabled] form button[type="submit"]:active,
-form button[type="submit"].disabled.active,
-form button[type="submit"][disabled].active,
-fieldset[disabled] form button[type="submit"].active {
+form.form-small button[type="submit"].disabled,
+form.form-small button[type="submit"][disabled],
+fieldset[disabled] form.form-small button[type="submit"],
+form.form-small button[type="submit"].disabled:hover,
+form.form-small button[type="submit"][disabled]:hover,
+fieldset[disabled] form.form-small button[type="submit"]:hover,
+form.form-small button[type="submit"].disabled:focus,
+form.form-small button[type="submit"][disabled]:focus,
+fieldset[disabled] form.form-small button[type="submit"]:focus,
+form.form-small button[type="submit"].disabled:active,
+form.form-small button[type="submit"][disabled]:active,
+fieldset[disabled] form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].disabled.active,
+form.form-small button[type="submit"][disabled].active,
+fieldset[disabled] form.form-small button[type="submit"].active {
   background-color: #428bca;
   border-color: #357ebd;
 }
-form button[type="submit"]:active,
-form button[type="submit"].active {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-form button[type="submit"]:active,
-form button[type="submit"].active {
+form.form-small button[type="submit"]:active,
+form.form-small button[type="submit"].active {
   background-color: #3071a9;
   border-color: #2d6ca2;
 }
@@ -34456,4 +34456,365 @@ form.form-small button[type="submit"] {
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
+}
+form .delete-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#d9534f), to(#c9302c));
+  background-image: -webkit-linear-gradient(top, #d9534f, 0%, #c9302c, 100%);
+  background-image: -moz-linear-gradient(top, #d9534f 0%, #c9302c 100%);
+  background-image: linear-gradient(to bottom, #d9534f 0%, #c9302c 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc9302c', GradientType=0);
+  border-color: #c12e2a;
+  width: auto;
+}
+form .delete-button:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+form .delete-button:hover,
+form .delete-button:focus {
+  color: #333333;
+  text-decoration: none;
+}
+form .delete-button:active,
+form .delete-button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+form .delete-button:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+form .delete-button:hover,
+form .delete-button:focus {
+  color: #333333;
+  text-decoration: none;
+}
+form .delete-button:active,
+form .delete-button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+form .delete-button:active,
+form .delete-button.active {
+  background-image: none;
+}
+form .delete-button:hover,
+form .delete-button:focus,
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  background-image: none;
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button,
+form .delete-button.disabled:hover,
+form .delete-button[disabled]:hover,
+fieldset[disabled] form .delete-button:hover,
+form .delete-button.disabled:focus,
+form .delete-button[disabled]:focus,
+fieldset[disabled] form .delete-button:focus,
+form .delete-button.disabled:active,
+form .delete-button[disabled]:active,
+fieldset[disabled] form .delete-button:active,
+form .delete-button.disabled.active,
+form .delete-button[disabled].active,
+fieldset[disabled] form .delete-button.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+form .delete-button:hover,
+form .delete-button:focus,
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  background-image: none;
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button,
+form .delete-button.disabled:hover,
+form .delete-button[disabled]:hover,
+fieldset[disabled] form .delete-button:hover,
+form .delete-button.disabled:focus,
+form .delete-button[disabled]:focus,
+fieldset[disabled] form .delete-button:focus,
+form .delete-button.disabled:active,
+form .delete-button[disabled]:active,
+fieldset[disabled] form .delete-button:active,
+form .delete-button.disabled.active,
+form .delete-button[disabled].active,
+fieldset[disabled] form .delete-button.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+form .delete-button:hover,
+form .delete-button:focus,
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  background-image: none;
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button,
+form .delete-button.disabled:hover,
+form .delete-button[disabled]:hover,
+fieldset[disabled] form .delete-button:hover,
+form .delete-button.disabled:focus,
+form .delete-button[disabled]:focus,
+fieldset[disabled] form .delete-button:focus,
+form .delete-button.disabled:active,
+form .delete-button[disabled]:active,
+fieldset[disabled] form .delete-button:active,
+form .delete-button.disabled.active,
+form .delete-button[disabled].active,
+fieldset[disabled] form .delete-button.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+form .delete-button:hover,
+form .delete-button:focus,
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  background-image: none;
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button,
+form .delete-button.disabled:hover,
+form .delete-button[disabled]:hover,
+fieldset[disabled] form .delete-button:hover,
+form .delete-button.disabled:focus,
+form .delete-button[disabled]:focus,
+fieldset[disabled] form .delete-button:focus,
+form .delete-button.disabled:active,
+form .delete-button[disabled]:active,
+fieldset[disabled] form .delete-button:active,
+form .delete-button.disabled.active,
+form .delete-button[disabled].active,
+fieldset[disabled] form .delete-button.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+form .delete-button:hover,
+form .delete-button:focus,
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  background-image: none;
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button,
+form .delete-button.disabled:hover,
+form .delete-button[disabled]:hover,
+fieldset[disabled] form .delete-button:hover,
+form .delete-button.disabled:focus,
+form .delete-button[disabled]:focus,
+fieldset[disabled] form .delete-button:focus,
+form .delete-button.disabled:active,
+form .delete-button[disabled]:active,
+fieldset[disabled] form .delete-button:active,
+form .delete-button.disabled.active,
+form .delete-button[disabled].active,
+fieldset[disabled] form .delete-button.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+form .delete-button:hover,
+form .delete-button:focus,
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  background-image: none;
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button,
+form .delete-button.disabled:hover,
+form .delete-button[disabled]:hover,
+fieldset[disabled] form .delete-button:hover,
+form .delete-button.disabled:focus,
+form .delete-button[disabled]:focus,
+fieldset[disabled] form .delete-button:focus,
+form .delete-button.disabled:active,
+form .delete-button[disabled]:active,
+fieldset[disabled] form .delete-button:active,
+form .delete-button.disabled.active,
+form .delete-button[disabled].active,
+fieldset[disabled] form .delete-button.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+form .delete-button:hover,
+form .delete-button:focus,
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  background-image: none;
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button,
+form .delete-button.disabled:hover,
+form .delete-button[disabled]:hover,
+fieldset[disabled] form .delete-button:hover,
+form .delete-button.disabled:focus,
+form .delete-button[disabled]:focus,
+fieldset[disabled] form .delete-button:focus,
+form .delete-button.disabled:active,
+form .delete-button[disabled]:active,
+fieldset[disabled] form .delete-button:active,
+form .delete-button.disabled.active,
+form .delete-button[disabled].active,
+fieldset[disabled] form .delete-button.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+form .delete-button:hover,
+form .delete-button:focus,
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+form .delete-button:active,
+form .delete-button.active,
+.open .dropdown-toggleform .delete-button {
+  background-image: none;
+}
+form .delete-button.disabled,
+form .delete-button[disabled],
+fieldset[disabled] form .delete-button,
+form .delete-button.disabled:hover,
+form .delete-button[disabled]:hover,
+fieldset[disabled] form .delete-button:hover,
+form .delete-button.disabled:focus,
+form .delete-button[disabled]:focus,
+fieldset[disabled] form .delete-button:focus,
+form .delete-button.disabled:active,
+form .delete-button[disabled]:active,
+fieldset[disabled] form .delete-button:active,
+form .delete-button.disabled.active,
+form .delete-button[disabled].active,
+fieldset[disabled] form .delete-button.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+form .delete-button:active,
+form .delete-button.active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+form .delete-button:active,
+form .delete-button.active {
+  background-color: #c9302c;
+  border-color: #c12e2a;
 }

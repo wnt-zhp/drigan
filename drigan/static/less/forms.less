@@ -2,10 +2,10 @@ label {
     display: block;
     margin-bottom: 0;
 }
-form input:not([type="checkbox"]), form textarea, select {
+form.form-small input:not([type="checkbox"]), form textarea, select {
     .form-control;
 }
-form textarea {
+form.form-small textarea {
     height: 100px;
 }
 
@@ -18,11 +18,18 @@ form textarea {
     max-width: 300px;
 }
 
-form button[type="submit"] {
+form.form-small button[type="submit"] {
     .btn;
     .btn-primary;
     .btn-block;
 }
 form.form-small button[type="submit"] {
     .btn-lg;
+}
+
+form .delete-button {
+    .btn;
+    .btn-sm;
+    .btn-danger;
+    width: auto;
 }
