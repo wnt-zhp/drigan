@@ -2,10 +2,10 @@
 {% load i18n %}
 {% block title %}{% trans "Add attraction" %}{% endblock %}
 {% block content %}
-    <form method='post' action='.'>
+    <form method='post' action='.' class="form-small">
         {% csrf_token %}
-        {% trans "Add attraction:" %}
+        <h1>{% trans "Add attraction:" %}</h1>
         {{ form.as_p }}
-        <input type='submit' value='{% trans "Save" %}'>
+        <button type='submit'>{% trans "Save" %}</button>
     </form>
 {% endblock %}

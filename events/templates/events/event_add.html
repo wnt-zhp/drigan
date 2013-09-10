@@ -2,12 +2,12 @@
 {% load i18n %}
 {% block title %}{% trans "Add event" %}{% endblock %}
 {% block content %}
-    <form method='post' action='.'>
+    <form method='post' action='.' class="form-small">
         {% csrf_token %}
-        {% trans "Add event:" %}
+        <h1>{% trans "Add event:" %}</h2>
         {{ form.as_p }}
-        {% trans "Add organizer:" %}
+        <h3>{% trans "Organizer:" %}</h3>
         {{ organizer_form.as_p }}
-        <input type='submit' value='{% trans "Save" %}'>
+        <button type='submit'>{% trans "Save" %}</button>
     </form>
 {% endblock %}
