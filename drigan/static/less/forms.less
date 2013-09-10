@@ -2,8 +2,11 @@ label {
     display: block;
     margin-bottom: 0;
 }
-form input:not([type="checkbox"]) {
+form input:not([type="checkbox"]), form textarea, select {
     .form-control;
+}
+form textarea {
+    height: 100px;
 }
 
 .form-alone {

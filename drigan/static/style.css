@@ -29694,9 +29694,3880 @@ a.thumbnail:focus {
   padding: 9px;
   color: #333333;
 }
+html,
 body {
-  padding-top: 60px;
+  height: 100%;
   background-color: #eee;
+}
+.content {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 60px;
+  margin-bottom: 60px;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+.content:before,
+.content:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.content:after {
+  clear: both;
+}
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+
+  margin: 0 auto -40px;
+  /* Pad bottom by footer height */
+
+  padding: 0 0 40px;
+}
+footer {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  font-size: small;
+  padding: 5px;
+  color: #666;
+  height: 40px;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
+}
+footer:before,
+footer:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+footer:after {
+  clear: both;
 }
 .errorlist {
   padding-left: 0;
@@ -29797,11 +33668,16 @@ body {
 .errorlist li .alert-link {
   color: #953b39;
 }
+.messages {
+  margin: 10px 20px;
+}
 label {
   display: block;
   margin-bottom: 0;
 }
-form input:not([type="checkbox"]) {
+form input:not([type="checkbox"]),
+form textarea,
+select {
   display: block;
   width: 100%;
   height: 34px;
@@ -29818,248 +33694,395 @@ form input:not([type="checkbox"]) {
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-form input:not([type="checkbox"]):-moz-placeholder {
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder {
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder {
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder {
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder {
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder {
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder {
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder {
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder {
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder {
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder {
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder {
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder {
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder {
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder {
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder {
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):focus {
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus {
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus {
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-form input:not([type="checkbox"])[disabled],
-form input:not([type="checkbox"])[readonly],
-fieldset[disabled] form input:not([type="checkbox"]) {
-  cursor: not-allowed;
-  background-color: #eeeeee;
-}
-textareaform input:not([type="checkbox"]) {
-  height: auto;
-}
-form input:not([type="checkbox"]):-moz-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"])::-moz-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"]):-ms-input-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"])::-webkit-input-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"]):-moz-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"])::-moz-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"]):-ms-input-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"])::-webkit-input-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"]):-moz-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"])::-moz-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"]):-ms-input-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"])::-webkit-input-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"]):-moz-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"])::-moz-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"]):-ms-input-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"])::-webkit-input-placeholder {
-  color: #999999;
-}
-form input:not([type="checkbox"]):focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-form input:not([type="checkbox"]):focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-form input:not([type="checkbox"]):focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-form input:not([type="checkbox"]):focus {
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 form input:not([type="checkbox"])[disabled],
+form textarea[disabled],
+select[disabled],
 form input:not([type="checkbox"])[readonly],
-fieldset[disabled] form input:not([type="checkbox"]) {
+form textarea[readonly],
+select[readonly],
+fieldset[disabled] form input:not([type="checkbox"]),
+fieldset[disabled] form textarea,
+fieldset[disabled] select {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
-textareaform input:not([type="checkbox"]) {
+textareaform input:not([type="checkbox"]),
+textareaform textarea,
+textareaselect {
   height: auto;
 }
-form input:not([type="checkbox"]):-moz-placeholder {
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder {
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder {
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder {
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder {
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder {
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder {
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder {
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder {
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder {
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder {
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder {
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-moz-placeholder {
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-moz-placeholder {
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):-ms-input-placeholder {
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"])::-webkit-input-placeholder {
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
   color: #999999;
 }
-form input:not([type="checkbox"]):focus {
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus {
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus {
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-form input:not([type="checkbox"]):focus {
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 form input:not([type="checkbox"])[disabled],
+form textarea[disabled],
+select[disabled],
 form input:not([type="checkbox"])[readonly],
-fieldset[disabled] form input:not([type="checkbox"]) {
+form textarea[readonly],
+select[readonly],
+fieldset[disabled] form input:not([type="checkbox"]),
+fieldset[disabled] form textarea,
+fieldset[disabled] select {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
-textareaform input:not([type="checkbox"]) {
+textareaform input:not([type="checkbox"]),
+textareaform textarea,
+textareaselect {
   height: auto;
+}
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"]):-moz-placeholder,
+form textarea:-moz-placeholder,
+select:-moz-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"])::-moz-placeholder,
+form textarea::-moz-placeholder,
+select::-moz-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"]):-ms-input-placeholder,
+form textarea:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"])::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  color: #999999;
+}
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+form input:not([type="checkbox"]):focus,
+form textarea:focus,
+select:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+form input:not([type="checkbox"])[disabled],
+form textarea[disabled],
+select[disabled],
+form input:not([type="checkbox"])[readonly],
+form textarea[readonly],
+select[readonly],
+fieldset[disabled] form input:not([type="checkbox"]),
+fieldset[disabled] form textarea,
+fieldset[disabled] select {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+textareaform input:not([type="checkbox"]),
+textareaform textarea,
+textareaselect {
+  height: auto;
+}
+form textarea {
+  height: 100px;
 }
 .form-alone {
   margin: 60px auto 0;
