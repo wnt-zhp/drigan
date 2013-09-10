@@ -3,10 +3,10 @@
 
 {% block title %}{% trans "Sign up" %}{% endblock %}
 {% block content %}
-<form method="post" action=".">
+<form method="post" action="." class="form-small">
   {% csrf_token %}
   {{ form.as_p }}
 
-  <input type="submit" class="btn btn-primary btn-lg btn-block"value="{% trans 'Submit' %}" />
+  <button type="submit">{% trans 'Submit' %}</button>
 </form>
 {% endblock %}

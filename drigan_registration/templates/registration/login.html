@@ -4,15 +4,13 @@
 {% block title %}{% trans "Sign in" %}{% endblock %}
 {% block content %}
 <div class="container">
-  <form method="post" action="." class="form-signin">
+  <form method="post" action="." class="form-small form-signin">
     {% csrf_token %} 
     {{ form.as_p }}
-
-    <button class="btn btn-primary btn-lg btn-block" type="submit">{% trans 'Sign in' %}</button>
+    <div>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</div>
+    <div>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Sign up" %}</a>!</div>
+    <button type="submit">{% trans 'Sign in' %}</button>
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
-
-  <p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-  <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Sign up" %}</a>!</p>
 </div>
 {% endblock %}
