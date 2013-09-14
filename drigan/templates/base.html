@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% if flatpage %}{{ flatpage.title }}{% endif %}{% endblock %} | drigan</title>
 
-    <link href="{{ STATIC_URL }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ STATIC_URL }}/css/style.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}style.css" rel="stylesheet">
     {% block head %}{% endblock %}
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+  <div id="wrapper">
+    <header class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -38,18 +38,22 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </div>
-    {% if messages %}
-    <div class="messages">
+    </header>
+    <div class="content">
+      {% if messages %}
+      <div class="messages">
         {% for message in messages %}
         <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
         {% endfor %}
-    </div>
-    {% endif %}
-    <div class="container">
+      </div>
+      {% endif %}
       {% block content %}{% endblock %}
     </div><!-- /.container -->
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="{{ STATIC_URL }}/vendor/bootstrap/js/bootstrap.min.js"></script>
+  </div><!-- /#wrapper -->
+  <footer>
+      footer
+  </footer>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="{{ STATIC_URL }}vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

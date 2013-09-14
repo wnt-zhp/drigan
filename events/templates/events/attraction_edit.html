@@ -2,16 +2,10 @@
 {% load i18n %}
 {% block title %}{% trans "Edit attraction" %}{% endblock %}
 {% block content %}
-    <div>
-        <form method='post' action='{% url "events.views.delete_attraction" attraction.event.id attraction.id %}'>
-            {% csrf_token %}
-            <input type='submit' value='{% trans "Delete" %}'>
-        </form>
-    </div>
-    <form method='post' action='.'>
+    <form method='post' action='.' class="form-small">
         {% csrf_token %}
-        {% trans "Edit attraction:" %}
+        <h1>{% trans "Edit attraction:" %}</h1>
         {{ form.as_p }}
-        <input type='submit' value='{% trans "Save" %}'>
+        <button type='submit'>{% trans "Save" %}</button>
     </form>
 {% endblock %}

@@ -4,9 +4,7 @@
 {% block title %}{% trans "Account activated" %}{% endblock %}
 
 {% block content %}
-    <div class="page-header">
-        <h1>{% trans "Account activated" %}</h1>
-    </div>
+    <h1>{% trans "Account activated" %}</h1>
     <p>
         {% trans "Your account has been successfully activated." %}
         <a href="{% url "auth_login" %}">{% trans "Sign in!" %}</a>
