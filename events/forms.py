@@ -4,6 +4,7 @@ from events.models import Event, Organizer, Attraction
 
 
 class AddEventForm(ModelForm):
+    error_css_class = "form-error"
     class Meta:
         model = Event
         fields = ('name',)

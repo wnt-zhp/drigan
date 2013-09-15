@@ -33,3 +33,19 @@ form .delete-button {
     .btn-danger;
     width: auto;
 }
+form .errorlist {
+    li {
+        padding: 0 5px;
+        margin: 2px 0;
+    }
+    margin: 15px 0 0;
+}
+form .form-error {
+    input, textarea {
+        border-color: @state-danger-text !important;
+        .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)) !important;
+    }
+    label {
+        color: @state-danger-text;
+    }
+}
