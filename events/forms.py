@@ -6,8 +6,7 @@ from events.models import Event, Organizer, Attraction
 class AddEventForm(ModelForm):
     class Meta:
         model = Event
-        fields = ('name', 'start_date',
-                  'end_date', 'website', 'category')
+        fields = ('name',)
 
 
 class EditEventForm(ModelForm):
