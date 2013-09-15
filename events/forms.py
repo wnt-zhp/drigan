@@ -20,7 +20,7 @@ class EditEventForm(DriganModelForm):
 class AddOrganizerForm(DriganModelForm):
     class Meta:
         model = Organizer
-        fields = ('name', 'mail', 'phone', 'address')
+        fields = ('name', 'mail', 'phone')
 
 
 class AddAttractionForm(DriganModelForm):
