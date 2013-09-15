@@ -23,8 +23,7 @@ class Event(models.Model):
     website = models.CharField(_("website"), max_length=100, blank=True)
     created_by = models.ForeignKey(User)
     category = models.ForeignKey('categories.Category',
-                                 verbose_name=_('category'),
-                                 null=True, blank=True)
+                                 verbose_name=_('category'))
     description = models.TextField(_("description of the event"), blank=True)
     organizer = models.ForeignKey(Organizer)
 
