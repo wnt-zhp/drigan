@@ -23,6 +23,12 @@ class AddOrganizerForm(DriganModelForm):
         fields = ('name', 'mail', 'phone')
 
 
+class EditOrganizerForm(DriganModelForm):
+    class Meta:
+        model = Organizer
+        fields = ('name', 'mail', 'phone', 'address')
+
+
 class AddAttractionForm(DriganModelForm):
     class Meta:
         model = Attraction

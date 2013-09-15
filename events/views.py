@@ -7,8 +7,9 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils.translation import ugettext as _
-from events.forms import *
-from events.models import *
+from events.forms import AddOrganizerForm, EditOrganizerForm, \
+    AddEventForm, EditEventForm, AddAttractionForm
+from events.models import Event, Attraction
 
 
 def event_details(request, event_id):
@@ -55,9 +56,9 @@ def edit_event(request, event_id):
     organizer = event.organizer
     if request.method == "POST":
         form = EditEventForm(request.POST, instance=event, prefix='event')
-        organizer_form = AddOrganizerForm(request.POST,
-                                          instance=organizer,
-                                          prefix='organizer')
+        organizer_form = EditOrganizerForm(request.POST,
+                                           instance=organizer,
+                                           prefix='organizer')
         if form.is_valid() and organizer_form.is_valid():
             event = form.save()
             organizer = organizer_form.save()
@@ -68,7 +69,7 @@ def edit_event(request, event_id):
                 args=(event.id,)))
     else:
         form = EditEventForm(instance=event, prefix='event')
-        organizer_form = AddOrganizerForm(instance=organizer,
+        organizer_form = EditOrganizerForm(instance=organizer,
                                           prefix='organizer')
 
     return render_to_response("events/event_edit.html",
