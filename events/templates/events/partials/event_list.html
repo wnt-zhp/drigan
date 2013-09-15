@@ -1,0 +1,25 @@
+<ul class="event-list">
+  {% for event in events %}
+    <li>
+      <a href="{% url "events.views.event_details" event.id %}" class="event-header">
+        <h4>{{ event }}</h4>
+      </a>
+      <p>
+        {{ event.start_date|default_if_none:'' }} 
+        {% if event.end_date %}
+          {% ifnotequal event.start_date event.end_date %}
+            - {{ event.end_date }}
+          {% endifnotequal %}
+        {% endif %}
+      </p>
+      <p>
+      {% for attraction in event.attraction_set.all %}
+        <a href="{% url "events.views.attraction_details" event.id attraction.id %}">
+          {{ attraction }}
+        </a>
+        {% if not forloop.last %},{% endif %}
+      {% endfor %}
+      </p>
+    </li>
+  {% endfor %}
+</ul>

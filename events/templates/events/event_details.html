@@ -14,10 +14,13 @@
         <a href="{{ event.website }}">{{ event.website }}</a>
     {% endif %}
     <p>
-        {{ event.start_date }} 
-        {% ifnotequal event.start_date event.end_date %}
-            - {{ event.end_date }}
-        {% endifnotequal %}
+        {{ event.start_date|default_if_none:'' }} 
+        
+        {% if event.end_date %}
+            {% ifnotequal event.start_date event.end_date %}
+                - {{ event.end_date }}
+            {% endifnotequal %}
+        {% endif %}
     </p>
     <p>
         {% if event.description %}

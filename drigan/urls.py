@@ -2,10 +2,13 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+
+from drigan.views import StartView
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^$', StartView.as_view()),
     url(r'^events/', include('events.urls')),
 
     # Examples:
