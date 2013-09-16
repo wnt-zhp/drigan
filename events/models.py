@@ -17,6 +17,8 @@ class Organizer(models.Model):
 
 
 class Event(models.Model):
+    logo = models.ImageField(upload_to='uploads/events/logos',
+                             null=True, blank=True)
     name = models.CharField(_("event name"), max_length=200,
                             help_text=_("Without edition (eg. \"Long Race\", "
                                         "not \"Long Race 2013\")"))
@@ -33,6 +35,9 @@ class Event(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_logo(self):
+        return self.logo if self.logo else self.category.thumbnail
 
 
 class Attraction(models.Model):
