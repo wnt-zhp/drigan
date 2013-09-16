@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <ul class="event-list">
   {% for event in events %}
     <li>
@@ -21,5 +23,7 @@
       {% endfor %}
       </p>
     </li>
+  {% empty %}
+    <li>{% trans "No upcoming events..." %}</li>
   {% endfor %}
 </ul>
