@@ -1,9 +1,23 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n imagekit %}
+
 {% block title %}
     {{ event.name }}
 {% endblock %}
+
 {% block content %}
+    {% if event.get_logo %}
+        {% thumbnail '100x100' event.get_logo -- class="thumbnail" %}
+    {% endif %}
+    {% if change_logo_form %}
+        <form class="change-event-logo-form autosubmit" enctype="multipart/form-data" method="POST" action="{% url "events.views.change_event_logo" event.id %}">
+            {% csrf_token %}
+            <div class="upload-file-button">
+                {{ change_logo_form }}
+            </div>
+            <button type="submit">Save</button>
+        </form>
+    {% endif %}
     <div>
         <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit" %}</a>
         <a href="{% url "events.views.add_attraction" event.id %}">{% trans "Add attraction" %}</a>

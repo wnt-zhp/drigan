@@ -35256,6 +35256,376 @@ form .helptext {
   color: #737373;
   font-size: 0.9em;
 }
+form .upload-file-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#428bca), to(#3071a9));
+  background-image: -webkit-linear-gradient(top, #428bca, 0%, #3071a9, 100%);
+  background-image: -moz-linear-gradient(top, #428bca 0%, #3071a9 100%);
+  background-image: linear-gradient(to bottom, #428bca 0%, #3071a9 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff3071a9', GradientType=0);
+  border-color: #2d6ca2;
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+}
+form .upload-file-button:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus {
+  color: #333333;
+  text-decoration: none;
+}
+form .upload-file-button:active,
+form .upload-file-button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+form .upload-file-button:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus {
+  color: #333333;
+  text-decoration: none;
+}
+form .upload-file-button:active,
+form .upload-file-button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+form .upload-file-button:active,
+form .upload-file-button.active {
+  background-image: none;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus,
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  background-image: none;
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button,
+form .upload-file-button.disabled:hover,
+form .upload-file-button[disabled]:hover,
+fieldset[disabled] form .upload-file-button:hover,
+form .upload-file-button.disabled:focus,
+form .upload-file-button[disabled]:focus,
+fieldset[disabled] form .upload-file-button:focus,
+form .upload-file-button.disabled:active,
+form .upload-file-button[disabled]:active,
+fieldset[disabled] form .upload-file-button:active,
+form .upload-file-button.disabled.active,
+form .upload-file-button[disabled].active,
+fieldset[disabled] form .upload-file-button.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus,
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  background-image: none;
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button,
+form .upload-file-button.disabled:hover,
+form .upload-file-button[disabled]:hover,
+fieldset[disabled] form .upload-file-button:hover,
+form .upload-file-button.disabled:focus,
+form .upload-file-button[disabled]:focus,
+fieldset[disabled] form .upload-file-button:focus,
+form .upload-file-button.disabled:active,
+form .upload-file-button[disabled]:active,
+fieldset[disabled] form .upload-file-button:active,
+form .upload-file-button.disabled.active,
+form .upload-file-button[disabled].active,
+fieldset[disabled] form .upload-file-button.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus,
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  background-image: none;
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button,
+form .upload-file-button.disabled:hover,
+form .upload-file-button[disabled]:hover,
+fieldset[disabled] form .upload-file-button:hover,
+form .upload-file-button.disabled:focus,
+form .upload-file-button[disabled]:focus,
+fieldset[disabled] form .upload-file-button:focus,
+form .upload-file-button.disabled:active,
+form .upload-file-button[disabled]:active,
+fieldset[disabled] form .upload-file-button:active,
+form .upload-file-button.disabled.active,
+form .upload-file-button[disabled].active,
+fieldset[disabled] form .upload-file-button.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus,
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  background-image: none;
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button,
+form .upload-file-button.disabled:hover,
+form .upload-file-button[disabled]:hover,
+fieldset[disabled] form .upload-file-button:hover,
+form .upload-file-button.disabled:focus,
+form .upload-file-button[disabled]:focus,
+fieldset[disabled] form .upload-file-button:focus,
+form .upload-file-button.disabled:active,
+form .upload-file-button[disabled]:active,
+fieldset[disabled] form .upload-file-button:active,
+form .upload-file-button.disabled.active,
+form .upload-file-button[disabled].active,
+fieldset[disabled] form .upload-file-button.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus,
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  background-image: none;
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button,
+form .upload-file-button.disabled:hover,
+form .upload-file-button[disabled]:hover,
+fieldset[disabled] form .upload-file-button:hover,
+form .upload-file-button.disabled:focus,
+form .upload-file-button[disabled]:focus,
+fieldset[disabled] form .upload-file-button:focus,
+form .upload-file-button.disabled:active,
+form .upload-file-button[disabled]:active,
+fieldset[disabled] form .upload-file-button:active,
+form .upload-file-button.disabled.active,
+form .upload-file-button[disabled].active,
+fieldset[disabled] form .upload-file-button.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus,
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  background-image: none;
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button,
+form .upload-file-button.disabled:hover,
+form .upload-file-button[disabled]:hover,
+fieldset[disabled] form .upload-file-button:hover,
+form .upload-file-button.disabled:focus,
+form .upload-file-button[disabled]:focus,
+fieldset[disabled] form .upload-file-button:focus,
+form .upload-file-button.disabled:active,
+form .upload-file-button[disabled]:active,
+fieldset[disabled] form .upload-file-button:active,
+form .upload-file-button.disabled.active,
+form .upload-file-button[disabled].active,
+fieldset[disabled] form .upload-file-button.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus,
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  background-image: none;
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button,
+form .upload-file-button.disabled:hover,
+form .upload-file-button[disabled]:hover,
+fieldset[disabled] form .upload-file-button:hover,
+form .upload-file-button.disabled:focus,
+form .upload-file-button[disabled]:focus,
+fieldset[disabled] form .upload-file-button:focus,
+form .upload-file-button.disabled:active,
+form .upload-file-button[disabled]:active,
+fieldset[disabled] form .upload-file-button:active,
+form .upload-file-button.disabled.active,
+form .upload-file-button[disabled].active,
+fieldset[disabled] form .upload-file-button.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+form .upload-file-button:hover,
+form .upload-file-button:focus,
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+form .upload-file-button:active,
+form .upload-file-button.active,
+.open .dropdown-toggleform .upload-file-button {
+  background-image: none;
+}
+form .upload-file-button.disabled,
+form .upload-file-button[disabled],
+fieldset[disabled] form .upload-file-button,
+form .upload-file-button.disabled:hover,
+form .upload-file-button[disabled]:hover,
+fieldset[disabled] form .upload-file-button:hover,
+form .upload-file-button.disabled:focus,
+form .upload-file-button[disabled]:focus,
+fieldset[disabled] form .upload-file-button:focus,
+form .upload-file-button.disabled:active,
+form .upload-file-button[disabled]:active,
+fieldset[disabled] form .upload-file-button:active,
+form .upload-file-button.disabled.active,
+form .upload-file-button[disabled].active,
+fieldset[disabled] form .upload-file-button.active {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+form .upload-file-button:active,
+form .upload-file-button.active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+form .upload-file-button:active,
+form .upload-file-button.active {
+  background-color: #3071a9;
+  border-color: #2d6ca2;
+}
+form .upload-file-button input[type="file"] {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .event-list {
   margin-bottom: 20px;
   padding-left: 0;

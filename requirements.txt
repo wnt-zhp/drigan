@@ -1,4 +1,4 @@
-django==1.5.4
+git+https://github.com/django/django.git@stable/1.6.x
 psycopg2
 django-categories==1.2.2
 django-registration==1.0

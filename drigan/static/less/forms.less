@@ -53,3 +53,19 @@ form .helptext {
     .help-block;
     font-size: 0.9em;
 }
+
+form .upload-file-button {
+    .btn;
+    .btn-sm;
+    .btn-primary;
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+    input[type="file"] {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

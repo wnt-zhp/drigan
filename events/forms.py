@@ -34,3 +34,16 @@ class AddAttractionForm(DriganModelForm):
         model = Attraction
         fields = ('name', 'start_date', 'end_date', 'place',
                   'description', 'category')
+
+
+class ChangeEventLogoForm(DriganModelForm):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault("label_suffix", "")
+        super(ChangeEventLogoForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = Event
+        fields = ('logo',)
+        labels = {
+            'logo': 'Change logo'
+        }
