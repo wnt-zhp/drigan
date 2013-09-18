@@ -3,9 +3,13 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 from categories.models import CategoryBase
 from categories.admin import CategoryBaseAdmin
+from categories.settings import THUMBNAIL_UPLOAD_PATH
 
 
 class AttractionCategory(CategoryBase):
+    thumbnail = models.ImageField(
+        upload_to=THUMBNAIL_UPLOAD_PATH,
+        null=True, blank=True)
 
     class Meta:
         verbose_name_plural = 'attraction categories'
