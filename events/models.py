@@ -3,6 +3,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
+from softdelete.models import SoftDeleteObject
 
 
 class Organizer(models.Model):
@@ -16,7 +17,7 @@ class Organizer(models.Model):
         return self.name
 
 
-class Event(models.Model):
+class Event(SoftDeleteObject):
     name = models.CharField(_("event name"), max_length=200,
                             help_text=_("Without edition (eg. \"Long Race\", "
                                         "not \"Long Race 2013\")"))
@@ -40,7 +41,7 @@ class Event(models.Model):
         return self.logo if self.logo else self.category.thumbnail
 
 
-class Attraction(models.Model):
+class Attraction(SoftDeleteObject):
     event = models.ForeignKey(Event)
     name = models.CharField(_("name"), max_length=200)
     start_date = models.DateTimeField(_("start date"))
