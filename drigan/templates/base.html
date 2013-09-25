@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n staticfiles %}
 
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% if flatpage %}{{ flatpage.title }}{% endif %}{% endblock %} | drigan</title>
 
-    <link href="{{ STATIC_URL }}style.css" rel="stylesheet">
+    <link href="{% static "style.css" %}" rel="stylesheet">
     {% block head %}{% endblock %}
 </head>
 <body>
@@ -54,6 +54,7 @@
       footer
   </footer>
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="{{ STATIC_URL }}vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "scripts.min.js" %}"></script>
 </body>
 </html>
