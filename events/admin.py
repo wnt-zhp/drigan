@@ -1,4 +1,5 @@
-from events.models import *
+from events.models import Event, Attraction, Organizer, \
+    SportCategory, AttractionCategory, CategoryAdmin
 from django.contrib import admin
 
 admin.site.register(Event)
