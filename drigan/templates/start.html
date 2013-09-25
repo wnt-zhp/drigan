@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<a href="{% url "events.views.add_event" %}" class='add-event-button'>{% trans "Organize your event with us!" %}</a>
+
+<h2>{% trans "Upcoming events:" %}</h2>
+{% include "events/partials/event_list.html" with events=object_list %}
+
+{% endblock %}

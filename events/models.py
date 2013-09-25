@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
@@ -37,11 +39,15 @@ class Organizer(models.Model):
 
 
 class Event(models.Model):
-    name = models.CharField(_("event name"), max_length=200)
+    name = models.CharField(_("event name"), max_length=200,
+                            help_text=_("Without edition (eg. \"Long Race\", "
+                                        "not \"Long Race 2013\")"))
     start_date = models.DateTimeField(_("start date of the event"),
                                       null=True, blank=True)
     end_date = models.DateTimeField(_("end date of the event"),
                                     null=True, blank=True)
+    logo = models.ImageField(upload_to='uploads/events/logos',
+                             null=True, blank=True)
     website = models.CharField(_("website"), max_length=100, blank=True)
     created_by = models.ForeignKey(User)
     category = models.ForeignKey(SportCategory,
@@ -52,6 +58,9 @@ class Event(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_logo(self):
+        return self.logo if self.logo else self.category.thumbnail
 
 
 class Attraction(models.Model):
