@@ -37,11 +37,12 @@ class Organizer(models.Model):
 
 
 class Event(models.Model):
-    name = models.CharField(_("name"), max_length=200)
-    start_date = models.DateTimeField(_("start date of the event"))
-    end_date = models.DateTimeField(_("end date of the event"))
-    website = models.CharField(_("website"), max_length=100,
-                               null=True, blank=True)
+    name = models.CharField(_("event name"), max_length=200)
+    start_date = models.DateTimeField(_("start date of the event"),
+                                      null=True, blank=True)
+    end_date = models.DateTimeField(_("end date of the event"),
+                                    null=True, blank=True)
+    website = models.CharField(_("website"), max_length=100, blank=True)
     created_by = models.ForeignKey(User)
     category = models.ForeignKey(SportCategory,
                                  verbose_name=_('category'))
