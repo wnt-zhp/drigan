@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 from categories.models import CategoryBase
-from categories.admin import CategoryBaseAdmin
 from categories.settings import THUMBNAIL_UPLOAD_PATH
 
 
@@ -19,10 +18,6 @@ class SportCategory(AttractionCategory):
 
     class Meta:
         verbose_name_plural = 'sport categories'
-
-
-class CategoryAdmin(CategoryBaseAdmin):
-    pass
 
 
 class Organizer(models.Model):
