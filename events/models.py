@@ -3,6 +3,28 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
+from categories.models import CategoryBase
+from categories.admin import CategoryBaseAdmin
+from categories.settings import THUMBNAIL_UPLOAD_PATH
+
+
+class AttractionCategory(CategoryBase):
+    thumbnail = models.ImageField(
+        upload_to=THUMBNAIL_UPLOAD_PATH,
+        null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'attraction categories'
+
+
+class SportCategory(AttractionCategory):
+
+    class Meta:
+        verbose_name_plural = 'sport categories'
+
+
+class CategoryAdmin(CategoryBaseAdmin):
+    pass
 
 
 class Organizer(models.Model):
@@ -28,9 +50,10 @@ class Event(models.Model):
                              null=True, blank=True)
     website = models.CharField(_("website"), max_length=100, blank=True)
     created_by = models.ForeignKey(User)
-    category = models.ForeignKey('categories.Category',
+    category = models.ForeignKey(SportCategory,
                                  verbose_name=_('category'))
-    description = models.TextField(_("description of the event"), blank=True)
+    description = models.TextField(_("description of the event"),
+                                   blank=True, null=True)
     organizer = models.ForeignKey(Organizer)
 
     def __unicode__(self):
@@ -48,7 +71,7 @@ class Attraction(models.Model):
     place = models.CharField(_("place"), max_length=200)
     description = models.TextField(
         _("description of the attraction"), null=True, blank=True)
-    category = models.ForeignKey('categories.Category',
+    category = models.ForeignKey(AttractionCategory,
                                  verbose_name=
                                  _('category'))
 
