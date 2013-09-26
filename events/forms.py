@@ -7,13 +7,13 @@ class AddEventForm(DriganModelForm):
 
     class Meta:
         model = Event
-        fields = ('name', 'category')
+        fields = ('name', 'edition', 'category')
 
 
 class EditEventForm(DriganModelForm):
     class Meta:
         model = Event
-        fields = ('name', 'start_date', 'end_date',
+        fields = ('name', 'edition', 'start_date', 'end_date',
                   'website', 'category', 'description')
 
 
