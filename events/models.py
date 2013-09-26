@@ -3,6 +3,24 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
+from softdelete.models import SoftDeleteObject
+from categories.models import CategoryBase
+from categories.settings import THUMBNAIL_UPLOAD_PATH
+
+
+class AttractionCategory(CategoryBase):
+    thumbnail = models.ImageField(
+        upload_to=THUMBNAIL_UPLOAD_PATH,
+        null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'attraction categories'
+
+
+class SportCategory(AttractionCategory):
+
+    class Meta:
+        verbose_name_plural = 'sport categories'
 
 
 class Organizer(models.Model):
@@ -22,8 +40,7 @@ class SerialEventGroup(models.Model):
     def __unicode__(self):
         return self.name
 
-
-class Event(models.Model):
+class Event(SoftDeleteObject):
     name = models.CharField(_("event name"), max_length=200,
                             help_text=_("Without edition (eg. \"Long Race\", "
                                         "not \"Long Race 2013\")"))
@@ -35,9 +52,10 @@ class Event(models.Model):
                              null=True, blank=True)
     website = models.CharField(_("website"), max_length=100, blank=True)
     created_by = models.ForeignKey(User)
-    category = models.ForeignKey('categories.Category',
+    category = models.ForeignKey(SportCategory,
                                  verbose_name=_('category'))
-    description = models.TextField(_("description of the event"), blank=True)
+    description = models.TextField(_("description of the event"),
+                                   blank=True, null=True)
     organizer = models.ForeignKey(Organizer)
     edition = models.CharField(_("edition name"), max_length=100,
                                blank=True,
@@ -57,7 +75,7 @@ class Event(models.Model):
                                                             self.edition)
 
 
-class Attraction(models.Model):
+class Attraction(SoftDeleteObject):
     event = models.ForeignKey(Event)
     name = models.CharField(_("name"), max_length=200)
     start_date = models.DateTimeField(_("start date"))
@@ -65,7 +83,7 @@ class Attraction(models.Model):
     place = models.CharField(_("place"), max_length=200)
     description = models.TextField(
         _("description of the attraction"), null=True, blank=True)
-    category = models.ForeignKey('categories.Category',
+    category = models.ForeignKey(AttractionCategory,
                                  verbose_name=
                                  _('category'))
 
