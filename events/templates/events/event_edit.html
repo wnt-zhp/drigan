@@ -6,7 +6,7 @@
     <form method='post' action='.' class="form-small">
         {% csrf_token %}
         {{ form.as_p }}
-        {% trans "Edit organizer:" %}
+        <h3>{% trans "Organizer details:" %}</h3>
         {{ organizer_form.as_p }}
         <button type='submit'>{% trans "Save" %}</button>
     </form>

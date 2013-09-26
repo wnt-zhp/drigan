@@ -7,14 +7,18 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils.translation import ugettext as _
-from events.forms import *
-from events.models import *
+from events.forms import AddOrganizerForm, EditOrganizerForm, \
+    AddEventForm, EditEventForm, AddAttractionForm, ChangeEventLogoForm
+from events.models import Event, Attraction
 
 
 def event_details(request, event_id):
     event = get_object_or_404(Event, id=event_id)
+    change_logo_form = ChangeEventLogoForm()
     return render_to_response("events/event_details.html",
-                              {"event": event},
+                              {"event":             event,
+                               "change_logo_form": change_logo_form,
+                               },
                               context_instance=RequestContext(request))
 
 
@@ -55,9 +59,9 @@ def edit_event(request, event_id):
     organizer = event.organizer
     if request.method == "POST":
         form = EditEventForm(request.POST, instance=event, prefix='event')
-        organizer_form = AddOrganizerForm(request.POST,
-                                          instance=organizer,
-                                          prefix='organizer')
+        organizer_form = EditOrganizerForm(request.POST,
+                                           instance=organizer,
+                                           prefix='organizer')
         if form.is_valid() and organizer_form.is_valid():
             event = form.save()
             organizer = organizer_form.save()
@@ -68,8 +72,8 @@ def edit_event(request, event_id):
                 args=(event.id,)))
     else:
         form = EditEventForm(instance=event, prefix='event')
-        organizer_form = AddOrganizerForm(instance=organizer,
-                                          prefix='organizer')
+        organizer_form = EditOrganizerForm(instance=organizer,
+                                           prefix='organizer')
 
     return render_to_response("events/event_edit.html",
                               {"form": form, "organizer_form": organizer_form,
@@ -83,7 +87,26 @@ def delete_event(request, event_id):
     if request.method == "POST":
         event.delete()
         messages.success(request, _('Event has been deleted.'))
-    return http.HttpResponseRedirect('/')
+    return http.HttpResponseRedirect(reverse(add_event))
+
+
+def change_event_logo(request, event_id):
+    if request.method == "POST":
+        event = get_object_or_404(Event, pk=event_id)
+        form = ChangeEventLogoForm(request.POST, request.FILES,
+                                   instance=event)
+        if form.is_valid():
+            form.save()
+            messages.success(request,
+                             _('Logo changed successfully'))
+        else:
+            messages.error(request,
+                           _('Form data incorrect.'))
+            messages.error(request, form.errors.as_text())
+    else:
+        messages.error(request,
+                       _('Logo not changed - no data given.'))
+    return http.HttpResponseRedirect(reverse(event_details, args=(event_id,)))
 
 
 @login_required

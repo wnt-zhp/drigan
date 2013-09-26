@@ -1,0 +1,32 @@
+{% load i18n imagekit %}
+
+<ul class="event-list">
+  {% for event in events %}
+    <li>
+      <a href="{% url "events.views.event_details" event.id %}" class="event-header">
+        {% if event.get_logo %}
+          {% thumbnail '100x100' event.get_logo -- class="thumbnail" %}
+        {% endif %}
+        <h4>{{ event }}</h4>
+      </a>
+      <p>
+        {{ event.start_date|default_if_none:'' }} 
+        {% if event.end_date %}
+          {% ifnotequal event.start_date event.end_date %}
+            - {{ event.end_date }}
+          {% endifnotequal %}
+        {% endif %}
+      </p>
+      <p>
+      {% for attraction in event.attraction_set.all %}
+        <a href="{% url "events.views.attraction_details" event.id attraction.id %}">
+          {{ attraction }}
+        </a>
+        {% if not forloop.last %},{% endif %}
+      {% endfor %}
+      </p>
+    </li>
+  {% empty %}
+    <li>{% trans "No upcoming events..." %}</li>
+  {% endfor %}
+</ul>
