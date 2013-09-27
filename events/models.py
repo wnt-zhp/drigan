@@ -34,6 +34,12 @@ class Organizer(models.Model):
         return self.name
 
 
+class SerialEventGroup(models.Model):
+    name = models.CharField(_("name"), max_length=200)
+
+    def __unicode__(self):
+        return self.name
+
 class Event(SoftDeleteObject):
     name = models.CharField(_("event name"), max_length=200,
                             help_text=_("Without edition (eg. \"Long Race\", "
@@ -51,12 +57,22 @@ class Event(SoftDeleteObject):
     description = models.TextField(_("description of the event"),
                                    blank=True, null=True)
     organizer = models.ForeignKey(Organizer)
+    edition = models.CharField(_("edition name"), max_length=100,
+                               blank=True,
+                               help_text=_("Only if event is cyclic (eg. "
+                                           "\"1\", \"2014\")"))
+    event_group = models.ForeignKey(SerialEventGroup, null=True, blank=True)
 
     def __unicode__(self):
         return self.name
 
     def get_logo(self):
         return self.logo if self.logo else self.category.thumbnail
+
+    def get_other_editions(self):
+        if self.event_group:
+            return self.event_group.event_set.all().exclude(edition=
+                                                            self.edition)
 
 
 class Attraction(SoftDeleteObject):

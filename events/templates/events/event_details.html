@@ -65,4 +65,5 @@
         {% csrf_token %}
         <button type='submit' class='delete-button'>{% trans "Delete" %}</button>
     </form>
+    {% include "events/partials/editions_list.html" %}
 {% endblock %}
