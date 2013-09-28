@@ -50,7 +50,7 @@ class Event(SoftDeleteObject):
                                     null=True, blank=True)
     logo = models.ImageField(upload_to='uploads/events/logos',
                              null=True, blank=True)
-    website = models.CharField(_("website"), max_length=100, blank=True)
+    website = models.URLField(_("website"), max_length=100, blank=True)
     created_by = models.ForeignKey(User)
     category = models.ForeignKey(SportCategory,
                                  verbose_name=_('category'))

@@ -22,3 +22,37 @@
         margin-right: 10px;
     }
 }
+
+.event-details {
+    .panel;
+    .panel-default;
+    header {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        .border-top-radius(@panel-border-radius - 1);
+        h1 {
+            .panel-title;
+            font-weight: bold;
+            font-size: 1.8em;
+        }
+    }
+    .event-details-content {
+        .panel-body;
+        .event-details-meta {
+            max-width: 150px;
+            text-align: center;
+            .pull-left;
+            a {
+                .btn;
+                .btn-sm;
+                .btn-success;
+                .btn-block;
+                font-weight: bold;
+                margin: 5px 0;
+            }
+        }
+        .event-details-data {
+            margin-left: 150px;
+        }
+    }
+}
