@@ -40,6 +40,7 @@ class SerialEventGroup(models.Model):
     def __unicode__(self):
         return self.name
 
+
 class Event(SoftDeleteObject):
     name = models.CharField(_("event name"), max_length=200,
                             help_text=_("Without edition (eg. \"Long Race\", "
@@ -73,6 +74,11 @@ class Event(SoftDeleteObject):
         if self.event_group:
             return self.event_group.event_set.all().exclude(edition=
                                                             self.edition)
+
+    class Meta:
+        permissions = (
+            ('change_logo', 'Can change logo'),
+        )
 
 
 class Attraction(SoftDeleteObject):
