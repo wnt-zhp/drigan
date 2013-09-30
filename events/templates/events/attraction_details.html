@@ -1,36 +1,43 @@
 {% extends "base.html" %}
 {% load url from future %}
-{% load i18n %}
+{% load i18n imagekit %}
+
 {% block title %}
     {{ attraction.name }}
 {% endblock %}
-{% block content %}
-    <div>
-        <a href="{% url "events.views.event_details" attraction.event.id %}">{% trans "Back to the event" %}</a>
-        <a href="{% url "events.views.edit_attraction" attraction.event.id attraction.id %}">{% trans "Edit" %}</a>
-    </div>
-    <h1>{{ attraction.name }}</h1>
-    <div>
-        {% if attraction.description  %}
-            {{ attraction.description }}
-        {% endif %}
-    </div>
-    <div>
-        {{ attraction.place }}
-    </div>
-    <div>
-        {{ attraction.start_date }} 
-        {% ifnotequal attraction.start_date attraction.end_date %}
-            - {{ attraction.end_date }}
-        {% endifnotequal %}
-    </div>
-    <div>
-        {% trans "Category: " %}
-        {{ attraction.category }}
-    </div>
 
-    <form method='post' action='{% url "events.views.delete_attraction" attraction.event.id attraction.id %}'>
-        {% csrf_token %}
-        <button type='submit' class='delete-button'>{% trans "Delete" %}</button>
-    </form>
+{% block content %}
+    <div class="event-details">
+        <header class="panel-heading">
+            <h1>{{ attraction.name }}</h1>
+            <small>{{ attraction.category }}</small>
+        </header>
+
+        <div class="event-details-content">
+            <div class="event-details-meta">
+                {% if attraction.get_logo %}
+                    {% thumbnail '100x100' attraction.get_logo -- class="thumbnail" %}
+                {% endif %}
+            </div>
+            <div class="event-details-data">
+                {% include "events/partials/time_interval.html" with start_date=attraction.start_date end_date=attraction.end_date %}
+
+                {{ attraction.place }}
+                <div>
+                    {% if attraction.description  %}
+                        {{ attraction.description }}
+                    {% endif %}
+                </div>
+
+
+
+                <a href="{% url "events.views.event_details" attraction.event.id %}">{% trans "Back to the event" %}</a>
+                <a href="{% url "events.views.edit_attraction" attraction.event.id attraction.id %}">{% trans "Edit" %}</a>
+                <form method='post' action='{% url "events.views.delete_attraction" attraction.event.id attraction.id %}'>
+                    {% csrf_token %}
+                    <button type='submit' class='delete-button'>{% trans "Delete" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -30,21 +30,11 @@
                 {% endif %}
             </div>
             <div class="event-details-data">
-                {% if event.start_date or event.end_date %}
-                    <p class="event-date">
-                        {{ event.start_date|default_if_none:'' }} 
-                        
-                        {% if event.end_date %}
-                            {% ifnotequal event.start_date event.end_date %}
-                                - {{ event.end_date }}
-                            {% endifnotequal %}
-                        {% endif %}
-                    </p>
-                {% endif %}
+                {% include "events/partials/time_interval.html" with start_date=event.start_date end_date=event.end_date %}
                 {% if event.description %}
-                <p>
-                    {{ event.description }}
-                </p>
+                    <p>
+                        {{ event.description }}
+                    </p>
                 {% endif %}
                 <dl> 
                     <dt>{% trans "Attractions: " %}</dt>
