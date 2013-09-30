@@ -49,18 +49,9 @@
                 <dl> 
                     <dt>{% trans "Attractions: " %}</dt>
                     <dd>
+                        {% include "events/partials/attraction_list.html" with attractions=event.attraction_set.all %}
                         <div>
-                            {% for attraction in event.attraction_set.all %}
-                                <a href="{% url "events.views.attraction_details" event.id attraction.id %}">
-                                    {{ attraction }}
-                                </a>
-                                {% if not forloop.last %},{% endif %}
-                            {% empty %}
-                                {% trans "None :(" %}
-                            {% endfor %}
-                        </div>
-                        <div>
-                            <a href="{% url "events.views.add_attraction" event.id %}">{% trans "Add attraction" %}</a>
+                            <a href="{% url "events.views.add_attraction" event.id %}" class="btn btn-success">{% trans "Add attraction" %}</a>
                         </div>
                     </dd>
                     {% if event.website %}

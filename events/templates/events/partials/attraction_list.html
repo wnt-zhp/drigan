@@ -1,0 +1,20 @@
+{% load i18n imagekit %}
+
+<ul class="attraction-list">
+    {% for attraction in attractions %}
+        <li>
+            <span class="event-category">{{ attraction.category }}</span>
+            <a href="{% url "events.views.attraction_details" attraction.event.id attraction.id %}">
+                {% if attraction.get_logo %}
+                    {% thumbnail '64x64' attraction.get_logo -- class="thumbnail" %}
+                {% endif %}
+                <h4>{{ attraction.name }}</h4>
+            </a>
+            {% if attraction.description %}
+                <p>{{ attraction.description }}</p>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>{% trans "None :(" %}</li>
+    {% endfor %}
+</ul>

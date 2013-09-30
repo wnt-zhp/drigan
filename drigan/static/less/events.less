@@ -1,4 +1,4 @@
-.event-list {
+.event-list, .attraction-list {
     .list-group;
     h4 {
         .list-group-item-heading;
@@ -9,7 +9,6 @@
     }
     li {
         .list-group-item;
-        .clearfix; 
     }
     li:hover {
         background-color: @list-group-hover-bg;
@@ -21,6 +20,25 @@
         float: left;
         margin-right: 10px;
     }
+}
+
+.attraction-list{
+    li {
+        min-height: 100px;
+    }
+}
+.event-list {
+    li {
+        min-height: 130px;
+    }
+}
+
+
+.attraction-list span.event-category, .event-list span.event-category {
+    display: block;
+    font-size: 0.7em;
+    margin-top: -0.5em;
+    color: #888;
 }
 
 .event-details {
@@ -56,3 +74,6 @@
         }
     }
 }
+
+
+
