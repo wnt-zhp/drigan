@@ -10,6 +10,7 @@
                 {% endif %}
                 <h4>{{ attraction.name }}</h4>
             </a>
+            {% include "events/partials/time_interval.html" with start_date=attraction.start_date end_date=attraction.end_date %}
             {% if attraction.description %}
                 <p>{{ attraction.description }}</p>
             {% endif %}

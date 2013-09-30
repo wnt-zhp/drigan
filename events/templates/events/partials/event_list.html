@@ -10,19 +10,12 @@
         {% endif %}
         <h4>{{ event }}</h4>
       </a>
-      <p>
-        {{ event.start_date|default_if_none:'' }} 
-        {% if event.end_date %}
-          {% ifnotequal event.start_date event.end_date %}
-            - {{ event.end_date }}
-          {% endifnotequal %}
-        {% endif %}
-      </p>
-      <p>
+      {% include "events/partials/time_interval.html" with start_date=event.start_date end_date=event.end_date %}
+      <p>Attractions: 
       {% for attraction in event.attraction_set.all %}
         <a href="{% url "events.views.attraction_details" event.id attraction.id %}">
-          {{ attraction }}</a>{% if not forloop.last %},{% endif %}
-      {% endfor %}
+          {{ attraction }}</a>{% if not forloop.last %},{% endif %}{% empty %}
+        {% trans "none yet" %}{% endfor %}.
       </p>
     </li>
   {% empty %}

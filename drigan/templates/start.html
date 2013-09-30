@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block title %}{% trans "Upcoming events" %}{% endblock %}
+
 {% block content %}
 <a href="{% url "events.views.add_event" %}" class='add-event-button'>{% trans "Organize your event with us!" %}</a>
 

@@ -36814,3 +36814,7 @@ fieldset[disabled] .event-details .event-details-content .event-details-meta a.a
 .event-details .event-details-content .event-details-data {
   margin-left: 150px;
 }
+.event-date {
+  font-size: 0.8em;
+  color: #666;
+}
