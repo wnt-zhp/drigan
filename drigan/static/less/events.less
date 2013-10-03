@@ -2,10 +2,11 @@
     .list-group;
     h4 {
         .list-group-item-heading;
+    }
+    .event-header {
         color: @text-color; 
     }
     .event-header:hover {
-        text-decoration: none;
     }
     li {
         .list-group-item;
@@ -53,6 +54,10 @@
             font-weight: bold;
             font-size: 1.8em;
         }
+        .attraction-parent {
+            font-weight: normal;
+            font-size: 0.7em;
+        }
     }
     .event-details-content {
         .panel-body;
@@ -71,6 +76,16 @@
         }
         .event-details-data {
             margin-left: 150px;
+        }
+    }
+    .action-buttons {
+        form {
+            display: inline;
+        }
+        a {
+            .btn;
+            .btn-sm;
+            .btn-primary;
         }
     }
 }

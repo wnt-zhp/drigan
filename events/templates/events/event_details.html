@@ -25,8 +25,6 @@
                         </div>
                         <button type="submit">Save</button>
                     </form>
-                    <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit event" %}</a>
-                    <a href="{% url "events.views.add_attraction" event.id %}">{% trans "Add attraction" %}</a>
                 {% endif %}
             </div>
             <div class="event-details-data">
@@ -61,11 +59,14 @@
                         </dd>
                     {% endif %}
                 </dl>
-
-                <form method='post' action='{% url "events.views.delete_event" event.id %}'>
-                    {% csrf_token %}
-                    <button type='submit' class='delete-button'>{% trans "Delete event" %}</button>
-                </form>
+                
+                <div class="action-buttons">
+                    <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit event" %}</a>
+                    <form method='post' action='{% url "events.views.delete_event" event.id %}'>
+                        {% csrf_token %}
+                        <button type='submit' class='delete-button'>{% trans "Delete event" %}</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
