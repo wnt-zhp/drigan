@@ -40,6 +40,7 @@ class SerialEventGroup(models.Model):
     def __unicode__(self):
         return self.name
 
+
 class Event(SoftDeleteObject):
     name = models.CharField(_("event name"), max_length=200,
                             help_text=_("Without edition (eg. \"Long Race\", "
@@ -50,7 +51,7 @@ class Event(SoftDeleteObject):
                                     null=True, blank=True)
     logo = models.ImageField(upload_to='uploads/events/logos',
                              null=True, blank=True)
-    website = models.CharField(_("website"), max_length=100, blank=True)
+    website = models.URLField(_("website"), max_length=100, blank=True)
     created_by = models.ForeignKey(User)
     category = models.ForeignKey(SportCategory,
                                  verbose_name=_('category'))
@@ -89,3 +90,9 @@ class Attraction(SoftDeleteObject):
 
     def __unicode__(self):
         return self.name
+
+    def get_logo(self):
+        return self.category.thumbnail
+
+    class Meta:
+        ordering = ['start_date', 'name']
