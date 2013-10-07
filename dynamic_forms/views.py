@@ -13,12 +13,13 @@ from django.contrib.contenttypes.models import ContentType
 
 @login_required
 def add_dynamic_form(request, content_type_model, object_id):
-    content_type = ContentType.objects.get(model=content_type_model)
-    dynamic_form = DynamicForm.objects.create(content_type=content_type,
-                                              object_id=object_id)
-    return http.HttpResponseRedirect(reverse(
-        'dynamic_forms.views.add_dynamic_form_field',
-        args=(dynamic_form.id,)))
+    if request.method == 'POST':
+        content_type = ContentType.objects.get(model=content_type_model)
+        dynamic_form = DynamicForm.objects.create(content_type=content_type,
+                                                  object_id=object_id)
+        return http.HttpResponseRedirect(reverse(
+            'dynamic_forms.views.add_dynamic_form_field',
+            args=(dynamic_form.id,)))
 
 
 @login_required
