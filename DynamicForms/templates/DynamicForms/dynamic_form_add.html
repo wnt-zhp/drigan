@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Add form" %}{% endblock %}
+{% block content %}
+    <form method='post' action='.' class="form-small">
+        {% csrf_token %}
+        <h1>{% trans "Add field:" %}</h1>
+        {{ form.as_p }}
+        <button type='submit'>{% trans "Save" %}</button>
+    </form>
+    <div class="form-small">
+        <h1>{% trans "Your form:" %}</h1>
+        {% for field in dynamic_form.fields.all reversed %}
+            <p>{{ field.name }}:</p>
+        {% empty %}
+            <p>{% trans "Your form hasn't got any fields yet." %}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

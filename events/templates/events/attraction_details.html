@@ -44,6 +44,7 @@
 
                 <div class="action-buttons">
                     <a href="{% url "events.views.edit_attraction" attraction.event.id attraction.id %}">{% trans "Edit attraction" %}</a>
+                    <a href="{% url "DynamicForms.views.add_dynamic_form" 'attraction' attraction.id %}">{% trans "Add registration form" %}</a>
                     <form method='post' action='{% url "events.views.delete_attraction" attraction.event.id attraction.id %}'>
                         {% csrf_token %}
                         <button type='submit' class='delete-button'>{% trans "Delete attraction" %}</button>
