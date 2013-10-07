@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
-from DynamicForms.forms import AddDynamicFormField
-from DynamicForms.models import DynamicForm
+from dynamic_forms.forms import AddDynamicFormField
+from dynamic_forms.models import DynamicForm
 from django.template import RequestContext
 from django import http
 from django.core.urlresolvers import reverse
@@ -17,7 +17,7 @@ def add_dynamic_form(request, content_type_model, object_id):
     dynamic_form = DynamicForm.objects.create(content_type=content_type,
                                               object_id=object_id)
     return http.HttpResponseRedirect(reverse(
-        'DynamicForms.views.add_dynamic_form_field',
+        'dynamic_forms.views.add_dynamic_form_field',
         args=(dynamic_form.id,)))
 
 
@@ -36,6 +36,6 @@ def add_dynamic_form_field(request, dynamic_form_id):
                              _('Field has been added successfully.'))
     else:
         form = AddDynamicFormField()
-    return render_to_response("DynamicForms/dynamic_form_add.html",
+    return render_to_response("dynamic_forms/dynamic_form_add.html",
                               {"form": form, "dynamic_form": dynamic_form},
                               context_instance=RequestContext(request))

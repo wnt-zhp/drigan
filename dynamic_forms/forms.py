@@ -1,5 +1,5 @@
 from drigan.forms import DriganModelForm
-from DynamicForms.models import DynamicFormField
+from dynamic_forms.models import DynamicFormField
 
 
 class AddDynamicFormField(DriganModelForm):

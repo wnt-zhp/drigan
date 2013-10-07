@@ -1,5 +1,5 @@
 from django.conf.urls import patterns
-from DynamicForms import views
+from dynamic_forms import views
 
 urlpatterns = patterns('',
     (r'^add/(?P<dynamic_form_id>\d+)/$', views.add_dynamic_form_field),

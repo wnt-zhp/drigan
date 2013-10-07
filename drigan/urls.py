@@ -10,7 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', StartView.as_view()),
     url(r'^events/', include('events.urls')),
-    url(r'^forms/', include('DynamicForms.urls')),
+    url(r'^forms/', include('dynamic_forms.urls')),
 
     # Examples:
     # url(r'^$', 'drigan.views.home', name='home'),
