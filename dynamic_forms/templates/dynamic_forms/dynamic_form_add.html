@@ -10,10 +10,11 @@
     </form>
     <div class="form-small">
         <h1>{% trans "Your form:" %}</h1>
-        {% for field in dynamic_form.fields.all %}
-            <p>{{ field.name }}:</p>
-        {% empty %}
+        {% if dynamic_form.fields.all %}
+            <p>{{ dynamic_form_form }}</p>
+        {% else %}
             <p>{% trans "Your form hasn't got any fields yet." %}</p>
-        {% endfor %}
+        {% endif %}
+
     </div>
 {% endblock %}
