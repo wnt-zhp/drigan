@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from dynamic_forms.forms import AddDynamicFormField
+from dynamic_forms.forms import AddDynamicFormField, BaseDynamicForm
 from dynamic_forms.models import DynamicForm
 from django.template import RequestContext
 from django import http
@@ -37,8 +37,9 @@ def add_dynamic_form_field(request, dynamic_form_id):
                              _('Field has been added successfully.'))
     else:
         form = AddDynamicFormField()
-    dynamic_form_form = dynamic_form.to_form()
+    dynamic_form_form = BaseDynamicForm(dynamic_form)
     return render_to_response("dynamic_forms/dynamic_form_add.html",
-                              {"form": form, "dynamic_form": dynamic_form,
+                              {"form": form,
+                               "dynamic_form": dynamic_form,
                                "dynamic_form_form": dynamic_form_form},
                               context_instance=RequestContext(request))
