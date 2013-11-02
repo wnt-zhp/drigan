@@ -43,7 +43,6 @@ def add_event(request):
                 form.save()
                 assign_perm('events.change_event', request.user, event)
                 assign_perm('events.delete_event', request.user, event)
-                assign_perm('change_logo', request.user, event)
                 messages.success(request,
                                  _('Event has been added successfully.'))
                 return http.HttpResponseRedirect(reverse(
@@ -97,7 +96,7 @@ def delete_event(request, event_id):
     return http.HttpResponseRedirect(reverse(add_event))
 
 
-@permission_required('change_logo', (Event, 'id', 'event_id'))
+@permission_required('events.change_event', (Event, 'id', 'event_id'))
 def change_event_logo(request, event_id):
     if request.method == "POST":
         event = get_object_or_404(Event, pk=event_id)

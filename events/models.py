@@ -75,11 +75,6 @@ class Event(SoftDeleteObject):
             return self.event_group.event_set.all().exclude(edition=
                                                             self.edition)
 
-    class Meta:
-        permissions = (
-            ('change_logo', 'Can change logo'),
-        )
-
 
 class Attraction(SoftDeleteObject):
     event = models.ForeignKey(Event)
