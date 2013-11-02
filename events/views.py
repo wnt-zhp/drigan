@@ -10,6 +10,8 @@ from django.utils.translation import ugettext as _
 from events.forms import AddOrganizerForm, EditOrganizerForm, \
     AddEventForm, EditEventForm, AddAttractionForm, ChangeEventLogoForm
 from events.models import Event, Attraction
+from guardian.decorators import permission_required
+from guardian.shortcuts import assign_perm
 
 
 def event_details(request, event_id):
@@ -39,6 +41,8 @@ def add_event(request):
                 event.organizer = organizer
                 event.save()
                 form.save()
+                assign_perm('events.change_event', request.user, event)
+                assign_perm('events.delete_event', request.user, event)
                 messages.success(request,
                                  _('Event has been added successfully.'))
                 return http.HttpResponseRedirect(reverse(
@@ -53,6 +57,7 @@ def add_event(request):
 
 
 @login_required
+@permission_required('events.change_event', (Event, 'id', 'event_id'))
 @transaction.commit_on_success
 def edit_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
@@ -82,6 +87,7 @@ def edit_event(request, event_id):
 
 
 @login_required
+@permission_required('events.delete_event', (Event, 'id', 'event_id'))
 def delete_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     if request.method == "POST":
@@ -90,6 +96,7 @@ def delete_event(request, event_id):
     return http.HttpResponseRedirect(reverse(add_event))
 
 
+@permission_required('events.change_event', (Event, 'id', 'event_id'))
 def change_event_logo(request, event_id):
     if request.method == "POST":
         event = get_object_or_404(Event, pk=event_id)
@@ -110,6 +117,7 @@ def change_event_logo(request, event_id):
 
 
 @login_required
+@permission_required('events.change_event', (Event, 'id', 'event_id'))
 def add_attraction(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     if request.method == 'POST':
@@ -119,6 +127,8 @@ def add_attraction(request, event_id):
             attraction.event = event
             attraction.save()
             form.save()
+            assign_perm('events.change_attraction', request.user, attraction)
+            assign_perm('events.delete_attraction', request.user, attraction)
             messages.success(request,
                              _('Attraction has been added successfully.'))
             return http.HttpResponseRedirect(reverse(
@@ -139,6 +149,8 @@ def attraction_details(request, event_id, attraction_id):
 
 
 @login_required
+@permission_required('events.change_attraction', (Attraction, 'id',
+                                                  'attraction_id'))
 def edit_attraction(request, event_id, attraction_id):
     attraction = get_object_or_404(Attraction, pk=attraction_id)
     if request.method == "POST":
@@ -159,6 +171,8 @@ def edit_attraction(request, event_id, attraction_id):
 
 
 @login_required
+@permission_required('events.delete_attraction', (Attraction, 'id',
+                                                  'attraction_id'))
 def delete_attraction(request, event_id, attraction_id):
     attraction = get_object_or_404(Attraction, pk=attraction_id)
     event = attraction.event
