@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<p class="event-date">
+    {% if start_date %}
+        {{ start_date }}
+    {% else %}
+        {% if end_date %}{% trans "Unknown" %}{% endif %}
+    {% endif %}
+    {% if end_date %}
+        {% ifnotequal end_date start_date %}
+            – {{ end_date }}
+        {% endifnotequal %}
+    {% endif %}
+</p>

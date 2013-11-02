@@ -1,15 +1,15 @@
-.event-list {
+.event-list, .attraction-list {
     .list-group;
     h4 {
         .list-group-item-heading;
+    }
+    .event-header {
         color: @text-color; 
     }
     .event-header:hover {
-        text-decoration: none;
     }
     li {
         .list-group-item;
-        .clearfix; 
     }
     li:hover {
         background-color: @list-group-hover-bg;
@@ -22,3 +22,77 @@
         margin-right: 10px;
     }
 }
+
+.attraction-list{
+    li {
+        min-height: 100px;
+    }
+}
+.event-list {
+    li {
+        min-height: 130px;
+    }
+}
+
+
+.attraction-list span.event-category, .event-list span.event-category {
+    display: block;
+    font-size: 0.7em;
+    margin-top: -0.5em;
+    color: #888;
+}
+
+.event-details {
+    .panel;
+    .panel-default;
+    header {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        .border-top-radius(@panel-border-radius - 1);
+        h1 {
+            .panel-title;
+            font-weight: bold;
+            font-size: 1.8em;
+        }
+        .attraction-parent {
+            font-weight: normal;
+            font-size: 0.7em;
+        }
+    }
+    .event-details-content {
+        .panel-body;
+        .event-details-meta {
+            max-width: 150px;
+            text-align: center;
+            .pull-left;
+            a {
+                .btn;
+                .btn-sm;
+                .btn-success;
+                .btn-block;
+                font-weight: bold;
+                margin: 5px 0;
+            }
+        }
+        .event-details-data {
+            margin-left: 150px;
+        }
+    }
+    .action-buttons {
+        form {
+            display: inline;
+        }
+        a {
+            .btn;
+            .btn-sm;
+            .btn-primary;
+        }
+    }
+}
+.event-date {
+    font-size: 0.8em;
+    color: #666; 
+}
+
+
+

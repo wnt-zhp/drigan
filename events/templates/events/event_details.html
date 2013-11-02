@@ -6,64 +6,68 @@
 {% endblock %}
 
 {% block content %}
-    {% if event.get_logo %}
-        {% thumbnail '100x100' event.get_logo -- class="thumbnail" %}
-    {% endif %}
-    {% if change_logo_form %}
-        <form class="change-event-logo-form autosubmit" enctype="multipart/form-data" method="POST" action="{% url "events.views.change_event_logo" event.id %}">
-            {% csrf_token %}
-            <div class="upload-file-button">
-                {{ change_logo_form }}
+    <div class="event-details">
+        <header class="panel-heading">
+            <h1>{{ event.name }}</h1>
+            <small>{{ event.category }}</small>
+        </header>
+
+        <div class="event-details-content">
+            <div class="event-details-meta">
+                {% if event.get_logo %}
+                    {% thumbnail '100x100' event.get_logo -- class="thumbnail" %}
+                {% endif %}
+                {% if change_logo_form %}
+                    <form class="change-event-logo-form autosubmit" enctype="multipart/form-data" method="POST" action="{% url "events.views.change_event_logo" event.id %}">
+                        {% csrf_token %}
+                        <div class="upload-file-button">
+                            {{ change_logo_form }}
+                        </div>
+                        <button type="submit">Save</button>
+                    </form>
+                {% endif %}
             </div>
-            <button type="submit">Save</button>
-        </form>
-    {% endif %}
-    <div>
-        <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit" %}</a>
-        <a href="{% url "events.views.add_attraction" event.id %}">{% trans "Add attraction" %}</a>
+            <div class="event-details-data">
+                {% include "events/partials/time_interval.html" with start_date=event.start_date end_date=event.end_date %}
+                {% if event.description %}
+                    <p>
+                        {{ event.description }}
+                    </p>
+                {% endif %}
+                <dl> 
+                    <dt>{% trans "Attractions: " %}</dt>
+                    <dd>
+                        {% include "events/partials/attraction_list.html" with attractions=event.attraction_set.all %}
+                        <div>
+                            <a href="{% url "events.views.add_attraction" event.id %}" class="btn btn-success">{% trans "Add attraction" %}</a>
+                        </div>
+                    </dd>
+                    {% if event.website %}
+                        <dt>{% trans "Website:" %}</dt>
+                        <dd><a href="{{ event.website }}">{{ event.website }}</a></dd>
+                    {% endif %}
+
+                    <dt>{% trans "Organizer:" %}</dt>
+                    <dd>{{ event.organizer.name }}</dd>
+
+                    {% if event.get_other_editions %}
+                        <dt>{% trans "Other editions of this event:" %}</dt>
+                        <dd>
+                            {% for edition in event.get_other_editions %}
+                                <a href="{% url "events.views.event_details" edition.id %}">{{ edition }}</a>{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </dd>
+                    {% endif %}
+                </dl>
+                
+                <div class="action-buttons">
+                    <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit event" %}</a>
+                    <form method='post' action='{% url "events.views.delete_event" event.id %}'>
+                        {% csrf_token %}
+                        <button type='submit' class='delete-button'>{% trans "Delete event" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <h1>{{ event.name }}</h1>
-    {% if event.website %}
-        <a href="{{ event.website }}">{{ event.website }}</a>
-    {% endif %}
-    <p>
-        {{ event.start_date|default_if_none:'' }} 
-        
-        {% if event.end_date %}
-            {% ifnotequal event.start_date event.end_date %}
-                - {{ event.end_date }}
-            {% endifnotequal %}
-        {% endif %}
-    </p>
-    <p>
-        {% if event.description %}
-            {{ event.description }}
-        {% endif %}
-    </p>
-    <dl> 
-        <dt>{% trans "Organizer: " %}</dt>
-        <dd>{{ event.organizer.name }}</dd>
-        
-        <dt>{% trans "Attractions: " %}</dt>
-        <dd>
-            {% for attraction in event.attraction_set.all %}
-                <a href="{% url "events.views.attraction_details" event.id attraction.id %}">
-                    {{ attraction }}
-                </a>
-                {% if not forloop.last %},{% endif %}
-            {% empty %}
-                {% trans "None :(" %}
-            {% endfor %}
-        </dd>
-
-        <dt>{% trans "Category: " %}</dt>
-        <dd>{{ event.category }}</dd>
-    </dl>
-
-    <form method='post' action='{% url "events.views.delete_event" event.id %}'>
-        {% csrf_token %}
-        <button type='submit' class='delete-button'>{% trans "Delete" %}</button>
-    </form>
-    {% include "events/partials/editions_list.html" %}
 {% endblock %}
