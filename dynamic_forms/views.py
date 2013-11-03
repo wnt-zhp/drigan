@@ -9,6 +9,7 @@ from django.utils.translation import ugettext as _
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
+import pickle
 
 
 @login_required
@@ -52,6 +53,8 @@ def fill_form(request, dynamic_form_id):
         form = BaseDynamicForm(dynamic_form, request.POST)
         if form.is_valid():
             filled_data = form.cleaned_data
+            for k in filled_data:
+                filled_data[k] = pickle.dumps(filled_data[k])
             DynamicFormData.objects.create(form=dynamic_form,
                                            user=request.user,
                                            data=filled_data)
