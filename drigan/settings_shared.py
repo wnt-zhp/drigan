@@ -58,6 +58,13 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # this is default
+    'guardian.backends.ObjectPermissionBackend',
+)
+
+ANONYMOUS_USER_ID = -1
+
 ROOT_URLCONF = 'drigan.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -84,6 +91,7 @@ INSTALLED_APPS = (
     'categories.editor',
     'imagekit',
     'softdelete',
+    'guardian',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

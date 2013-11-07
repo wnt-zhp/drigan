@@ -4,3 +4,4 @@ django-categories==1.2.2
 django-registration==1.0
 django-imagekit==3.0.3
 django-softdelete==0.3.4
+django-guardian==1.1.1

@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% load i18n imagekit %}
+{% load guardian_tags %}
 
 {% block title %}
     {{ event.name }}
 {% endblock %}
 
 {% block content %}
+{% get_obj_perms request.user for event as "event_perms" %}
     <div class="event-details">
         <header class="panel-heading">
             <h1>{{ event.name }}</h1>
@@ -17,9 +19,11 @@
                 {% if event.get_logo %}
                     {% thumbnail '100x100' event.get_logo -- class="thumbnail" %}
                 {% endif %}
-                {% if change_logo_form %}
-                    {% url "events-change-event-logo" event.id as action %}
-                    {% include "events/partials/change_logo_form.html" %}
+                {% if "change_event" in event_perms %}
+                    {% if change_logo_form %}
+                        {% url "events-change-event-logo" event.id as action %}
+                        {% include "events/partials/change_logo_form.html" %}
+                    {% endif %}
                 {% endif %}
             </div>
             <div class="event-details-data">
@@ -33,9 +37,11 @@
                     <dt>{% trans "Attractions: " %}</dt>
                     <dd>
                         {% include "events/partials/attraction_list.html" with attractions=event.attraction_set.all %}
-                        <div>
-                            <a href="{% url "events.views.add_attraction" event.id %}" class="btn btn-success">{% trans "Add attraction" %}</a>
-                        </div>
+                        {% if "change_event" in event_perms %}
+                            <div>
+                                <a href="{% url "events.views.add_attraction" event.id %}" class="btn btn-success">{% trans "Add attraction" %}</a>
+                            </div>
+                        {% endif %}
                     </dd>
                     {% if event.website %}
                         <dt>{% trans "Website:" %}</dt>
@@ -56,11 +62,15 @@
                 </dl>
                 
                 <div class="action-buttons">
-                    <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit event" %}</a>
-                    <form method='post' action='{% url "events.views.delete_event" event.id %}'>
-                        {% csrf_token %}
-                        <button type='submit' class='delete-button'>{% trans "Delete event" %}</button>
-                    </form>
+                    {% if "change_event" in event_perms %}
+                        <a href="{% url "events.views.edit_event" event.id %}">{% trans "Edit event" %}</a>
+                    {% endif %}
+                    {% if "change_event" in event_perms %}
+                        <form method='post' action='{% url "events.views.delete_event" event.id %}'>
+                            {% csrf_token %}
+                            <button type='submit' class='delete-button'>{% trans "Delete event" %}</button>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
         </div>
