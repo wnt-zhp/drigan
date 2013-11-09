@@ -57,7 +57,7 @@ def fill_form(request, dynamic_form_id):
                 filled_data[k] = pickle.dumps(filled_data[k])
             DynamicFormData.objects.create(form=dynamic_form,
                                            user=request.user,
-                                           data=filled_data)
+                                           raw_data=filled_data)
             messages.success(request,
                              _('Form has been filled successfully.'))
             return http.HttpResponseRedirect("/")
