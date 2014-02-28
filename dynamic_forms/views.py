@@ -67,3 +67,12 @@ def fill_form(request, dynamic_form_id):
                               {"dynamic_form": dynamic_form,
                                "dynamic_form_form": form},
                               context_instance=RequestContext(request))
+
+
+@login_required
+def participants_list(request, dynamic_form_id):
+    dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
+    list = DynamicFormData.objects.all().filter(form=dynamic_form)
+    return render_to_response("dynamic_forms/list.html",
+                              {"list": list},
+                              context_instance=RequestContext(request))
