@@ -88,6 +88,8 @@ class Attraction(SoftDeleteObject):
     name = models.CharField(_("name"), max_length=200)
     start_date = models.DateTimeField(_("start date"))
     end_date = models.DateTimeField(_("end date"))
+    logo = models.ImageField(upload_to='uploads/events/logos',
+                             null=True, blank=True)
     place = models.CharField(_("place"), max_length=200)
     description = models.TextField(
         _("description of the attraction"), null=True, blank=True)
@@ -99,7 +101,7 @@ class Attraction(SoftDeleteObject):
         return self.name
 
     def get_logo(self):
-        return self.category.thumbnail
+        return self.logo if self.logo else self.category.thumbnail
 
     class Meta:
         ordering = ['start_date', 'name']

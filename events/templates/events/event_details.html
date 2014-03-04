@@ -21,13 +21,8 @@
                 {% endif %}
                 {% if "change_event" in event_perms %}
                     {% if change_logo_form %}
-                        <form class="change-event-logo-form autosubmit" enctype="multipart/form-data" method="POST" action="{% url "events.views.change_event_logo" event.id %}">
-                            {% csrf_token %}
-                            <div class="upload-file-button">
-                                {{ change_logo_form }}
-                            </div>
-                            <button type="submit">Save</button>
-                        </form>
+                        {% url "events-change-event-logo" event.id as action %}
+                        {% include "events/partials/change_logo_form.html" %}
                     {% endif %}
                 {% endif %}
             </div>
