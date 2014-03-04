@@ -16,6 +16,13 @@ class AttractionCategory(CategoryBase):
     class Meta:
         verbose_name_plural = 'attraction categories'
 
+    def __str__(self):
+        if self.parent:
+            return "<AttractionCategory, '{}/{}'>".format(
+                self.parent.name, self.name)
+        else:
+            return "<AttractionCategory, '{}'>".format(self.name)
+
 
 class SportCategory(AttractionCategory):
 
