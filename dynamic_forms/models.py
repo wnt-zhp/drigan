@@ -3,7 +3,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
 from django_hstore import hstore
-import pickle
 
 FIELD_TYPES = [
     ('IntegerField', 'Number Field'),
@@ -37,13 +36,9 @@ class DynamicFormField(models.Model):
 class DynamicFormData(models.Model):
     form = models.ForeignKey(DynamicForm)
     user = models.ForeignKey(User)
-    raw_data = hstore.DictionaryField(db_index=True)
+    data = hstore.DictionaryField(db_index=True)
+
+    objects = hstore.HStoreManager()
 
     def __unicode__(self):
         return u'%s %s' % (self.form, self.user)
-
-    def __init__(self, *args, **kwargs):
-        super(DynamicFormData, self).__init__(*args, **kwargs)
-        self.data = {}
-        for k in self.raw_data:
-                self.data[k] = pickle.loads(self.raw_data[k])
