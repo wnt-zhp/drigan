@@ -1,4 +1,4 @@
-from settings_shared import *
+from .settings_shared import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

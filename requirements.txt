@@ -1,7 +1,8 @@
 git+https://github.com/django/django.git@stable/1.6.x
+git+https://github.com/zeroos/django-categories.git
 psycopg2
-django-categories==1.2.2
 django-registration==1.0
-django-imagekit==3.0.3
+django-imagekit==3.2
 django-softdelete==0.3.4
 django-guardian==1.1.1
+pillow==2.3.0
