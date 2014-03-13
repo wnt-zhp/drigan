@@ -47,16 +47,29 @@
                 <div class="action-buttons">
                     {% if "change_attraction" in attraction_perms %}
                         <a href="{% url "events.views.edit_attraction" attraction.event.id attraction.id %}">{% trans "Edit attraction" %}</a>
-                        <form method='post' action='{% url "dynamic_forms.views.add_dynamic_form" 'attraction' attraction.id %}'>
-                            {% csrf_token %}
-                            <button type='submit'>{% trans "Add registration form" %}</button>
-                        </form>
+                        {% if not forms %}
+                            <form method='post' action='{% url "dynamic_forms.views.add_dynamic_form" 'attraction' attraction.id %}'>
+                                {% csrf_token %}
+                                <button type='submit' class='btn btn-primary'>{% trans "Add registration form" %}</button>
+                            </form>
+                        {% endif %}
                     {% endif %}
                     {% if "delete_attraction" in attraction_perms %}
                         <form method='post' action='{% url "events.views.delete_attraction" attraction.event.id attraction.id %}'>
                             {% csrf_token %}
-                            <button type='submit' class='delete-button'>{% trans "Delete attraction" %}</button>
+                            <button type='submit' class='btn btn-danger'>{% trans "Delete attraction" %}</button>
                         </form>
+                    {% endif %}
+                    {% if forms %}
+                        {% for form in forms %}
+                        {% if forloop.first %}
+                            <form method='post' action='{% url "dynamic_forms.views.fill_form" form.id %}'>
+                                {% csrf_token %}
+                                <button type='submit' class='btn btn-primary'>{% trans "Fill form" %}</button>
+                            </form>
+                             <a href="{% url "dynamic_forms.views.participants_list" form.id %}">{% trans "Participants list" %}</a>
+                        {% endif %}
+                        {% endfor %}
                     {% endif %}
                 </div>
             </div>

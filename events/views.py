@@ -12,6 +12,8 @@ from events.forms import AddOrganizerForm, EditOrganizerForm, \
 from events.models import Event, Attraction
 from guardian.decorators import permission_required
 from guardian.shortcuts import assign_perm
+from dynamic_forms.models import DynamicForm
+from django.contrib.contenttypes.models import ContentType
 
 
 def event_details(request, event_id):
@@ -143,8 +145,12 @@ def add_attraction(request, event_id):
 
 def attraction_details(request, event_id, attraction_id):
     attraction = get_object_or_404(Attraction, id=attraction_id)
+    content_type = ContentType.objects.get_for_model(attraction)
+    forms = DynamicForm.objects.filter(object_id=attraction_id,
+                                       content_type=content_type)
     return render_to_response("events/attraction_details.html",
-                              {"attraction": attraction},
+                              {"attraction": attraction,
+                               "forms": forms},
                               context_instance=RequestContext(request))
 
 
