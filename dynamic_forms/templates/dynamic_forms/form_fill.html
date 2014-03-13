@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Fill form" %}{% endblock %}
+{% block content %}
+    <form method='post' action='.' class="form-small">
+        {% csrf_token %}
+        <h1>{% trans "Fill form:" %}</h1>
+        {{ dynamic_form_form.as_p }}
+        <button type='submit'>{% trans "Save" %}</button>
+    </form>
+{% endblock %}

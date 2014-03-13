@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Participants list" %}{% endblock %}
+{% block content %}
+{% if participants %}
+    <h1>{% trans "Participants list:" %}</h1>
+    <table>
+        {% for participant in participants %}
+            {% if forloop.first %}
+            <tr>
+                <td></td>
+                {% for key, value in participant.data.items %}
+                    <td>{{ key }}</td>
+                {% endfor %}
+            </tr>
+            {% endif %}
+            <tr>
+                <td>{{ forloop.counter }}.</td>
+                {% for key, value in participant.data.items %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    {% trans "Nobody has signed up yet :(" %}
+{% endif %}
+{% endblock %}
