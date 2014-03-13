@@ -1,0 +1,8 @@
+<form class="change-event-logo-form autosubmit" enctype="multipart/form-data" method="POST" action="{{ action }}">
+    {% csrf_token %}
+    <div class="upload-file-button">
+        {{ change_logo_form }}
+    </div>
+    <button type="submit">Save</button>
+</form>
+

@@ -24,6 +24,8 @@
             <div class="event-details-meta">
                 {% if attraction.get_logo %}
                     {% thumbnail '100x100' attraction.get_logo -- class="thumbnail" %}
+                    {% url "events-change-attraction-logo" attraction.id as action %}
+                    {% include "events/partials/change_logo_form.html" %}
                 {% endif %}
             </div>
             <div class="event-details-data">

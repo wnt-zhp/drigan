@@ -20,7 +20,7 @@ def event_details(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     change_logo_form = ChangeEventLogoForm()
     return render_to_response("events/event_details.html",
-                              {"event":             event,
+                              {"event":            event,
                                "change_logo_form": change_logo_form,
                                },
                               context_instance=RequestContext(request))
@@ -98,12 +98,11 @@ def delete_event(request, event_id):
     return http.HttpResponseRedirect(reverse(add_event))
 
 
-@permission_required('events.change_event', (Event, 'id', 'event_id'))
-def change_event_logo(request, event_id):
+def change_logo(request, object_id, model_cls, reverse_view):
     if request.method == "POST":
-        event = get_object_or_404(Event, pk=event_id)
+        obj = get_object_or_404(model_cls, pk=object_id)
         form = ChangeEventLogoForm(request.POST, request.FILES,
-                                   instance=event)
+                                   instance=obj)
         if form.is_valid():
             form.save()
             messages.success(request,
@@ -115,7 +114,7 @@ def change_event_logo(request, event_id):
     else:
         messages.error(request,
                        _('Logo not changed - no data given.'))
-    return http.HttpResponseRedirect(reverse(event_details, args=(event_id,)))
+    return http.HttpResponseRedirect(reverse(reverse_view, args=(object_id,)))
 
 
 @login_required
@@ -143,14 +142,17 @@ def add_attraction(request, event_id):
                               context_instance=RequestContext(request))
 
 
-def attraction_details(request, event_id, attraction_id):
+def attraction_details(request, attraction_id):
     attraction = get_object_or_404(Attraction, id=attraction_id)
     content_type = ContentType.objects.get_for_model(attraction)
     forms = DynamicForm.objects.filter(object_id=attraction_id,
                                        content_type=content_type)
+    change_logo_form = ChangeEventLogoForm()
     return render_to_response("events/attraction_details.html",
-                              {"attraction": attraction,
-                               "forms": forms},
+                              {"attraction":       attraction,
+                               "change_logo_form": change_logo_form,
+                               "forms": forms
+                               },
                               context_instance=RequestContext(request))
 
 

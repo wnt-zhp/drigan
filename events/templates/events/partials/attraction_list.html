@@ -4,7 +4,7 @@
     {% for attraction in attractions %}
         <li>
             <span class="event-category">{{ attraction.category }}</span>
-            <a href="{% url "events.views.attraction_details" attraction.event.id attraction.id %}" class="event-header">
+            <a href="{% url "events.views.attraction_details" attraction.id %}" class="event-header">
                 {% if attraction.get_logo %}
                     {% thumbnail '64x64' attraction.get_logo -- class="thumbnail" %}
                 {% endif %}
