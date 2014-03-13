@@ -2,18 +2,20 @@
 {% load i18n %}
 {% block title %}{% trans "Participants list" %}{% endblock %}
 {% block content %}
-{% if list %}
+{% if participants %}
     <h1>{% trans "Participants list:" %}</h1>
     <table>
-        {% for participant in list %}
+        {% for participant in participants %}
             {% if forloop.first %}
             <tr>
+                <td></td>
                 {% for key, value in participant.data.items %}
                     <td>{{ key }}</td>
                 {% endfor %}
             </tr>
             {% endif %}
             <tr>
+                <td>{{ forloop.counter }}.</td>
                 {% for key, value in participant.data.items %}
                     <td>{{ value }}</td>
                 {% endfor %}

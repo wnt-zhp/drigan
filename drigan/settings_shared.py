@@ -93,6 +93,7 @@ INSTALLED_APPS = (
     'softdelete',
     'dynamic_forms',
     'guardian',
+    'django_hstore',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
