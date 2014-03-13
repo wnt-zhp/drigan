@@ -134,7 +134,7 @@ def add_attraction(request, event_id):
                              _('Attraction has been added successfully.'))
             return http.HttpResponseRedirect(reverse(
                 'events.views.attraction_details',
-                args=(event.id, attraction.id,)))
+                args=(attraction.id,)))
     else:
         form = AddAttractionForm()
     return render_to_response("events/attraction_add.html",
