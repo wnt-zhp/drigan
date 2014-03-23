@@ -58,6 +58,7 @@ def add_choices_to_choicefield(request, field_id):
         if form.is_valid():
             new_choice = {form.cleaned_data['name']:
                           form.cleaned_data['name']}
+            #https://bitbucket.org/zeroos/drigan/issue/7/cannot-update-hstore-dictionary-field
             all_choices = choice_field.choices.copy()
             all_choices.update(new_choice)
             choice_field.choices = all_choices

@@ -39,6 +39,7 @@ class BaseDynamicForm(forms.Form):
             if dynamic_field.field_type == 'ChoiceField':
                 if not dynamic_field.required:
                     blank_choice = {'': '---------'}
+                    #https://bitbucket.org/zeroos/drigan/issue/7/cannot-update-hstore-dictionary-field
                     all_choices = dynamic_field.choices.copy()
                     all_choices.update(blank_choice)
                     dynamic_field.choices = all_choices
