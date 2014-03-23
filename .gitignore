@@ -3,3 +3,4 @@ drigan/settings.py
 *.swp
 .sass-cache
 .ropeproject
+.idea/*
