@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Add choice" %}{% endblock %}
+{% block content %}
+    <form method='post' action='.' class="form-small">
+        {% csrf_token %}
+        <h1>{% trans "Add choice to your field:" %}</h1>
+        {{ form.as_p }}
+        <button type='submit'>{% trans "Save" %}</button>
+    </form>
+    <form method='post' action='{% url "dynamic_forms.views.add_dynamic_form_field" dynamic_form_id %}'>
+        {% csrf_token %}
+        <button type='submit' class='btn btn-primary'>{% trans "Done" %}</button>
+    </form>
+{% endblock %}
