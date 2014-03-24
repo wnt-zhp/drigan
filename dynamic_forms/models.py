@@ -11,7 +11,7 @@ FIELD_TYPES = [
     ('EmailField', 'E-mail Field'),
     ('DateField', 'Date Field'),
     ('BooleanField', 'Yes/No Field'),
-    ('ChoiceField', 'Choice Field')
+    ('ChoiceField', 'Choice Field'),
 ]
 
 
@@ -29,7 +29,9 @@ class DynamicFormField(models.Model):
     field_type = models.CharField(max_length=100, choices=FIELD_TYPES)
     required = models.BooleanField(default=True)
     form = models.ForeignKey(DynamicForm, related_name='fields')
-    choices = hstore.DictionaryField(db_index=True, blank=True, null=True)
+    additional_data = hstore.DictionaryField(blank=True, null=True)
+
+    objects = hstore.HStoreManager()
 
     def __unicode__(self):
         return u'%s: %s' % (self.form.__unicode__(), self.name)

@@ -1,6 +1,7 @@
 from drigan.forms import DriganModelForm
 from django import forms
 from dynamic_forms.models import DynamicFormField
+import json
 
 
 types = {'IntegerField': forms.IntegerField,
@@ -38,10 +39,12 @@ class BaseDynamicForm(forms.Form):
                 field.widget = forms.Textarea()
             if dynamic_field.field_type == 'ChoiceField':
                 if not dynamic_field.required:
-                    blank_choice = {'': '---------'}
-                    #https://bitbucket.org/zeroos/drigan/issue/7/cannot-update-hstore-dictionary-field
-                    all_choices = dynamic_field.choices.copy()
-                    all_choices.update(blank_choice)
-                    dynamic_field.choices = all_choices
-                field.choices = list(dynamic_field.choices.items())
+                    blank_choice = '---------'
+                    data = json.loads(dynamic_field.additional_data['dict'])
+                    data['choices'].append(blank_choice)
+                    dynamic_field.additional_data['dict'] = json.dumps(data)
+                choices = json.loads(
+                    dynamic_field.additional_data['dict'])['choices']
+                field.choices = [(choices[i], choices[i])
+                                 for i in range(0, len(choices))]
             self.fields[dynamic_field.name] = field
