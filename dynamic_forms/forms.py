@@ -38,13 +38,10 @@ class BaseDynamicForm(forms.Form):
             if dynamic_field.field_type == 'TextField':
                 field.widget = forms.Textarea()
             if dynamic_field.field_type == 'ChoiceField':
+                choices = json.loads(dynamic_field.additional_data['choices'])
                 if not dynamic_field.required:
                     blank_choice = '---------'
-                    data = json.loads(dynamic_field.additional_data['dict'])
-                    data['choices'].append(blank_choice)
-                    dynamic_field.additional_data['dict'] = json.dumps(data)
-                choices = json.loads(
-                    dynamic_field.additional_data['dict'])['choices']
+                    choices.insert(0, blank_choice)
                 field.choices = [(choices[i], choices[i])
                                  for i in range(0, len(choices))]
             self.fields[dynamic_field.name] = field

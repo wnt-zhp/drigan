@@ -35,8 +35,7 @@ def add_dynamic_form_field(request, dynamic_form_id):
             field.save()
             form.save()
             if field.field_type == 'ChoiceField':
-                field.additional_data = {}
-                field.additional_data['dict'] = {'choices': []}
+                field.additional_data = {'choices': []}
                 field.save()
                 return http.HttpResponseRedirect(reverse(
                     'dynamic_forms.views.add_choices_to_choicefield',
@@ -61,9 +60,10 @@ def add_choices_to_choicefield(request, field_id):
         form = AddChoices(request.POST)
         if form.is_valid():
             new_choice = form.cleaned_data['name']
-            data = json.loads(choice_field.additional_data['dict'])
-            data['choices'].append(new_choice)
-            choice_field.additional_data['dict'] = json.dumps(data)
+            print(repr(choice_field.additional_data))
+            choices = json.loads(choice_field.additional_data['choices'])
+            choices.append(new_choice)
+            choice_field.additional_data['choices'] = choices
             choice_field.save()
             form = AddChoices()
             messages.success(request,
