@@ -66,12 +66,18 @@ def add_choices_to_choicefield(request, field_id):
             new_choice = form.cleaned_data['name']
             print(repr(choice_field.additional_data))
             choices = json.loads(choice_field.additional_data['choices'])
-            choices.append(new_choice)
-            choice_field.additional_data['choices'] = choices
-            choice_field.save()
-            form = AddChoices()
-            messages.success(request,
-                             _('Choice has been added successfully.'))
+            choices_lowercase = [choice.lower() for choice in choices]
+            if not new_choice.lower() in choices_lowercase:
+                choices.append(new_choice)
+                choice_field.additional_data['choices'] = choices
+                choice_field.save()
+                form = AddChoices()
+                messages.success(request,
+                                 _('Choice has been added successfully.'))
+            else:
+                messages.error(request,
+                               _('This choice already exists.'))
+
     else:
         form = AddChoices()
     return render_to_response("dynamic_forms/choices_add.html",
