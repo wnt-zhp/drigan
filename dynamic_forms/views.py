@@ -31,18 +31,22 @@ def add_dynamic_form_field(request, dynamic_form_id):
         form = AddDynamicFormField(request.POST)
         if form.is_valid():
             field = form.save(commit=False)
-            field.form = dynamic_form
-            field.save()
-            form.save()
-            if field.field_type == 'ChoiceField':
-                field.additional_data = {'choices': []}
+            if not DynamicFormField.objects.filter(name__iexact=field.name):
+                field.form = dynamic_form
                 field.save()
-                return http.HttpResponseRedirect(reverse(
-                    'dynamic_forms.views.add_choices_to_choicefield',
-                    args=(field.id,)))
-            form = AddDynamicFormField()
-            messages.success(request,
-                             _('Field has been added successfully.'))
+                form.save()
+                if field.field_type == 'ChoiceField':
+                    field.additional_data = {'choices': []}
+                    field.save()
+                    return http.HttpResponseRedirect(reverse(
+                        'dynamic_forms.views.add_choices_to_choicefield',
+                        args=(field.id,)))
+                form = AddDynamicFormField()
+                messages.success(request,
+                                 _('Field has been added successfully.'))
+            else:
+                messages.error(request,
+                               _('Field with this name already exists.'))
     else:
         form = AddDynamicFormField()
     dynamic_form_form = BaseDynamicForm(dynamic_form)
@@ -62,12 +66,18 @@ def add_choices_to_choicefield(request, field_id):
             new_choice = form.cleaned_data['name']
             print(repr(choice_field.additional_data))
             choices = json.loads(choice_field.additional_data['choices'])
-            choices.append(new_choice)
-            choice_field.additional_data['choices'] = choices
-            choice_field.save()
-            form = AddChoices()
-            messages.success(request,
-                             _('Choice has been added successfully.'))
+            choices_lowercase = [choice.lower() for choice in choices]
+            if not new_choice.lower() in choices_lowercase:
+                choices.append(new_choice)
+                choice_field.additional_data['choices'] = choices
+                choice_field.save()
+                form = AddChoices()
+                messages.success(request,
+                                 _('Choice has been added successfully.'))
+            else:
+                messages.error(request,
+                               _('This choice already exists.'))
+
     else:
         form = AddChoices()
     return render_to_response("dynamic_forms/choices_add.html",
