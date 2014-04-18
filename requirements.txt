@@ -1,4 +1,4 @@
-git+https://github.com/django/django.git@stable/1.6.x
+django>=1.6.0
 git+https://github.com/zeroos/django-categories.git
 psycopg2
 django-registration==1.0
