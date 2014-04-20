@@ -31,7 +31,7 @@ class DynamicFormField(models.Model):
     required = models.BooleanField(default=True)
     form = models.ForeignKey(DynamicForm, related_name='fields')
     additional_data = hstore.DictionaryField(blank=True, null=True)
-    position = PositionField()
+    position = PositionField(collection='form')
 
     objects = hstore.HStoreManager()
 
