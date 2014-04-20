@@ -94,6 +94,7 @@ INSTALLED_APPS = (
     'dynamic_forms',
     'guardian',
     'django_hstore',
+    'positions',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

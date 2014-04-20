@@ -57,7 +57,7 @@
                     {% if forms %}
                         {% for form in forms %}
                         {% if forloop.first %}
-                            <a href="{% url "dynamic_forms.views.add_dynamic_form_field" form.id %}">{% trans "Edit form" %}</a>
+                            <a href="{% url "dynamic_forms.views.edit_dynamic_form" form.id %}">{% trans "Edit form" %}</a>
                             <a href="{% url "dynamic_forms.views.participants_list" form.id %}">{% trans "Participants list" %}</a>
                         {% endif %}
                         {% endfor %}
