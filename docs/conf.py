@@ -202,6 +202,8 @@ latex_elements = {
 latex_documents = [
   ('index', 'Drigan.tex', u'Drigan Documentation',
    u'Drigan Team', 'manual'),
+  ('design/spec10', 'spec10.tex', u'Specyfikacja Drigna',
+   u'Jacek Bzdak', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -247,6 +249,7 @@ texinfo_documents = [
   ('index', 'Drigan', u'Drigan Documentation',
    u'Drigan Team', 'Drigan', 'One line description of project.',
    'Miscellaneous'),
+
 ]
 
 # Documents to append as an appendix to all manuals.

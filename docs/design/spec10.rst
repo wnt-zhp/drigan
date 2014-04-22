@@ -30,6 +30,7 @@ Role w systemie
     zna Pythona.
 
 .. _spec-v10-organizer:
+
 Organizator
 ***********
 
@@ -50,6 +51,7 @@ oprogramowanie. Zawsze organizator będzie zawierał takie dane:
     ale na razie tego nie robimy.
 
 .. _spec-v10-event:
+
 Wydarzenie
 **********
 
@@ -67,9 +69,11 @@ Podstawowe dane wydarzenia:
   Pole edycja jest nieobowiązkowe.
 * Dane organizatora.
 * Datę rozpoczęcia i zakończenia wydarzenia
+
  * Zawsze podajemy datę rozpoczęcia
  * Data zakończenia jest opcjonalna, jeśli organizator zaznaczy że wydarzenie
    jest jednodniowe.
+
 * Opis Wydarzenia
 
 .. _spec-v10-subevent:
@@ -144,11 +148,11 @@ Wydarzenie ma takie stany:
     status do akceptacji.
 
     Wydarzenie przestaje być wtedy edytowalne
-    (patrz: :ref:`spec-v10-edit-event-state:`).
+    (patrz: :ref:`spec-v10-edit-event-state`).
 
     W zależności od konfiguracji wydarzenie albo automatycznie przechodzi w status
     zaakceptowane, albo wymaga to kliknięcia przez administratora
-    (patrz: :ref:`spec-v10-event-accept:`).
+    (patrz: :ref:`spec-v10-event-accept`).
 
 **Zaakceptowane**
 
@@ -192,7 +196,12 @@ Na razie zamykamy wprowadzanie jakichkolwiek zmian do wydarzenia podczas jego
 trwania. Potem będzie trzeba włączyć częściową funkcjonalność zmiany
 wydarzenia.
 
+.. note::
+
+    Decyzja po rozmowie z Michałem w REJCEN-29
+
 .. _spec-v10-payment:
+
 Płantość
 ********
 
@@ -215,6 +224,7 @@ Płatność zawiera dwie niezależne informacje:
 
 
 .. _spec-v10-payment-mwthod:
+
 Metoda opłaty
 ^^^^^^^^^^^^^
 
@@ -250,6 +260,7 @@ Mamy takie metody opłaty:
 
 
 .. _spec-v10-rejetracja:
+
 Rejestracja na zajęcia
 **********************
 
@@ -258,6 +269,7 @@ Rejestracja na zajęcia
     Wypada z pierwszej wersji.
 
 .. _spec-v10-validacje:
+
 Walidacje dostępu do wydarzenia
 *******************************
 
@@ -282,10 +294,38 @@ Lista walidacji jakie będą potrzebne w wersji harcwrsjiej:
 
 
 .. _spec-v10-dynamic-forms:
+
 Dynamiczne ankiety
 ******************
 
 TODO
+
+
+.. _spec-v10-register-basic-data:
+
+Podstawowe dane związane z rejestracją
+**************************************
+
+Podczas rejestracji użytkownik dla każdego wydarzenia podaje ten sam zestaw
+podstawowych danych.
+
+Dla wersji ogólnej będzie to:
+
+TODO
+
+Dla wersji harcerskiej:
+
+* Imie
+* Nazwisko
+* Numer PESEL
+* Numer karty członkowskiej (organizator wybiera czy pole to jest obowiązakowe(
+* Adres
+
+  * Podzielony na atomowe dane
+
+* Stopień harcerski
+* Stopień instruktorski
+
 
 Generyczny mechanizm pluginów
 -----------------------------
@@ -304,7 +344,9 @@ Na pewno za pomocą pluginów opisywane będą:
 
 * Podstawowe informacje podawane podczas rejestracji (przez użytkownika)
 * Podstawowe informacje o wydarzeniu
+
  * Podstawowe informacje o podwydarzeniu
+
 * Podstawowe informacje o organizatorze
 
 
@@ -437,6 +479,7 @@ Jeśli wymagamy weryfkiacji to status zmienai się na: **Do akceptacji**, oraz:
 * Organizator dostanie e-maila o konieczności weryfikacji.
 
 .. _spec-v10-event-accept:
+
 Weryfikacja wydarzena
 *********************
 
@@ -445,7 +488,7 @@ Administrator w panelu administracyjnym ma listę wydarzeń do potwierdzenia.
 Dla każdego z nich może zaakceptować je lub odrzucić.
 
 * Zaakceptowane otrzymuje status **zaakceptowane**
-* Odrzucone otzymuje status **nowe**.
+* Odrzucone otzymuje status **nowe** (można ją zmienić i przesłać do akceptacji ponownie).
 
 W obu przypadkach organizator otrzymuje wiadomość e-mail.
 
@@ -457,3 +500,8 @@ Automatyczna zmiana stanów wydarzeń
 
 Dodajemy komendę administracyjną django (django management command), która
 przy wywołaniu odświerza stan rejestacji.
+
+Rejestracja
+***********
+
+Użytkownik na liście wydarzeń
