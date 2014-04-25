@@ -65,16 +65,14 @@ Wydarzenie jest zbiorem podwydarzeń, rejestrujemy się na podwydarzenia.
 Podstawowe dane wydarzenia:
 
 * Nazwę wydarzenia
+* Opis Wydarzenia
 * Numer edycji wydarzenia (na przykład nazwą będzie Zlot Kadry a edycją 2016).
   Pole edycja jest nieobowiązkowe.
 * Dane organizatora.
 * Datę rozpoczęcia i zakończenia wydarzenia
-
- * Zawsze podajemy datę rozpoczęcia
- * Data zakończenia jest opcjonalna, jeśli organizator zaznaczy że wydarzenie
-   jest jednodniowe.
-
-* Opis Wydarzenia
+  * Zawsze podajemy datę rozpoczęcia
+  * Data zakończenia jest opcjonalna, jeśli organizator zaznaczy że wydarzenie
+    jest jednodniowe.
 
 .. _spec-v10-subevent:
 
@@ -93,10 +91,10 @@ Podwydarzenia są czymś na co uczestnicy się rejestrują. Podwydarzenie ma 
 
 * Płatność/informacja o darmowości **obowiązkowe**, patrz: :ref:`spec-v10-payment`.
 * Czas rezerwacji miejsca **obowiązkowe jeśli jest limit miejsc i płatność**.
-* Połączenie z rejestracją na wydarze
-  Osoba która będzie się rejestrować na to podwydarzenie będzie miała tyle
-  dni na dokonanie zapłaty. W przypadku gdy wpłata nie dotrze miejsce będzie
-  zwalniane:
+  * Osoba która będzie się rejestrować na to podwydarzenie będzie miała tyle
+    dni na dokonanie zapłaty. W przypadku gdy wpłata nie dotrze miejsce będzie
+    zwalniane.
+* Połączenie z rejestracją na wydarzenie
 * Ograniczenia na uczestnika (walidacje), parz :ref:`spec-v10-validacje`.
 
   .. warning::
@@ -108,8 +106,8 @@ Podwydarzenia są czymś na co uczestnicy się rejestrują. Podwydarzenie ma 
 
 **Podpinanie dynamicznej ankiety**
 
-Każde podwydarzenie ma możliwość pdopięcia dynamicznej ankiety zbierającej
-dodatkowe (wpisane przez Orhanizatora) dane o uczestnikach.
+Każde podwydarzenie ma możliwość podopięcia dynamicznej ankiety zbierającej
+dodatkowe (wpisane przez Organizatora) dane o uczestnikach.
 
 Informacje o tej funkcjonalności w :ref:`spec-v10-dynamic-forms`.
 
@@ -130,7 +128,7 @@ Dodatkowa konfiguracja wydarzenia
 
 .. note::
 
-    Opcjonalnie: czy nie rozważyć by by te dane były określane per podwydarzenie.
+    Opcjonalnie: czy nie rozważyć by te dane były określane per podwydarzenie.
 
 Przestrzeń stanów wydarzenia
 ****************************
@@ -326,15 +324,13 @@ Dla wersji harcerskiej:
 * Stopień harcerski
 * Stopień instruktorski
 
-
-Generyczny mechanizm pluginów
------------------------------
-
 .. note::
 
     Całość można zamiemienić na system z wykorzystaniem dynamicznych ankiet.
-
     Reszta informacji o decyzji na ``REJCEN-26``.
+
+Generyczny mechanizm pluginów
+-----------------------------
 
 Sporo rzeczy w tej aplikacji będzie zmienialne na poziomie wdrożenia, dobrze 
 byłoby mieć jakiś wspólny mechanizm pluginów który pozwalałby elegancko 
@@ -410,15 +406,15 @@ Utworzenie wydarzenia
 *********************
 
 Każdy ma prawo stworzyć nowe wydarzenie. Użytkownik klika guzik: dodaj wydarzenie
-i prenosi go na formularz dodawania wydarzenia.
+i przenosi go na formularz dodawania wydarzenia.
 
 .. note::
 
     Ewentualnie można rozważyć wymaganie posiadania odpowiedniego przywileju
     django.
 
-Formularze ten zawiera podstawowe dane wydarzenia oraz dane organizatora (
-opis tutaj: :ref:`spec-v10-event`, oraz :ref:`spec-v10-organizer`.
+Formularze ten zawiera podstawowe dane wydarzenia oraz dane organizatora 
+(opis tutaj: :ref:`spec-v10-event`, oraz :ref:`spec-v10-organizer`).
 
 Użytkownik wypełnia ten formularz i jeśli nie ma błędów wydarzenie dodaje
 się w stanie: 'Nowe'.
@@ -435,7 +431,7 @@ Jeśli dane są poprawne do wydarzenia dodaje się podwydarzenie.
 
 .. note::
 
-    Na liśice wydarzeń organizator wydarzenia widzi  jego status.
+    Na liśice wydarzeń organizator wydarzenia widzi jego status.
 
 Dodanie płatności do podwydarzenia
 **********************************
@@ -453,11 +449,12 @@ Dodanie (dynamicznej) ankiety do podwydarzenia
 
 Domyślnie podwydarzenie nie ma dynamicznej ankiety.
 
-Po dodaniu podwydarzenia dodanoiu na liście podwydarzeń
+Po dodaniu podwydarzenia na liście podwydarzeń
 w wydarzeniu pojawia się guzik "Dodaj ankietę".
 
-Po jego kliknięciu organizator widzi listę pytań oraz formularz zawierający
-dane umożliwiające dodanie pytania.
+Po jego kliknięciu organizator widzi listę już dodanych
+pytań z możliwością ich edycji oraz formularz 
+umożliwiający dodanie pytania.
 
 TODO opisać dokladniej.
 
@@ -469,13 +466,12 @@ rozpocznij zbieranie zgłoszeń.
 
 Jeśli w konfigiuracji systemu *nie wymagamy* weryfikacji wydarzeń
 wydarzenie otrzymuje status: **zaakceptowane**. Jeśli data rozpoczęcia
-zbierania zgłoszeń
-już minęła status zmienia się na **otwarte**.
+zbierania zgłoszeń już minęła status zmienia się na **otwarte**.
 
 Jeśli wymagamy weryfkiacji to status zmienai się na: **Do akceptacji**, oraz:
 
 * Administrator aplikacji otrzyma wiadomość e-mail o konieczności weryfikacji
-  danegoe eventu.
+  danego wydarzenia.
 * Organizator dostanie e-maila o konieczności weryfikacji.
 
 .. _spec-v10-event-accept:
@@ -493,7 +489,7 @@ Dla każdego z nich może zaakceptować je lub odrzucić.
 W obu przypadkach organizator otrzymuje wiadomość e-mail.
 
 W przypadku odrzucenia rejestracji administrator musi podać powód, który
-trafia mejla do organizatora.
+pojawi się w mailu do organizatora.
 
 Automatyczna zmiana stanów wydarzeń
 ***********************************
