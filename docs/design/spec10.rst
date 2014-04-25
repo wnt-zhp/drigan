@@ -65,16 +65,14 @@ Wydarzenie jest zbiorem podwydarzeń, rejestrujemy się na podwydarzenia.
 Podstawowe dane wydarzenia:
 
 * Nazwę wydarzenia
+* Opis Wydarzenia
 * Numer edycji wydarzenia (na przykład nazwą będzie Zlot Kadry a edycją 2016).
   Pole edycja jest nieobowiązkowe.
 * Dane organizatora.
 * Datę rozpoczęcia i zakończenia wydarzenia
-
- * Zawsze podajemy datę rozpoczęcia
- * Data zakończenia jest opcjonalna, jeśli organizator zaznaczy że wydarzenie
-   jest jednodniowe.
-
-* Opis Wydarzenia
+  * Zawsze podajemy datę rozpoczęcia
+  * Data zakończenia jest opcjonalna, jeśli organizator zaznaczy że wydarzenie
+    jest jednodniowe.
 
 .. _spec-v10-subevent:
 
@@ -93,10 +91,10 @@ Podwydarzenia są czymś na co uczestnicy się rejestrują. Podwydarzenie ma 
 
 * Płatność/informacja o darmowości **obowiązkowe**, patrz: :ref:`spec-v10-payment`.
 * Czas rezerwacji miejsca **obowiązkowe jeśli jest limit miejsc i płatność**.
-* Połączenie z rejestracją na wydarze
-  Osoba która będzie się rejestrować na to podwydarzenie będzie miała tyle
-  dni na dokonanie zapłaty. W przypadku gdy wpłata nie dotrze miejsce będzie
-  zwalniane:
+  * Osoba która będzie się rejestrować na to podwydarzenie będzie miała tyle
+    dni na dokonanie zapłaty. W przypadku gdy wpłata nie dotrze miejsce będzie
+    zwalniane.
+* Połączenie z rejestracją na wydarzenie
 * Ograniczenia na uczestnika (walidacje), parz :ref:`spec-v10-validacje`.
 
   .. warning::
@@ -108,8 +106,8 @@ Podwydarzenia są czymś na co uczestnicy się rejestrują. Podwydarzenie ma 
 
 **Podpinanie dynamicznej ankiety**
 
-Każde podwydarzenie ma możliwość pdopięcia dynamicznej ankiety zbierającej
-dodatkowe (wpisane przez Orhanizatora) dane o uczestnikach.
+Każde podwydarzenie ma możliwość podopięcia dynamicznej ankiety zbierającej
+dodatkowe (wpisane przez Organizatora) dane o uczestnikach.
 
 Informacje o tej funkcjonalności w :ref:`spec-v10-dynamic-forms`.
 
@@ -130,7 +128,7 @@ Dodatkowa konfiguracja wydarzenia
 
 .. note::
 
-    Opcjonalnie: czy nie rozważyć by by te dane były określane per podwydarzenie.
+    Opcjonalnie: czy nie rozważyć by te dane były określane per podwydarzenie.
 
 Przestrzeń stanów wydarzenia
 ****************************
