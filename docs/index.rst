@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    design/spec10
+   design/coding-standards
 
 
 
