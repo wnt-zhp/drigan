@@ -15,6 +15,12 @@
 import sys
 import os
 
+CURRDIR = os.path.dirname(__file__)
+
+PARENT = os.path.split(CURRDIR)[0]
+
+sys.path.append(PARENT)
+
 os.environ['DJANGO_SETTINGS_MODULE'] = 'drigan.settings_example'
 
 # WORKAROUND FOR: https://code.djangoproject.com/ticket/21042 via https://bitbucket.org/birkenfeld/sphinx/issue/1254/autodoc-fails-to-handle-descriptors-with
