@@ -337,17 +337,37 @@ Generalnie każde wydarzenie będzie zbierało *jakieś* dodatakowe dane o
 każdym zgłoszeniu. Chcemy by organizator mógł do każdej atrakcji
 podpiąć dodatkowy formularz rejestracji z dynamiczną zawartością.
 
+Synchronizacja dynamicznych dancyh między formularzami
+######################################################
+
+Żeby użytkownik nie musial wpisywać danych wielokrotnie powinniśmy umożliwić 
+mechznizm automatycznego uzupełniania danych które powtarzają się między
+ankietami.
+
+Mechznizm ten działa następująco: Pole o nazwie ``foo`` otrzymuje początkowo wartość 
+z pola o nazwie ``foo`` w ostatnio wypełnionej ankiecie zawierającej to pole.
+
+.. note::
+
+    Potem może wymyślimy coś bardziej błyskotliwego.
+
 .. _spec-v10-register-basic-data:
 
-Podstawowe dane związane z rejestracją
-**************************************
+Podstawowe dane
+***************
 
 Podczas rejestracji użytkownik dla każdego wydarzenia podaje ten sam zestaw
 podstawowych danych.
 
+POdstaw
+
 Dla wersji ogólnej będzie to:
 
-TODO
+* Imie
+* Nazwisko
+* Adres
+
+  * Podzielony na atomowe dane
 
 Dla wersji harcerskiej:
 
@@ -362,10 +382,15 @@ Dla wersji harcerskiej:
 * Stopień harcerski
 * Stopień instruktorski
 
+Przechowywanie podstawowyd
+
 .. note::
 
     Całość można zamiemienić na system z wykorzystaniem dynamicznych ankiet.
     Reszta informacji o decyzji na ``REJCEN-26``.
+
+
+
 
 Generyczny mechanizm pluginów
 -----------------------------
@@ -387,7 +412,19 @@ Na pewno za pomocą pluginów opisywane będą:
 
     Prawdopodobnie większość z tych scenariuszy zastąpimy dynamicznymi ankietami.
 
-    Ale to jest otwarty temat. 
+    Ale to jest otwarty temat.
+
+Implementacja pluginów za pomocą dynamicznych formularzy
+********************************************************
+
+Osoba wdrażająca aplikację tworzy dynamiczny formularz który zawiera podstawowe
+dane dla wszystkich rejestracji. Następnie w adminie na poziomie bazy danych
+ustala że dynamiczny formularz o danym ID jest dodawany do każdej rejestracji.
+
+.. note::
+
+    Procedura zmiany tego formularza wyglądałaby tak że: nowo tworzone rejestracje
+    miałyby już doklejane nowe dane, a stare działałyby na danych starych.
 
 Integracja z ESHD
 -----------------
