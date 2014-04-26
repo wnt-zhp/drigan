@@ -259,7 +259,7 @@ Mamy takie metody opłaty:
 
   .. note::
 
-        Wypada z pierwszej wersji apki. 
+        Wypada z pierwszej wersji apki.
 
 **Weryfikacja ręczna przez organizatora**
 
@@ -290,6 +290,14 @@ Mamy takie metody opłaty:
 
 Rejestracja na zajęcia
 **********************
+
+Niektóre atrakcje mogą wymagać dodatkowej rezerwacji na zajęcia/warsztaty
+czy coś podobnego.
+
+Scenariusze użycia w ZHP które chcemy spełnić:
+
+* Rejestracja na warsztaty podczas LAS.
+* Rejestracja na zajęcia dla grup harcerzy na Zlocie w Krakowie. 
 
 .. note::
 
