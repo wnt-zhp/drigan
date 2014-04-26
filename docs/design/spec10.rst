@@ -116,7 +116,6 @@ Informacje o tej funkcjonalności w :ref:`spec-v10-dynamic-forms`.
     Limit miejsc prawdopowobnie wypadnie z pierwszej wersji aplikacji.
 
 
-
 Dodatkowa konfiguracja wydarzenia
 *********************************
 
@@ -314,11 +313,12 @@ Lista walidacji jakie będą potrzebne w wersji harcwrsjiej:
 
 .. _spec-v10-dynamic-forms:
 
-Dynamiczne ankiety
-******************
+Dynamiczne dane do formularza rejestracji
+*****************************************
 
-TODO
-
+Generalnie każde wydarzenie będzie zbierało *jakieś* dodatakowe dane o
+każdym zgłoszeniu. Chcemy by organizator mógł do każdej atrakcji
+podpiąć dodatkowy formularz rejestracji z dynamiczną zawartością.
 
 .. _spec-v10-register-basic-data:
 
