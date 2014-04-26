@@ -15,6 +15,16 @@
 import sys
 import os
 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'drigan.settings_example'
+
+# WORKAROUND FOR: https://code.djangoproject.com/ticket/21042 via https://bitbucket.org/birkenfeld/sphinx/issue/1254/autodoc-fails-to-handle-descriptors-with
+from django.db.models.fields.files import FileDescriptor
+FileDescriptor.__get__ = lambda self, *args, **kwargs: self
+
+# The same as latter one but undocumented
+from django.db.models.fields.subclassing import Creator
+Creator.__get__ = lambda self, *args, **kwargs: self
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.

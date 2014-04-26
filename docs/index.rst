@@ -13,6 +13,7 @@ Contents:
 
    design/spec10
    design/coding-standards
+   modules
 
 
 
