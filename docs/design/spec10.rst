@@ -321,6 +321,16 @@ Stany rejestracji:
 
    Wszystkie kroki powiązane z rejestracją są zakończone.
 
+.. note::
+
+    Stan ten można czasem wywnioskować ze stanu innych encji w systemie, ale nie
+    zawsze. Przykładowo organizator może uznać że ktoś jest zapłacony (nawet
+    jeśli dana atrakcja jest płacona przez dot pay więc weryfikacja płatności
+    jest automatyczna) --- powód może być taki że pewna grupa osób może mieć
+    uprawnienie do darmowego uczestnictwa w zlocie.
+
+
+
 
 .. _spec-v10-rejetracja:
 
@@ -691,26 +701,6 @@ nie zostanie ręcznie odnotowana przez administratora to ciągle widzi
 ekran: "Płatność w realizacji", po odnotowaniu płatności otrzymuje wiadomość
 e-mail o tym fakcie.
 
-
-Pobranie druku przelewu przy realizacji płatności przelewem
-***********************************************************
-
-Do ekranu obsługi płatności przelewem dodajemy formularz pobrania
-wypełnionego druku przekazu pocztowego.
-
-
-Realizacja płatności za pomocą dot-pay
-**************************************
-
-Organizator podaje wszystkie dane porzebne nam do zrealizowania plantości przez
-dot-pay, czyli:
-
-* Numer konta
-* Magiczny PIN dot-pay potrzebny do weryfikacji potwiedzień
-
-oraz dostaje instrukcjię jak skonfigurować konto po stronie dot-pay.
-
-
 Rejestracja
 ***********
 
@@ -718,3 +708,24 @@ Użytkownik z listy wydarzeń wybiera interesujące go wydarzenie, oraz wybiera
 podwydarzenie na które chce się zarejestrować.
 
 Wypełnia dane do rejestracji i klika dalej, użytkownik jest zarejestrowany.
+
+.. _spec-v10-org-panel-person-list:
+
+Wyświetlanie listy zarejestrowanych osób
+****************************************
+
+Po wybraniu swojego wydarzenia organizator ma dostęp do strony na której
+może zarządzać wydarzeniem.
+
+W ramach zadrządzania ma możliwość wyświetlenia listy osób które się 
+zarejestrowały na to wydarzenie.
+
+Może:
+
+* Filtorwać i sortować listę pod kątem: podstawowych danych i danych
+  z dynamicznego formularza
+* Widzieć w tabeli wszystkie dane o rejestracji (łącznie z dynamicznymi)
+* Mógł akceptować ręcznie zatwierdzać płatności.
+
+
+
