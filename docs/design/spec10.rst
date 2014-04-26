@@ -3,8 +3,8 @@ Specyfikacja techniczna
 
 Author: Jacek Bzdak
 
-Pojęcia (encje) w systemie
---------------------------
+Pojęcia w systemie
+------------------
 
 Role w systemie
 ***************
@@ -246,8 +246,11 @@ Płatność zawiera dwie niezależne informacje:
 
 .. _spec-v10-payment-mwthod:
 
-Metoda opłaty
-^^^^^^^^^^^^^
+Metoda opłaty (typ płatności)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Nie jest to element bazodanowy, a np. klasa instniejąca gdzieś w aplikajci,
+klasa ta odopwiada za obsługę danego rodzaju płatności.
 
 Mamy takie metody opłaty:
 
@@ -255,10 +258,14 @@ Mamy takie metody opłaty:
 
   Specjalny rodzaj platności oznaczający coś bezpłatnego.
 
+  Rejestracja automatycznie przechodzi w stan: "Opłacone"
+
 **Płatność gotówką na miejscu**
 
   Z naszego punktu widzenia jest równoznaczna z płatnością darmową, ale
   wyświetlamy co innego uczestnikom.
+
+  Rejestracja automatycznie przechodzi w stan: "Nie wymagana opłata przez aplikację".
 
   .. note::
 
@@ -287,6 +294,32 @@ Mamy takie metody opłaty:
   oraz inne dane konieczne do zrealisoania płatności.
 
   Aplikacja samodzielnie rejestruję wpłtę.
+
+
+Rejestracja
+***********
+
+Rejestracja to wiersz w tabeli który zawiera łączy użytkownika
+z podwydarzeniem (atrakcją) i informuje o statusie rejestracji użytkownika
+na atrakcję.
+
+Stany rejestracji:
+
+**nowa**
+
+    Stan zaraz po stworzeniu
+
+**wypełniona**
+
+    Po wypełnieniu ankiety
+
+**płatnść w toku**
+
+   Użytkownik rozpoczął proces opłacania wydarzenia.
+
+**Rejestracja zakończona**
+
+   Wszystkie kroki powiązane z rejestracją są zakończone.
 
 
 .. _spec-v10-rejetracja:
@@ -612,4 +645,74 @@ e-mail z informacją. Taka funkcjonalność musi siedzieć w cronie.
 Rejestracja
 ***********
 
-Użytkownik na liście wydarzeń
+Użytkownik z listy wydarzeń wybiera interesujące go wydarzenie, oraz wybiera
+podwydarzenie na które chce się zarejestrować.
+
+Wypełnia dane do rejestracji i klika dalej, użytkownik jest zarejestrowany.
+
+Obsługa
+-------
+
+Uzytkownik po podaniu danych przekierowywany jest na widok z płatnością,
+zawartość tego widoku jest zależna od rodzaju płatności.
+
+Zadanie techniczne: API płatności
+*********************************
+
+Wykonanie API obsługującego typy płatności
+(patrz :ref:`spec-v10-payment-mwthod`).
+
+Zadanie techniczne: obsługa rejestracji trwających długo
+********************************************************
+
+Płatność będzie odbywała się asynchronicznie, i może trwać kilka dni.
+
+Zatem musi być jakaś obsługa tego schematu, żeby użytkownik najpierw
+widział ekran: "Płatność w realizacji", a potem dostał wiaodmość
+e-mail oraz: "Płatność zakończona"
+
+.. note::
+
+    Możliwe będą dodatkowe kroki rejestracji po płatności, na przykład
+    wybór zajęć.
+
+Podpinanie płatności do atrakcji
+********************************
+
+Organizator ma możliwość podpięcia płatności do atrakcji.
+
+Obsługa bezpłatnej płatności
+****************************
+
+Informujemy użytkownika że dana atrakcja jest bezpłatna, wyświetlamy
+komunikat dodany przez organizatora. Po kliknięciu dalej użytkownik
+przechodzi na kolejny krok rejestarcji.
+
+
+Obsługa płatności przelewem
+***************************
+
+Użytkownik widzi informację o konieczności oplaty przelewem. Do póki płatość 
+nie zostanie ręcznie odnotowana przez administratora to ciągle widzi
+ekran: "Płatność w realizacji", po odnotowaniu płatności otrzymuje wiadomość
+e-mail o tym fakcie.
+
+
+Pobranie druku przelewu przy realizacji płatności przelewem
+-----------------------------------------------------------
+
+Do ekranu obsługi płatności przelewem dodajemy formularz pobrania
+wypełnionego druku przekazu pocztowego.
+
+
+Realizacja płatności za pomocą dot-pay
+--------------------------------------
+
+Organizator podaje wszystkie dane porzebne nam do zrealizowania plantości przez
+dot-pay, czyli:
+
+* Numer konta
+* Magiczny PIN dot-pay potrzebny do weryfikacji potwiedzień
+
+oraz dostaje instrukcjię jak skonfigurować konto po stronie dot-pay.
+
