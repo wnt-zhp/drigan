@@ -70,6 +70,7 @@ Podstawowe dane wydarzenia:
   Pole edycja jest nieobowiązkowe.
 * Dane organizatora.
 * Datę rozpoczęcia i zakończenia wydarzenia
+
   * Zawsze podajemy datę rozpoczęcia
   * Data zakończenia jest opcjonalna, jeśli organizator zaznaczy że wydarzenie
     jest jednodniowe.
@@ -91,9 +92,11 @@ Podwydarzenia są czymś na co uczestnicy się rejestrują. Podwydarzenie ma 
 
 * Płatność/informacja o darmowości **obowiązkowe**, patrz: :ref:`spec-v10-payment`.
 * Czas rezerwacji miejsca **obowiązkowe jeśli jest limit miejsc i płatność**.
+
   * Osoba która będzie się rejestrować na to podwydarzenie będzie miała tyle
     dni na dokonanie zapłaty. W przypadku gdy wpłata nie dotrze miejsce będzie
     zwalniane.
+
 * Połączenie z rejestracją na wydarzenie
 * Ograniczenia na uczestnika (walidacje), parz :ref:`spec-v10-validacje`.
 
@@ -137,7 +140,7 @@ Procesy powiązane z wydarzeniem
 .. _spec-v10-akceptacja:
 
 Tworzenie wydarzenia
-####################
+^^^^^^^^^^^^^^^^^^^^
 
 **tworzone**
 
@@ -162,7 +165,7 @@ Tworzenie wydarzenia
     Wydarzenie nie jest edytowalne ale jest widoczne na liście wydarzeń.
 
 Rejestracja otwarta/zamknięta
-=============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 **Rejestracja otwarta**
@@ -188,7 +191,7 @@ Rejestracja otwarta/zamknięta
 
 
 Wydarzenie trwa
-===============
+^^^^^^^^^^^^^^^
 
 .. note::
 
@@ -338,7 +341,7 @@ każdym zgłoszeniu. Chcemy by organizator mógł do każdej atrakcji
 podpiąć dodatkowy formularz rejestracji z dynamiczną zawartością.
 
 Synchronizacja dynamicznych dancyh między formularzami
-######################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Żeby użytkownik nie musial wpisywać danych wielokrotnie powinniśmy umożliwić 
 mechznizm automatycznego uzupełniania danych które powtarzają się między
@@ -560,7 +563,7 @@ Weryfikacja wydarzeń
 
 
 Wysłanie wydarzenia do weryfikacji
-##################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
@@ -582,7 +585,7 @@ Jeśli wymagamy weryfkiacji to status zmienai się na: **Do akceptacji**, oraz:
 .. _spec-v10-event-accept:
 
 Weryfikacja wydarzena
-#####################
+^^^^^^^^^^^^^^^^^^^^^
 
 Administrator w panelu administracyjnym ma listę wydarzeń do potwierdzenia.
 
