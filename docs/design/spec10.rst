@@ -297,7 +297,7 @@ czy coś podobnego.
 Scenariusze użycia w ZHP które chcemy spełnić:
 
 * Rejestracja na warsztaty podczas LAS.
-* Rejestracja na zajęcia dla grup harcerzy na Zlocie w Krakowie. 
+* Rejestracja na zajęcia dla grup harcerzy na Zlocie w Krakowie.
 
 .. note::
 
@@ -383,6 +383,11 @@ Na pewno za pomocą pluginów opisywane będą:
 
 * Podstawowe informacje o organizatorze
 
+.. note::
+
+    Prawdopodobnie większość z tych scenariuszy zastąpimy dynamicznymi ankietami.
+
+    Ale to jest otwarty temat. 
 
 Integracja z ESHD
 -----------------
