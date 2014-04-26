@@ -642,28 +642,22 @@ Generalnie zakładam że przy niektórych zmianach stanu rejestracji, powiązany
 z upływem czasu (otwarcie, zamknięcie) będziemy do użytkowników wysyłać wiadomości
 e-mail z informacją. Taka funkcjonalność musi siedzieć w cronie.
 
-Rejestracja
-***********
+.. _spec-v10-payment-scenario:
 
-Użytkownik z listy wydarzeń wybiera interesujące go wydarzenie, oraz wybiera
-podwydarzenie na które chce się zarejestrować.
-
-Wypełnia dane do rejestracji i klika dalej, użytkownik jest zarejestrowany.
-
-Obsługa
--------
+Obsługa płatności wersja 1.0
+****************************
 
 Uzytkownik po podaniu danych przekierowywany jest na widok z płatnością,
 zawartość tego widoku jest zależna od rodzaju płatności.
 
 Zadanie techniczne: API płatności
-*********************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Wykonanie API obsługującego typy płatności
 (patrz :ref:`spec-v10-payment-mwthod`).
 
 Zadanie techniczne: obsługa rejestracji trwających długo
-********************************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Płatność będzie odbywała się asynchronicznie, i może trwać kilka dni.
 
@@ -677,12 +671,12 @@ e-mail oraz: "Płatność zakończona"
     wybór zajęć.
 
 Podpinanie płatności do atrakcji
-********************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Organizator ma możliwość podpięcia płatności do atrakcji.
 
 Obsługa bezpłatnej płatności
-****************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Informujemy użytkownika że dana atrakcja jest bezpłatna, wyświetlamy
 komunikat dodany przez organizatora. Po kliknięciu dalej użytkownik
@@ -690,7 +684,7 @@ przechodzi na kolejny krok rejestarcji.
 
 
 Obsługa płatności przelewem
-***************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Użytkownik widzi informację o konieczności oplaty przelewem. Do póki płatość 
 nie zostanie ręcznie odnotowana przez administratora to ciągle widzi
@@ -699,14 +693,14 @@ e-mail o tym fakcie.
 
 
 Pobranie druku przelewu przy realizacji płatności przelewem
------------------------------------------------------------
+***********************************************************
 
 Do ekranu obsługi płatności przelewem dodajemy formularz pobrania
 wypełnionego druku przekazu pocztowego.
 
 
 Realizacja płatności za pomocą dot-pay
---------------------------------------
+**************************************
 
 Organizator podaje wszystkie dane porzebne nam do zrealizowania plantości przez
 dot-pay, czyli:
@@ -716,3 +710,11 @@ dot-pay, czyli:
 
 oraz dostaje instrukcjię jak skonfigurować konto po stronie dot-pay.
 
+
+Rejestracja
+***********
+
+Użytkownik z listy wydarzeń wybiera interesujące go wydarzenie, oraz wybiera
+podwydarzenie na które chce się zarejestrować.
+
+Wypełnia dane do rejestracji i klika dalej, użytkownik jest zarejestrowany.
