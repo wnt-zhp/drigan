@@ -4,6 +4,11 @@ Coding standards
 Basic stuff
 -----------
 
+First solve bugs then add features
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Bug fixes are more important then new features. 
+
 Code Reviews
 ^^^^^^^^^^^^
 
