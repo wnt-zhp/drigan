@@ -11,6 +11,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   design/spec10
+
 
 
 Indices and tables
