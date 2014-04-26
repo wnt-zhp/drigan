@@ -1,5 +1,5 @@
-Zasady pracy
-============
+Coding standards
+================
 
 Basic stuff
 -----------
