@@ -538,8 +538,33 @@ umożliwiający dodanie pytania.
 
 TODO opisać dokladniej.
 
+
+.. _spec-v10-register-event:
+
+Wyłączenie edycji wydarzenia po włączeniu rejestracji
+*****************************************************
+
+Administrator ma guzik: "Włącz rejestrację na wydarzenie" po jego kliknięciu
+widzi panel: "Po włączeniu rejestracji nie będziesz mógł modyfikować wydarzenia",
+jeśli kliknie "OK":
+
+* zmienia się stan wydarzenia
+* Można się na wydarzenie rejestrować 
+* Wydarzenie nie jest edytowalne
+
+
+.. _spec-v10-werify-event:
+
+Weryfikacja wydarzeń
+********************
+
+
 Wysłanie wydarzenia do weryfikacji
-**********************************
+##################################
+
+.. note::
+
+    Jest to rozwinięcie scenariusza z punktu poprzedniego.
 
 Po dodaniu wszystkich podwydarzeń organizator klika na guzik:
 rozpocznij zbieranie zgłoszeń.
@@ -557,7 +582,7 @@ Jeśli wymagamy weryfkiacji to status zmienai się na: **Do akceptacji**, oraz:
 .. _spec-v10-event-accept:
 
 Weryfikacja wydarzena
-*********************
+#####################
 
 Administrator w panelu administracyjnym ma listę wydarzeń do potwierdzenia.
 
@@ -579,7 +604,7 @@ przy wywołaniu odświerza stan rejestacji.
 
 Generalnie zakładam że przy niektórych zmianach stanu rejestracji, powiązanych
 z upływem czasu (otwarcie, zamknięcie) będziemy do użytkowników wysyłać wiadomości
-e-mail z informacją. Taka funkcjonalność musi siedzieć w cronie.  
+e-mail z informacją. Taka funkcjonalność musi siedzieć w cronie.
 
 Rejestracja
 ***********
