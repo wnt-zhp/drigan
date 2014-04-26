@@ -11,7 +11,13 @@ Every story is created in it's own branch. Person developing code then adds
 pull request. This pull request must be accepted by someone else.
 
 When asigning someone with a code-review, please mark your story as
-``In Review`` and assign it to this person in JIRA. 
+``In Review`` and assign it to this person in JIRA.
+
+Meaningfull commit messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use meaningfull commit messages. Please reference JIRA issue if appropriate.
+
 
 Documentation
 ^^^^^^^^^^^^^
