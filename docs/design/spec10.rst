@@ -252,6 +252,15 @@ Mamy takie metody opłaty:
 
   Specjalny rodzaj platności oznaczający coś bezpłatnego.
 
+**Płatność gotówką na miejscu**
+
+  Z naszego punktu widzenia jest równoznaczna z płatnością darmową, ale
+  wyświetlamy co innego uczestnikom.
+
+  .. note::
+
+        Wypada z pierwszej wersji apki. 
+
 **Weryfikacja ręczna przez organizatora**
 
   Aplikacja w żaden sposób nie obsługuje płatności.
