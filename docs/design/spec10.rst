@@ -130,12 +130,18 @@ Dodatkowa konfiguracja wydarzenia
 
     Opcjonalnie: czy nie rozważyć by te dane były określane per podwydarzenie.
 
-Przestrzeń stanów wydarzenia
-****************************
 
-Wydarzenie ma takie stany:
 
-**Tworzone**
+Procesy powiązane z wydarzeniem
+********************************
+
+.. _spec-v10-akceptacja:
+
+Tworzenie wydarzenia
+####################
+
+**tworzone**
+
 
     Kiedy wydarzenie jest **tworzone** nie wyświetla się na liście wydarzeń.
     Jest ono wtedy edytowalne dla osoby je tworzącej.
@@ -156,9 +162,9 @@ Wydarzenie ma takie stany:
 
     Wydarzenie nie jest edytowalne ale jest widoczne na liście wydarzeń.
 
-    Stan zmienia się na rejestracja otwarta w chwili nadejścia chwili
-    otwarcia rejestracji (określonej w wydarzeniu), lub natychmiastowo
-    (jeśli data nie jest określona).
+Rejestracja otwarta/zamknięta
+=============================
+
 
 **Rejestracja otwarta**
 
@@ -169,10 +175,25 @@ Wydarzenie ma takie stany:
     nie wpisał tej wartości to stan przechodzi w **wydarzenie trwa/rejestracja trwa**
     w momencie rozpoczęcia wydarzenia.
 
+    .. note::
+
+        Możliwa jest również zamknięcie rejestracji pod wpływem odpowiednich
+        validacji (przekroczenie limitu osób).
+
+
+
 **Rejestracja zamknięta**
 
     Nie ma możliwości rejestracji, stan przechodzi w **wydarzenie trwa/rejestracja zamknięta**
     w chwili rozpoczęcia wydarzenia.
+
+
+Wydarzenie trwa
+===============
+
+.. note::
+
+    To nie jest priorytet
 
 **Wydarzenie trwa**
 
