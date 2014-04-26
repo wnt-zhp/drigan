@@ -577,6 +577,10 @@ Automatyczna zmiana stanów wydarzeń
 Dodajemy komendę administracyjną django (django management command), która
 przy wywołaniu odświerza stan rejestacji.
 
+Generalnie zakładam że przy niektórych zmianach stanu rejestracji, powiązanych
+z upływem czasu (otwarcie, zamknięcie) będziemy do użytkowników wysyłać wiadomości
+e-mail z informacją. Taka funkcjonalność musi siedzieć w cronie.  
+
 Rejestracja
 ***********
 
