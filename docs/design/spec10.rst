@@ -387,7 +387,7 @@ Synchronizacja dynamicznych dancyh między formularzami
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Żeby użytkownik nie musial wpisywać danych wielokrotnie powinniśmy umożliwić 
-mechznizm automatycznego uzupełniania danych które powtarzają się między
+mechanizm automatycznego uzupełniania danych które powtarzają się między
 ankietami.
 
 Mechznizm ten działa następująco: Pole o nazwie ``foo`` otrzymuje początkowo wartość 
@@ -591,12 +591,13 @@ Wyłączenie edycji wydarzenia po włączeniu rejestracji
 *****************************************************
 
 Administrator ma guzik: "Włącz rejestrację na wydarzenie" po jego kliknięciu
-widzi panel: "Po włączeniu rejestracji nie będziesz mógł modyfikować wydarzenia",
-jeśli kliknie "OK":
+widzi panel: "Po włączeniu rejestracji nie będziesz mógł modyfikować wydarzenia".
 
-* zmienia się stan wydarzenia
-* Można się na wydarzenie rejestrować 
-* Wydarzenie nie jest edytowalne
+Jeśli kliknie "OK":
+
+* zmienia się stan wydarzenia,
+* można się na nie rejestrować,
+* wydarzenie nie jest edytowalne.
 
 
 .. _spec-v10-werify-event:
@@ -722,10 +723,10 @@ zarejestrowały na to wydarzenie.
 
 Może:
 
-* Filtorwać i sortować listę pod kątem: podstawowych danych i danych
-  z dynamicznego formularza
-* Widzieć w tabeli wszystkie dane o rejestracji (łącznie z dynamicznymi)
-* Mógł akceptować ręcznie zatwierdzać płatności.
+* filtorwać i sortować listę pod kątem: podstawowych danych i danych
+  z dynamicznego formularza,
+* widzieć w tabeli wszystkie dane o rejestracji (łącznie z dynamicznymi),
+* ręcznie zatwierdzać płatności.
 
 
 
