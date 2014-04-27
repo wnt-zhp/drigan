@@ -38,6 +38,13 @@ Unittests
 
 Aim for 100% unittest coverage (for changed code).
 
+Time logging
+^^^^^^^^^^^^
+
+Please log time spent on developing this application. I need this information
+for political reasons (people at HQ don't have idea how much value we bring
+in terms of free (as in beer) software).
+
 Django stuff
 ------------
 
