@@ -1,8 +1,6 @@
 Specyfikacja techniczna
 =======================
 
-Author: Jacek Bzdak
-
 Pojęcia w systemie
 ------------------
 

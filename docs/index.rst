@@ -11,8 +11,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   design/spec10
+   design/quick_start
    design/coding-standards
+   design/spec10
    modules
 
 
