@@ -50,7 +50,7 @@ Clone it using git:
 
 .. code-block:: bash
 
-    $ git clone git@bitbucket.org:zeroos/drigan.git
+    $ git clone https://bitbucket.org/zeroos/drigan.git
 
 Installing requirements
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,6 +86,15 @@ development purposes you can for example use this command:
 
     $ sudo -u postgres createdb drigan     # or other database name
 
+If you ever need to reset your database to initial state you can ofcourse use
+Django management command (`reset`) or just recreate the database (probably more
+reliable):
+
+.. code-block:: bash
+
+    $ sudo -u postgres dropdb drigan     # drop the database
+    $ sudo -u postgres createdb drigan     # and create it again
+
 
 settings.py
 ^^^^^^^^^^^
@@ -94,8 +103,8 @@ Every setting in the copied `settings_example.py` file is documented, so you can
 just go through them and adjust them. 
 
 If you are just trying to run it in developing mode, you don't have to
-change much -- just insert a correct database credentials and everything should
-work.
+change much -- just adjust your database credentials if needed and everything 
+should work.
 
 However, if you'd like to set up a production environment, you should look over
 each setting. And don't forget to set `DEBUG = False`!
