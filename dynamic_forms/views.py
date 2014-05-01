@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from dynamic_forms.forms import AddDynamicFormField, BaseDynamicForm,\
     AddChoices
 from dynamic_forms.models import DynamicForm, DynamicFormData, DynamicFormField
@@ -55,31 +55,32 @@ def change_field_order(request, field_id, direction):
 @login_required
 def add_dynamic_form_field(request, dynamic_form_id):
     dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
+    field_form = AddDynamicFormField()
     if request.method == 'POST':
-        form = AddDynamicFormField(request.POST)
-        if form.is_valid():
-            field = form.save(commit=False)
-            if not DynamicFormField.objects.filter(name__iexact=field.name):
-                field.form = dynamic_form
-                field.save()
-                form.save()
-                if field.field_type == 'ChoiceField':
-                    field.additional_data = {'choices': []}
-                    field.save()
-                    return http.HttpResponseRedirect(reverse(
-                        'dynamic_forms.views.add_choices_to_choicefield',
-                        args=(field.id,)))
-                form = AddDynamicFormField()
+        field_form = AddDynamicFormField(request.POST)
+        if field_form.is_valid():
+            field = field_form.save(commit=False)
+            field.form = dynamic_form
+            try:
+                dynamic_form.add_field_to_form(field)
                 messages.success(request,
                                  _('Field has been added successfully.'))
-            else:
+            except ValueError:
                 messages.error(request,
                                _('Field with this name already exists.'))
-    else:
-        form = AddDynamicFormField()
+            field.save()
+            if field.field_type == 'ChoiceField':
+                # TODO: This should really be handled somewhere else
+                return http.HttpResponseRedirect(reverse(
+                    'dynamic_forms.views.add_choices_to_choicefield',
+                    args=(field.id,)))
+            return http.HttpResponseRedirect(
+                    reverse('dynamic_forms.views.add_dynamic_form_field',
+                            kwargs={"dynamic_form_id":dynamic_form_id}))
+
     dynamic_form_form = BaseDynamicForm(dynamic_form)
     return render_to_response("dynamic_forms/dynamic_form_add.html",
-                              {"form": form,
+                              {"form": field_form,
                                "dynamic_form": dynamic_form,
                                "dynamic_form_form": dynamic_form_form},
                               context_instance=RequestContext(request))
@@ -99,25 +100,19 @@ def delete_dynamic_form_field(request, field_id):
 @login_required
 def add_choices_to_choicefield(request, field_id):
     choice_field = get_object_or_404(DynamicFormField, pk=field_id)
+    form = AddChoices()
     if request.method == 'POST':
         form = AddChoices(request.POST)
         if form.is_valid():
             new_choice = form.cleaned_data['name']
-            choices = json.loads(choice_field.additional_data['choices'])
-            choices_lowercase = [choice.lower() for choice in choices]
-            if not new_choice.lower() in choices_lowercase:
-                choices.append(new_choice)
-                choice_field.additional_data['choices'] = choices
-                choice_field.save()
-                form = AddChoices()
+            if choice_field.dynamic_field.has_choice(new_choice):
+                choice_field.dynamic_field.add_choice(new_choice)
                 messages.success(request,
                                  _('Choice has been added successfully.'))
             else:
                 messages.error(request,
-                               _('This choice already exists.'))
+                                   _('This choice already exists.'))
 
-    else:
-        form = AddChoices()
     return render_to_response("dynamic_forms/choices_add.html",
                               {"form": form,
                                "dynamic_form_id": choice_field.form.id},

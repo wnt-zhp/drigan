@@ -1,14 +1,21 @@
 # -*- coding: utf-8 -*-
 
 import abc
+import json
 
 from django import forms
+from django.forms.fields import ChoiceField
 from django.forms.widgets import Textarea
 from django.utils.translation import ugettext_lazy
 
 _FIELD_TYPES_DICT = {}
 
 _FIELD_TYPE_CHOICES = []
+
+__all__ = [
+    'register_field_type', 'get_field', 'get_field_choices', 'DynamicFieldType',
+    'ChoiceField'
+]
 
 def register_field_type(name):
     def wrapper(clazz):
@@ -41,9 +48,10 @@ class DynamicFieldType(object, metaclass=abc.ABCMeta):
     def get_type_description(self):
         return None
 
-    @abc.abstractmethod
     def load_field(self, dynamic_field):
-        return None
+        field = self.create_field()
+        field.required = dynamic_field.required
+        return field
 
     @abc.abstractmethod
     def create_field(self):
@@ -58,10 +66,6 @@ class _DjangoDynamicField(DynamicFieldType):
     def get_type_description(self):
         return self.DESCRIPTION
 
-    def load_field(self, dynamic_field):
-        field = self.create_field()
-        field.required = dynamic_field.required
-        return field
 
     def create_field(self):
         return self.DJANGO_FIELD_TYPE()
@@ -86,7 +90,6 @@ create_django_dynamic_field(forms.BooleanField, ugettext_lazy('Yes/No Field'))
 class DynamicTextField(_DjangoDynamicField):
 
     DESCRIPTION = "Text Field"
-
     DJANGO_FIELD_TYPE = forms.CharField
 
     def create_field(self):
@@ -94,4 +97,48 @@ class DynamicTextField(_DjangoDynamicField):
         field.widget = Textarea()
         return field
 
-# TODO: Add Choice Field
+@register_field_type("ChoicesField")
+class ChoicesField(_DjangoDynamicField):
+
+    DESCRIPTION = "ComboBox Field"
+    DJANGO_FIELD_TYPE = ChoiceField
+
+    def has_choice(self, dynamic_field, name):
+        choices = self.get_choices(dynamic_field)
+        return name in choices
+
+    def get_choices(self, dynamic_field):
+        """
+        :param dynamic_field:
+        :type dynamic_field: :class:`dynamic_forms.models.DynamicFormField`
+        :return: List containing possible choices (strings)
+        """
+        json_str = dynamic_field.additional_data.get("choices", "[]")
+        return json.loads(json_str)
+
+    def set_choices(self, dynamic_field, choices):
+
+        choices = list(choices)
+
+        for ch in choices:
+            if not isinstance(ch, str):
+                raise ValueError("Choices must be strings, {} is {}".format(ch, type(ch)))
+
+        dynamic_field.additional_data['choices'] = choices
+
+
+    def add_choice(self, dynamic_field, choice):
+
+        if self.has_choice(dynamic_field, choice):
+            raise ValueError("Field already contains choice '{}'".format(choice))
+
+        choices = self.get_choices(dynamic_field)
+        choices.append(choice)
+        self.set_choices(dynamic_field, choices)
+
+
+    def load_field(self, dynamic_field):
+        choice_field = super().load_field(dynamic_field)
+        choice_field.choices = [(c, c) for c in self.get_choices(dynamic_field)]
+        return choice_field
+

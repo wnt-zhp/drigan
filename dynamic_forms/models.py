@@ -12,6 +12,18 @@ class DynamicForm(models.Model):
     object_id = models.PositiveIntegerField(null=True)
     content_object = generic.GenericForeignKey('content_type', 'object_id')
 
+    def add_field_to_form(self, field):
+
+        if field.form == self:
+            return
+
+        if self.fields.filter(name__iexact = field.name).count():
+            raise ValueError("Field with the same name is already added to a form")
+
+        field.form = self
+
+
+
     def __unicode__(self):
         return self.content_object.__unicode__()
 
@@ -26,8 +38,11 @@ class DynamicFormField(models.Model):
     objects = hstore.HStoreManager()
 
     def get_django_field(self):
-        dynamic_field_type = get_field(self.field_type)
-        return dynamic_field_type.load_field(self)
+        return self.dynamic_field.load_field(self)
+
+    @property
+    def dynamic_field(self):
+        return get_field(self.field_type)
 
     def __unicode__(self):
         return u'%s: %s' % (self.form.__unicode__(), self.name)
