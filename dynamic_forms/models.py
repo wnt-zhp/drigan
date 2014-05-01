@@ -4,6 +4,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
 from django_hstore import hstore
+from positions import PositionField
 
 FIELD_TYPES = [
     ('IntegerField', 'Number Field'),
@@ -42,8 +43,12 @@ class DynamicFormField(models.Model):
     required = models.BooleanField(default=True)
     form = models.ForeignKey(DynamicForm, related_name='fields')
     additional_data = hstore.DictionaryField(blank=True, null=True)
+    position = PositionField(collection='form')
 
     objects = hstore.HStoreManager()
+
+    class Meta:
+        ordering = ['position']
 
     def __unicode__(self):
         return u'%s: %s' % (self.form.__unicode__(), self.name)

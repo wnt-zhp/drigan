@@ -32,6 +32,26 @@ def add_dynamic_form(request, content_type_model, object_id):
 
 
 @login_required
+def edit_dynamic_form(request, dynamic_form_id):
+    dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
+    return render_to_response("dynamic_forms/dynamic_form_edit.html",
+                              {"dynamic_form": dynamic_form},
+                              context_instance=RequestContext(request))
+
+
+@login_required
+def change_field_order(request, field_id, direction):
+    field = get_object_or_404(DynamicFormField, pk=field_id)
+    if request.method == "POST":
+        field.position += int(direction)
+        field.save()
+        messages.success(request, _('Order has been changed.'))
+    return http.HttpResponseRedirect(reverse(
+        'dynamic_forms.views.edit_dynamic_form',
+        args=(field.form.id,)))
+
+
+@login_required
 def add_dynamic_form_field(request, dynamic_form_id):
     dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
     if request.method == 'POST':
@@ -67,13 +87,23 @@ def add_dynamic_form_field(request, dynamic_form_id):
 
 
 @login_required
+def delete_dynamic_form_field(request, field_id):
+    dynamic_form_field = get_object_or_404(DynamicFormField, pk=field_id)
+    if request.method == "POST":
+        dynamic_form_field.delete()
+        messages.success(request, _('Field has been deleted.'))
+    return http.HttpResponseRedirect(reverse(
+        'dynamic_forms.views.edit_dynamic_form',
+        args=(dynamic_form_field.form.id,)))
+
+
+@login_required
 def add_choices_to_choicefield(request, field_id):
     choice_field = get_object_or_404(DynamicFormField, pk=field_id)
     if request.method == 'POST':
         form = AddChoices(request.POST)
         if form.is_valid():
             new_choice = form.cleaned_data['name']
-            #CR: Debug?
             print(repr(choice_field.additional_data))
             choices = json.loads(choice_field.additional_data['choices'])
             choices_lowercase = [choice.lower() for choice in choices]
@@ -113,7 +143,7 @@ def fill_form(request, dynamic_form_id):
     else:
         form = BaseDynamicForm(dynamic_form)
     return render_to_response("dynamic_forms/form_fill.html",
-                              {"dynamic_form": dynamic_form,
+                              {"dREJCEN-87ynamic_form": dynamic_form,
                                "dynamic_form_form": form},
                               context_instance=RequestContext(request))
 
