@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
@@ -19,11 +20,16 @@ class DynamicForm(models.Model):
     """
     Dynamic form
     """
+
+    #CR: Nie byłoby czyściej gdyby to co posiada DynamicForm miało zwykłego
+    # FK do Dynamic form?
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
     content_object = generic.GenericForeignKey('content_type', 'object_id')
 
     def __unicode__(self):
+        #CR: Dlaczego DynamicForm renderuje się jako obiekt który go posiada
+
         return self.content_object.__unicode__()
 
 
