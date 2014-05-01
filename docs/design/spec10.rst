@@ -170,10 +170,12 @@ Rejestracja otwarta/zamknięta
 
     W tym stanie możliwe jest rejestrowanie się.
 
-    Stan zmienia się na **rejestracja zamknięta** w momencie w którym
-    nadejścia chwili zakończenia rejestracji. Jeśli administrator wydarzenia
-    nie wpisał tej wartości to stan przechodzi w **wydarzenie trwa/rejestracja trwa**
-    w momencie rozpoczęcia wydarzenia.
+    Stan zmienia się na **rejestracja zamknięta**:
+
+    * w momencie w którym nadejścia zakończenia rejestracji (definiowane jako
+      własność wydarzenia/atrakcji)
+    * w momencie przekroczenia limitu rejestracji
+    * pewnie inne.
 
     .. note::
 
@@ -401,9 +403,8 @@ Podstawowe dane
 ***************
 
 Podczas rejestracji użytkownik dla każdego wydarzenia podaje ten sam zestaw
-podstawowych danych.
-
-POdstaw
+podstawowych danych.Podstawowe dane są konfigurowane na poziomie wdrożenia,
+ale dwa zestawy podstawowych danych będą zdefiniowane.
 
 Dla wersji ogólnej będzie to:
 
@@ -426,14 +427,10 @@ Dla wersji harcerskiej:
 * Stopień harcerski
 * Stopień instruktorski
 
-Przechowywanie podstawowyd
-
 .. note::
 
     Całość można zamiemienić na system z wykorzystaniem dynamicznych ankiet.
     Reszta informacji o decyzji na ``REJCEN-26``.
-
-
 
 
 Generyczny mechanizm pluginów
@@ -461,14 +458,17 @@ Na pewno za pomocą pluginów opisywane będą:
 Implementacja pluginów za pomocą dynamicznych formularzy
 ********************************************************
 
-Osoba wdrażająca aplikację tworzy dynamiczny formularz który zawiera podstawowe
-dane dla wszystkich rejestracji. Następnie w adminie na poziomie bazy danych
+Osoba wdrażająca aplikację tworzy dynamiczny formularz.
+Następnie w adminie na poziomie bazy danych
 ustala że dynamiczny formularz o danym ID jest dodawany do każdej rejestracji.
+
+Analogiczny mechanizm będzie działal dla danych organizatora.
 
 .. note::
 
     Procedura zmiany tego formularza wyglądałaby tak że: nowo tworzone rejestracje
     miałyby już doklejane nowe dane, a stare działałyby na danych starych.
+
 
 Integracja z ESHD
 -----------------
