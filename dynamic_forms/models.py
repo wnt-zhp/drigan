@@ -16,6 +16,9 @@ FIELD_TYPES = [
 
 
 class DynamicForm(models.Model):
+    """
+    Dynamic form
+    """
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
     content_object = generic.GenericForeignKey('content_type', 'object_id')
@@ -25,6 +28,9 @@ class DynamicForm(models.Model):
 
 
 class DynamicFormField(models.Model):
+    """
+    Field in dynamic form
+    """
     name = models.CharField(max_length=100)
     field_type = models.CharField(max_length=100, choices=FIELD_TYPES)
     required = models.BooleanField(default=True)
@@ -38,6 +44,9 @@ class DynamicFormField(models.Model):
 
 
 class DynamicFormData(models.Model):
+    """
+    Response for dynamic form.
+    """
     form = models.ForeignKey(DynamicForm)
     user = models.ForeignKey(User)
     data = hstore.DictionaryField(db_index=True)
