@@ -18,11 +18,14 @@ Altough most requirements will be installed for you automatically using
 Enabling HStore
 """""""""""""""
 
-To enable HStore in Postgresql installation just type in PostgreSQL shell (``psql``):
+To enable HStore in Postgresql type:
 
-.. code-block:: psql
+.. code-block:: bash
 
-    postgres=# CREATE EXTENSION hstore;
+    $ psql -d template1 -c 'create extension hstore;'
+
+From now on all created databases would have HStore installed. You can also
+run this command only for one database, after creating it.
 
 Setting up virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,7 +36,7 @@ in Python >= 3.3):
 
 .. code-block:: bash
 
-    $ venv /path/to/environment          #  create virtual environment
+    $ pyvenv /path/to/environment        #  create virtual environment
     $ cd /path/to/environment            #  cd to its directory
     $ source bin/activate                #  activate virtual environment
 
@@ -80,11 +83,13 @@ Creating database
 ^^^^^^^^^^^^^^^^^
 
 Now it's time to create a database. If you are doing it on your own just for
-development purposes you can for example use this command:
+development purposes you can for example use the following command. You have to
+issue it as a user with permissions to create PostgreSQL databases on your
+system (usually `postgres`).
 
 .. code-block:: bash
 
-    $ sudo -u postgres createdb drigan     # or other database name
+    postgres $ createdb drigan     # or other database name
 
 If you ever need to reset your database to initial state you can ofcourse use
 Django management command (`reset`) or just recreate the database (probably more
@@ -92,8 +97,8 @@ reliable):
 
 .. code-block:: bash
 
-    $ sudo -u postgres dropdb drigan     # drop the database
-    $ sudo -u postgres createdb drigan     # and create it again
+    postgres $ dropdb drigan     # drop the database
+    postgres $ createdb drigan     # and create it again
 
 
 settings.py
