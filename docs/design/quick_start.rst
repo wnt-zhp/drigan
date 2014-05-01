@@ -100,6 +100,8 @@ reliable):
     postgres $ dropdb drigan     # drop the database
     postgres $ createdb drigan     # and create it again
 
+Before first stable version is released we are not going to use migrations, so
+you will have to reset the database after each model change.
 
 settings.py
 ^^^^^^^^^^^
