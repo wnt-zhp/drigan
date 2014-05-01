@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     (r'^add/(?P<content_type_model>[-\w]+)/(?P<object_id>\d+)/$',
      views.add_dynamic_form),
     (r'^list/(?P<dynamic_form_id>\d+)/$', views.participants_list),
+    (r'^add-simple$', views.add_dynamic_form_simple),
 )

@@ -25,6 +25,14 @@ def add_dynamic_form(request, content_type_model, object_id):
 
 
 @login_required
+def add_dynamic_form_simple(request):
+    dynamic_form = DynamicForm.objects.create()
+    return http.HttpResponseRedirect(reverse(
+            'dynamic_forms.views.add_dynamic_form_field',
+            args=(dynamic_form.id,)))
+
+
+@login_required
 def edit_dynamic_form(request, dynamic_form_id):
     dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
     return render_to_response("dynamic_forms/dynamic_form_edit.html",
