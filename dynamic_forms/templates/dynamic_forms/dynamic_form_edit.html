@@ -2,43 +2,46 @@
 {% load i18n %}
 {% block title %}{% trans "Edit form" %}{% endblock %}
 {% block content %}
-    <div>
+<div>
     <table>
-        {% for field in dynamic_form.fields.all %}
-        {% if forloop.first %}
-            <tr>
+         <tr>
                 <td></td>
                 <td>{% trans "Field:" %}</td>
                 <td>{% trans "Order:" %}</td>
                 <td></td>
-            </tr> 
-        {% endif %}
-        <tr>
-            <td>{{ forloop.counter }}.</td>
-            <td>{{ field.name }}</td>
-            <td>
-                <form method='post' action='{% url "dynamic_forms.views.change_field_order" field.id -1 %}'>
-                    {% csrf_token %}
-                    <button type='submit' class='btn btn-success'>{% trans "up" %}</button>
-                </form>
-            </td>
-            <td>
-                <form method='post' action='{% url "dynamic_forms.views.change_field_order" field.id 1 %}'>
-                    {% csrf_token %}
-                    <button type='submit' class='btn btn-success'>{% trans "down" %}</button>
-                </form>
-            </td>
-             <td>
-                <form method='post' action='{% url "dynamic_forms.views.delete_dynamic_form_field" field.id %}'>
-                    {% csrf_token %}
-                    <button type='submit' class='delete-button'>{% trans "Delete" %}</button>
-                </form>
-            </td>
-    </tr>
-    {% endfor %}
+        </tr> 
+        {% for field in dynamic_form.fields.all %}
+            <tr>
+                <td>{{ forloop.counter }}.</td>
+                <td>{{ field.name }}</td>
+                <td>
+                    <form method='post' action='{% url "dynamic_forms.views.change_field_order" field.id -1 %}'>
+                        {% csrf_token %}
+                        <button type='submit' class='btn btn-success'>{% trans "up" %}</button>
+                    </form>
+                </td>
+                <td>
+                    <form method='post' action='{% url "dynamic_forms.views.change_field_order" field.id 1 %}'>
+                        {% csrf_token %}
+                        <button type='submit' class='btn btn-success'>{% trans "down" %}</button>
+                    </form>
+                </td>
+                <td>
+                    <form method='post' action='{% url "dynamic_forms.views.delete_dynamic_form_field" field.id %}'>
+                        {% csrf_token %}
+                        <button type='submit' class='delete-button'>{% trans "Delete" %}</button>
+                    </form>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td></td>
+                <td>{% trans "Your form hasn't got any fields yet." %}</td>
+            </tr>
+        {% endfor %}
     </table>
-    </div>
-    <div>
-        <a href="{% url "dynamic_forms.views.add_dynamic_form_field" dynamic_form.id %}">{% trans "Add field" %}</a>
-    </div>
+</div>
+<div>
+    <a href="{% url "dynamic_forms.views.add_dynamic_form_field" dynamic_form.id %}">{% trans "Add field" %}</a>
+</div>
 {% endblock %}
