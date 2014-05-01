@@ -152,3 +152,15 @@ and start coding!
 If you are setting up a production environment you can use any technique that's
 used to `deploy Django <https://docs.djangoproject.com/en/dev/howto/deployment/>`_.
 
+Testing
+-------
+
+Django is recreating test database prior to each test run. This has unfortunate
+side-effect that ``hstore`` extension is missing. Until someone fixes this
+error you'll need to create ``hstore`` extension in ``template1`` database.
+If you do this **all future databases created in this system will contain
+this extension.**
+
+.. code-block:: bash
+
+    psql template1 -c 'create extension hstore;'
