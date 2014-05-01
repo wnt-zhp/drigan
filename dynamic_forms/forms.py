@@ -4,14 +4,15 @@ from dynamic_forms.models import DynamicFormField
 import json
 
 
-types = {'IntegerField': forms.IntegerField,
-         'CharField': forms.CharField,
-         'TextField': forms.CharField,
-         'EmailField': forms.EmailField,
-         'DateField': forms.DateField,
-         'BooleanField': forms.BooleanField,
-         'ChoiceField': forms.ChoiceField
-         }
+types = {
+    'IntegerField': forms.IntegerField,
+    'CharField': forms.CharField,
+    'TextField': forms.CharField,
+    'EmailField': forms.EmailField,
+    'DateField': forms.DateField,
+    'BooleanField': forms.BooleanField,
+    'ChoiceField': forms.ChoiceField
+}
 
 
 class AddDynamicFormField(DriganModelForm):
