@@ -140,6 +140,9 @@ class ChoicesField(_DjangoDynamicFieldController):
 
     def load_field(self, dynamic_field):
         choice_field = super().load_field(dynamic_field)
-        choice_field.choices = [(c, c) for c in self.get_choices(dynamic_field)]
+        choices = [(c, c) for c in self.get_choices(dynamic_field)]
+        if not dynamic_field.required:
+            choices.insert(0, ('', "-"*7))
+        choice_field.choices = choices
         return choice_field
 
