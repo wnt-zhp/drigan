@@ -105,8 +105,8 @@ class ChoicesField(_DjangoDynamicFieldController):
     DJANGO_FIELD_TYPE = ChoiceField
 
     def has_choice(self, dynamic_field, name):
-        choices = self.get_choices(dynamic_field)
-        return name in choices
+        choices = [c.lower() for c in self.get_choices(dynamic_field)]
+        return name.lower() in choices
 
     def get_choices(self, dynamic_field):
         """

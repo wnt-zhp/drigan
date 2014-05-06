@@ -16,7 +16,7 @@ class DynamicForm(models.Model):
 
     def add_field_to_form(self, field):
 
-        if self.fields.filter(name__iexact = field.name).count():
+        if self.fields.filter(name__iexact = field.name).exists():
             raise FieldNameNotUnique("Field with the same name is already added to a form")
 
         field.form = self
