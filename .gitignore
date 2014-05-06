@@ -4,3 +4,4 @@ drigan/settings.py
 .sass-cache
 .ropeproject
 .idea/*
+docs/_build
