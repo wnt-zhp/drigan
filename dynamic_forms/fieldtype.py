@@ -13,7 +13,8 @@ _FIELD_TYPES_DICT = {}
 _FIELD_TYPE_CHOICES = []
 
 __all__ = [
-    'register_field_type', 'get_field', 'get_field_choices', 'DynamicFieldType',
+    'register_field_type', 'get_field', 'get_field_type_choices',
+    'DynamicFieldController',
     'ChoiceField'
 ]
 
@@ -30,17 +31,17 @@ def get_field(name):
     """
     :param str name:
     :return: Returns field type by name
-    :rtype: :class:`DynamicFieldType`
+    :rtype: :class:`DynamicFieldController`
     """
     return _FIELD_TYPES_DICT[name]
 
-def get_field_choices():
+def get_field_type_choices():
     """
     Returns django choices dictionary containing dynamic fields.
     """
     return _FIELD_TYPE_CHOICES
 
-class DynamicFieldType(object, metaclass=abc.ABCMeta):
+class DynamicFieldController(object, metaclass=abc.ABCMeta):
 
     FIELD_NAME = None
 
@@ -57,7 +58,7 @@ class DynamicFieldType(object, metaclass=abc.ABCMeta):
     def create_field(self):
         return None
 
-class _DjangoDynamicField(DynamicFieldType):
+class _DjangoDynamicFieldController(DynamicFieldController):
 
     DESCRIPTION = None
 
@@ -72,7 +73,7 @@ class _DjangoDynamicField(DynamicFieldType):
 
 def create_django_dynamic_field(django_type, description):
 
-    clazz = type("Dynamic"+django_type.__name__, (_DjangoDynamicField, ), {
+    clazz = type("Dynamic"+django_type.__name__, (_DjangoDynamicFieldController, ), {
         "DESCRIPTION": description,
         "DJANGO_FIELD_TYPE": django_type
     })
@@ -87,9 +88,9 @@ create_django_dynamic_field(forms.DateField, ugettext_lazy('Date Field'))
 create_django_dynamic_field(forms.BooleanField, ugettext_lazy('Yes/No Field'))
 
 @register_field_type("TextField")
-class DynamicTextField(_DjangoDynamicField):
+class DynamicTextField(_DjangoDynamicFieldController):
 
-    DESCRIPTION = "Text Field"
+    DESCRIPTION = ugettext_lazy("Text Field")
     DJANGO_FIELD_TYPE = forms.CharField
 
     def create_field(self):
@@ -98,9 +99,9 @@ class DynamicTextField(_DjangoDynamicField):
         return field
 
 @register_field_type("ChoicesField")
-class ChoicesField(_DjangoDynamicField):
+class ChoicesField(_DjangoDynamicFieldController):
 
-    DESCRIPTION = "ComboBox Field"
+    DESCRIPTION = ugettext_lazy("ComboBox Field")
     DJANGO_FIELD_TYPE = ChoiceField
 
     def has_choice(self, dynamic_field, name):

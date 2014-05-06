@@ -8,7 +8,7 @@ from django.test import TestCase
 from unittest import TestCase
 from dynamic_forms.models import DynamicFormField, DynamicForm
 
-from ..fieldtype import get_field, get_field_choices, DynamicFieldType, register_field_type
+from ..fieldtype import get_field, get_field_type_choices, DynamicFieldController, register_field_type
 
 class TestFieldtype(TestCase):
 
@@ -23,7 +23,7 @@ class TestFieldtype(TestCase):
     def test_register_works(self):
 
         @register_field_type("__TEST")
-        class TestField(DynamicFieldType):
+        class TestField(DynamicFieldController):
 
             def get_type_description(self):
                 return "__TEST_DESCRIPTION"
@@ -32,7 +32,7 @@ class TestFieldtype(TestCase):
                 return None
 
         self.assertIsInstance(get_field("__TEST"), TestField)
-        self.assertIn(("__TEST", "__TEST_DESCRIPTION"), get_field_choices())
+        self.assertIn(("__TEST", "__TEST_DESCRIPTION"), get_field_type_choices())
 
     def test_text_field(self):
 
@@ -61,7 +61,7 @@ class TestFieldtype(TestCase):
 
 class TestDynamicFieldTypeBehaviour(TestCase):
 
-    class DynamicFieldTypeDefault(DynamicFieldType):
+    class DynamicFieldTypeDefault(DynamicFieldController):
 
         def get_type_description(self):
             return super().get_type_description()

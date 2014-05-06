@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 from django_hstore import hstore
 from positions import PositionField
 
-from .fieldtype import get_field_choices, get_field
+from .fieldtype import get_field_type_choices, get_field
+
+class FieldNameNotUnique(ValueError): pass
 
 class DynamicForm(models.Model):
     content_type = models.ForeignKey(ContentType, null=True)
@@ -14,15 +16,10 @@ class DynamicForm(models.Model):
 
     def add_field_to_form(self, field):
 
-        if field.form == self:
-            return
-
         if self.fields.filter(name__iexact = field.name).count():
-            raise ValueError("Field with the same name is already added to a form")
+            raise FieldNameNotUnique("Field with the same name is already added to a form")
 
         field.form = self
-
-
 
     def __unicode__(self):
         return self.content_object.__unicode__()
@@ -30,7 +27,7 @@ class DynamicForm(models.Model):
 
 class DynamicFormField(models.Model):
     name = models.CharField(max_length=100)
-    field_type = models.CharField(max_length=100, choices=get_field_choices())
+    field_type = models.CharField(max_length=100, choices=get_field_type_choices())
     required = models.BooleanField(default=True)
     form = models.ForeignKey(DynamicForm, related_name='fields')
     additional_data = hstore.DictionaryField(blank=True, null=True)

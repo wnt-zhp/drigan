@@ -1,7 +1,8 @@
 from django.shortcuts import render_to_response, redirect
 from dynamic_forms.forms import AddDynamicFormField, BaseDynamicForm,\
     AddChoices
-from dynamic_forms.models import DynamicForm, DynamicFormData, DynamicFormField
+from dynamic_forms.models import DynamicForm, DynamicFormData, DynamicFormField, \
+    FieldNameNotUnique
 from django.template import RequestContext
 from django import http
 from django.core.urlresolvers import reverse
@@ -60,23 +61,24 @@ def add_dynamic_form_field(request, dynamic_form_id):
         field_form = AddDynamicFormField(request.POST)
         if field_form.is_valid():
             field = field_form.save(commit=False)
-            field.form = dynamic_form
+            # To będzie refaktorowane przy przejściu na CBV
             try:
                 dynamic_form.add_field_to_form(field)
                 messages.success(request,
                                  _('Field has been added successfully.'))
-            except ValueError:
+            except FieldNameNotUnique:
                 messages.error(request,
                                _('Field with this name already exists.'))
-            field.save()
-            if field.field_type == 'ChoiceField':
-                # TODO: This should really be handled somewhere else
-                return http.HttpResponseRedirect(reverse(
-                    'dynamic_forms.views.add_choices_to_choicefield',
+            else:
+                field.save()
+                if field.field_type == 'ChoicesField':
+                    # TODO: This should really be handled somewhere else
+                    return http.HttpResponseRedirect(reverse(
+                        'dynamic_forms.views.add_choices_to_choicefield',
                     args=(field.id,)))
-            return http.HttpResponseRedirect(
-                    reverse('dynamic_forms.views.add_dynamic_form_field',
-                            kwargs={"dynamic_form_id":dynamic_form_id}))
+                return http.HttpResponseRedirect(
+                        reverse('dynamic_forms.views.add_dynamic_form_field',
+                                kwargs={"dynamic_form_id":dynamic_form_id}))
 
     dynamic_form_form = BaseDynamicForm(dynamic_form)
     return render_to_response("dynamic_forms/dynamic_form_add.html",
@@ -105,8 +107,9 @@ def add_choices_to_choicefield(request, field_id):
         form = AddChoices(request.POST)
         if form.is_valid():
             new_choice = form.cleaned_data['name']
-            if choice_field.dynamic_field.has_choice(new_choice):
-                choice_field.dynamic_field.add_choice(new_choice)
+            if not choice_field.dynamic_field.has_choice(choice_field, new_choice):
+                choice_field.dynamic_field.add_choice(choice_field, new_choice)
+                choice_field.save()
                 messages.success(request,
                                  _('Choice has been added successfully.'))
             else:
