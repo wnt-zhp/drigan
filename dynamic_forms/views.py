@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.views.generic.base import View
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import FormView, \
-    DeleteView
+    DeleteView, CreateView
 from django.views.generic.list import ListView
 
 from django.template import RequestContext
@@ -67,39 +67,47 @@ class ChangeFieldOrder(LoginRequiredMixin, View):
             'dynamic_forms.views.edit_dynamic_form',
                 args=(field.form.id,)))
 
-@login_required
-def add_dynamic_form_field(request, dynamic_form_id):
-    dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
-    field_form = AddDynamicFormField()
-    if request.method == 'POST':
-        field_form = AddDynamicFormField(request.POST)
-        if field_form.is_valid():
-            field = field_form.save(commit=False)
-            # To będzie refaktorowane przy przejściu na CBV
-            try:
-                dynamic_form.add_field_to_form(field)
-                messages.success(request,
-                                 _('Field has been added successfully.'))
-            except FieldNameNotUnique:
-                messages.error(request,
-                               _('Field with this name already exists.'))
-            else:
-                field.save()
-                if field.field_type == 'ChoicesField':
-                    # TODO: This should really be handled somewhere else
-                    return http.HttpResponseRedirect(reverse(
-                        'dynamic_forms.views.add_choices_to_choicefield',
-                    args=(field.id,)))
-                return http.HttpResponseRedirect(
-                        reverse('dynamic_forms.views.add_dynamic_form_field',
-                                kwargs={"dynamic_form_id":dynamic_form_id}))
 
-    dynamic_form_form = BaseDynamicForm(dynamic_form)
-    return render_to_response("dynamic_forms/dynamic_form_add.html",
-                              {"form": field_form,
-                               "dynamic_form": dynamic_form,
-                               "dynamic_form_form": dynamic_form_form},
-                              context_instance=RequestContext(request))
+class AddDynamicFormFieldView(LoginRequiredMixin, CreateView):
+
+    template_name = "dynamic_forms/dynamic_form_add.html"
+    form_class = AddDynamicFormField
+
+    def dispatch(self, request, *args, **kwargs):
+        self.dynamic_form = get_object_or_404(DynamicForm, pk=kwargs['dynamic_form_id'])
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        kwargs.update({
+            'dynamic_form': self.dynamic_form,
+            'dynamic_form_form': BaseDynamicForm(self.dynamic_form)
+        })
+        return kwargs
+
+    def get_success_url(self):
+        return reverse('dynamic_forms.views.add_dynamic_form_field',
+                                kwargs={"dynamic_form_id":self.dynamic_form.id})
+
+
+    def form_valid(self, form):
+        field = form.save(commit=False)
+        try:
+            self.dynamic_form.add_field_to_form(field)
+            field.save()
+            messages.success(self.request,
+                             _('Field has been added successfully.'))
+        except FieldNameNotUnique:
+            messages.error(self.request,
+                           _('Field with this name already exists.'))
+            return self.form_invalid(form)
+
+        if field.field_type == 'ChoicesField':
+            # TODO: This should really be handled somewhere else
+            return http.HttpResponseRedirect(reverse(
+                'dynamic_forms.views.add_choices_to_choicefield',
+            args=(field.id,)))
+
+        return super().form_valid(form)
 
 class DeleteDynamicFormField(LoginRequiredMixin, DeleteView):
 

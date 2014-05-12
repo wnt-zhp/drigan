@@ -3,7 +3,7 @@ from dynamic_forms import views
 
 urlpatterns = patterns('',
     url(r'^add/choice/(?P<field_id>\d+)/$', views.AddChoicesToChoiceField.as_view(), name="dynamic_forms.views.add_choices_to_choicefield"),
-    (r'^add/(?P<dynamic_form_id>\d+)/$', views.add_dynamic_form_field),
+    url(r'^add/(?P<dynamic_form_id>\d+)/$', views.AddDynamicFormFieldView.as_view(), name="dynamic_forms.views.add_dynamic_form_field"),
     url(r'^add/(?P<content_type_model>[-\w]+)/(?P<object_id>\d+)/$', views.AddDynamicForm.as_view(), name="dynamic_forms.views.add_dynamic_form"),
     url(r'^edit/(?P<dynamic_form_id>\d+)/$', views.EditDynamicForm.as_view(), name="dynamic_forms.views.edit_dynamic_form"),
     url(r'^delete_field/(?P<field_id>\d+)$', views.DeleteDynamicFormField.as_view(), name="dynamic_forms.views.delete_dynamic_form_field"),
