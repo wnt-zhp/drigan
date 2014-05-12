@@ -8,7 +8,7 @@
         {{ form.as_p }}
         <button type='submit'>{% trans "Save" %}</button>
     </form>
-    <form method='post' action='{% url "dynamic_forms.views.add_dynamic_form_field" dynamic_form_id %}'>
+    <form method='get' action='{% url "dynamic_forms.views.add_dynamic_form_field" dynamic_form_id %}'>
         {% csrf_token %}
         <button type='submit' class='btn btn-primary'>{% trans "Done" %}</button>
     </form>
