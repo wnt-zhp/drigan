@@ -28,11 +28,14 @@ class AddDynamicForm(LoginRequiredMixin, View):
 
     http_method_names = ['post']
 
-    def post(self, content_type_model, object_id):
+    def post(self, request, content_type_model, object_id):
 
         content_type = ContentType.objects.get(model=content_type_model)
+        get_object_or_404(content_type.model_class(), pk=object_id)
         dynamic_form = DynamicForm.objects.create(content_type=content_type,
                                                   object_id=object_id)
+
+
 
         return http.HttpResponseRedirect(reverse(
             'dynamic_forms.views.add_dynamic_form_field',
