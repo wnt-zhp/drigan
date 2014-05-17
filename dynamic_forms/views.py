@@ -17,6 +17,7 @@ from django.contrib.contenttypes.models import ContentType
 
 
 from guardian.mixins import LoginRequiredMixin
+from dynamic_forms.fieldtype import ChoicesField
 
 from dynamic_forms.forms import AddDynamicFormField, BaseDynamicForm,\
     AddChoices
@@ -104,7 +105,7 @@ class AddDynamicFormFieldView(LoginRequiredMixin, CreateView):
                            _('Field with this name already exists.'))
             return self.form_invalid(form)
 
-        if field.field_type == 'ChoicesField':
+        if field.field_type == ChoicesField.FIELD_NAME:
             # TODO: This should really be handled somewhere else
             return http.HttpResponseRedirect(reverse(
                 'dynamic_forms.views.add_choices_to_choicefield',
@@ -135,7 +136,7 @@ class AddChoicesToChoiceField(LoginRequiredMixin, FormView):
     template_name = "dynamic_forms/choices_add.html"
 
     def dispatch(self, request, *args, **kwargs):
-        self.choice_field = get_object_or_404(DynamicFormField, pk=kwargs['field_id'], field_type='ChoicesField')
+        self.choice_field = get_object_or_404(DynamicFormField, pk=kwargs['field_id'], field_type=ChoicesField.FIELD_NAME)
         self.dynamic_form_id = self.choice_field.form.id
         return super().dispatch(request, *args, **kwargs)
 

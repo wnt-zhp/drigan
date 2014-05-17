@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DjangoModelDependency</ID>
+  <OriginalElement>#drigan</OriginalElement>
+  <nodes>
+    <node x="54.0" y="391.0">dynamic_forms.models.DynamicFormData</node>
+    <node x="303.5" y="0.0">django.contrib.contenttypes.models.ContentType</node>
+    <node x="384.0" y="358.0">dynamic_forms.models.DynamicFormField</node>
+    <node x="0.0" y="223.0">django.contrib.auth.models.User</node>
+    <node x="314.5" y="190.0">dynamic_forms.models.DynamicForm</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="dynamic_forms.models.DynamicForm" target="django.contrib.contenttypes.models.ContentType">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="dynamic_forms.models.DynamicFormField" target="dynamic_forms.models.DynamicForm">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="dynamic_forms.models.DynamicFormData" target="django.contrib.auth.models.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="dynamic_forms.models.DynamicFormData" target="dynamic_forms.models.DynamicForm">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="379.0" y="271.0" />
+  <SelectedNodes>
+    <node>django.contrib.contenttypes.models.ContentType</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+</Diagram>
+

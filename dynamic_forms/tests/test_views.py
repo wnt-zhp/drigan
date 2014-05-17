@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from django.test.client import Client
 from django.test.testcases import TestCase
 from dynamic_forms.fieldtype import get_field_type_choices
-from dynamic_forms.models import DynamicForm, DynamicFormField
+from dynamic_forms.models import DynamicForm, DynamicFormField, DynamicFormData
 
 
 class AddDynamicFormTest(TestCase):
@@ -84,7 +84,7 @@ class AddFieldTests(TestCase):
             data = {
                 "name": "test",
                 "required": "on",
-                "field_type": "IntegerField"
+                "field_type": "DynamicIntegerField"
             })
         self.assertEqual(response.status_code, 302)
         self.assertTrue(response['Location'].endswith(form_add_field_url))
@@ -92,7 +92,7 @@ class AddFieldTests(TestCase):
         df = DynamicFormField.objects.all()[0]
         self.assertEqual(df.name, "test")
         self.assertTrue(df.required)
-        self.assertEqual(df.field_type, "IntegerField")
+        self.assertEqual(df.field_type, "DynamicIntegerField")
 
     def test_add_form_field_invalid_type(self):
          self.assertEqual(DynamicFormField.objects.all().count(), 0)
@@ -111,7 +111,7 @@ class AddFieldTests(TestCase):
     def test_add_form_field_field_name_not_unique(self):
 
         DynamicFormField.objects.create(
-            name="test", required=True, field_type="IntegerField",
+            name="test", required=True, field_type="DynamicIntegerField",
             form=self.dynamic_form)
 
         self.assertEqual(DynamicFormField.objects.all().count(), 1)
@@ -121,7 +121,7 @@ class AddFieldTests(TestCase):
             data = {
                 "name": "test",
                 "required": "on",
-                "field_type": "IntegerField"
+                "field_type": "DynamicIntegerField"
             })
         self.assertEqual(response.status_code, 200)
         self.assertEqual(DynamicFormField.objects.all().count(), 1)
@@ -138,7 +138,7 @@ class AddFieldTests(TestCase):
             data = {
                 "name": "test",
                 "required": "on",
-                "field_type": "ChoicesField"
+                "field_type": "DynamicChoicesField"
             })
 
         self.assertEqual(response.status_code, 302)
@@ -147,7 +147,7 @@ class AddFieldTests(TestCase):
         df = DynamicFormField.objects.all()[0]
         self.assertEqual(df.name, "test")
         self.assertTrue(df.required)
-        self.assertEqual(df.field_type, "ChoicesField")
+        self.assertEqual(df.field_type, "DynamicChoicesField")
 
         redirect = reverse(
             "dynamic_forms.views.add_choices_to_choicefield",
@@ -170,10 +170,9 @@ class AddChoicesToChoiceField(TestCase):
         self.dynamic_form = DynamicForm.objects.create()
         self.dynamic_field = DynamicFormField.objects.create(
             form = self.dynamic_form,
-            field_type = "ChoicesField",
+            field_type = "DynamicChoicesField",
             name = "test_choice"
         )
-
 
         self.add_choice_url = reverse(
             "dynamic_forms.views.add_choices_to_choicefield",
@@ -182,17 +181,19 @@ class AddChoicesToChoiceField(TestCase):
 
     def test_add_new_choice_field(self):
 
-        self.assertEqual(len(self.dynamic_field.dynamic_field.get_choices(self.dynamic_field)), 0)
+        df = DynamicFormField.objects.get(pk=self.dynamic_field.pk)
+
+        self.assertEqual(len(df.dynamic_field.get_choices(df)), 0)
 
         response = self.client.post(self.add_choice_url, data={
             "name": "foobar"
         })
 
+        self.assertEqual(response.status_code, 302)
+
         df = DynamicFormField.objects.get(pk=self.dynamic_field.pk)
 
         self.assertEqual(len(self.dynamic_field.dynamic_field.get_choices(df)), 1)
-
-        self.assertEqual(response.status_code, 302)
 
         self.assertTrue(response['Location'].endswith(self.add_choice_url))
 
@@ -281,9 +282,106 @@ class TestEditForm(TestBasicFormBase, TestCase):
         )
 
 
-class TestFillForm(TestBasicFormBase, TestCase):
+class TestFillForm(TestCase):
 
-    def test_fill_form_valid(self):
+    fixtures = [
+        'dynamic-forms-test-users.json',
+    ]
+
+    def setUp(self):
+
+        self.client = Client()
+        self.assertTrue(self.client.login(username='test', password='test'))
+        self.dynamic_form = DynamicForm.objects.create()
+        self.dynamic_field_1 = DynamicFormField.objects.create(
+            form = self.dynamic_form,
+            field_type = "DynamicIntegerField",
+            name = "First",
+            required=False
+        )
+        self.dynamic_field_2 = DynamicFormField.objects.create(
+            form = self.dynamic_form,
+            field_type = "DynamicCharField",
+            name = "Second",
+            required=True
+        )
+        self.dynamic_field_3 = DynamicFormField.objects.create(
+            form = self.dynamic_form,
+            field_type = "DynamicChoicesField",
+            name = "Third",
+            required=False
+        )
+
+        self.dynamic_field_3.dynamic_field.add_choice(self.dynamic_field_3, "foo")
+        self.dynamic_field_3.dynamic_field.add_choice(self.dynamic_field_3, "bar")
+        self.dynamic_field_3.save()
+
+        self.fill_form_url = reverse("dynamic_forms.views.fill_form",
+                       kwargs={"dynamic_form_id": self.dynamic_form.pk})
+
+        self.participants_url = reverse(
+            "dynamic_forms.views.participants_list",
+            kwargs={"dynamic_form_id": self.dynamic_form.pk})
+
+    def test_fill_ok(self):
+        self.assertEqual(DynamicFormData.objects.all().count(), 0)
+        response = self.client.post(
+            self.fill_form_url,
+            data = {
+                "First": "21342123",
+                "Second": "SelectedOption",
+                "Third": "foo"
+            }
+        )
+
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(response['Location'].endswith(self.participants_url))
+        self.assertEqual(DynamicFormData.objects.all().count(), 1)
 
 
+    def __make_bad_request_test(self, data):
+        self.assertEqual(DynamicFormData.objects.all().count(), 0)
+        response = self.client.post(
+            self.fill_form_url,
+            data = data
+        )
 
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(DynamicFormData.objects.all().count(), 0)
+
+    def test_fill_bad_type(self):
+        self.__make_bad_request_test({
+            "First": "dupa",
+            "Second": "Das",
+            "Third": "foo"
+        })
+
+    def test_fill_miss_required(self):
+        self.__make_bad_request_test({
+            "First": "dupa",
+            "Third": "foo"
+        })
+
+
+    def test_fill_invalid_choice(self):
+        self.__make_bad_request_test({
+            "First": "dupa",
+            "Second": "Das",
+            "Third": "NoSuchChoice"
+        })
+
+    def test_participants(self):
+        self.client.post(
+            self.fill_form_url,
+            data = {
+                "First": "21342123",
+                "Second": "SelectedOption",
+                "Third": "foo"
+            }
+        )
+
+        response = self.client.get(self.participants_url)
+
+        self.assertIn(b"21342123", response.content)
+        self.assertIn(b"SelectedOption", response.content)
+        self.assertIn(b"foo", response.content)

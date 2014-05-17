@@ -14,9 +14,9 @@ class TestFieldtype(TestCase):
 
     def test_field_properly_constructed(self):
 
-        field = get_field("IntegerField")
+        field = get_field("DynamicIntegerField")
 
-        f = field.create_field()
+        f = field._create_field()
 
         self.assertIsInstance(f, IntegerField)
 
@@ -28,7 +28,7 @@ class TestFieldtype(TestCase):
             def get_type_description(self):
                 return "__TEST_DESCRIPTION"
 
-            def create_field(self):
+            def _create_field(self):
                 return None
 
         self.assertIsInstance(get_field("__TEST"), TestField)
@@ -36,9 +36,9 @@ class TestFieldtype(TestCase):
 
     def test_text_field(self):
 
-        field = get_field("TextField")
+        field = get_field("DynamicTextField")
 
-        f = field.create_field()
+        f = field._create_field()
 
         self.assertIsInstance(f.widget, Textarea)
 
@@ -48,7 +48,7 @@ class TestFieldtype(TestCase):
 
         dynamic = DynamicFormField.objects.create(
             name="Foo",
-            field_type = "IntegerField",
+            field_type = "DynamicIntegerField",
             required=False,
             form=form
         )
@@ -66,12 +66,12 @@ class TestDynamicFieldTypeBehaviour(TestCase):
         def get_type_description(self):
             return super().get_type_description()
 
-        def create_field(self):
-            return super().create_field()
+        def _create_field(self):
+            return super()._create_field()
 
     def test_get_description(self):
         self.assertIsNone(self.DynamicFieldTypeDefault().get_type_description())
 
     def test_create_field(self):
-        self.assertIsNone(self.DynamicFieldTypeDefault().create_field())
+        self.assertIsNone(self.DynamicFieldTypeDefault()._create_field())
 

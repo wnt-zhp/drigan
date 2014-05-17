@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
-from .fieldtype_tests import *
-from .views_tests import *
+from .test_fieldtypes import *
+from .test_views import *
