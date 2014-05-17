@@ -79,11 +79,10 @@ class PermissionsTest(TestCase):
         :param str: a url to test
         :param dict user: function will log in as user with given credentials
         """
-        if user == None:
-            user = {}
-
         c = Client()
-        if "username" in user:
+        if user is None:
+            user = {}
+        else:
             c.login(**user)
         response = c.get(url)
 
@@ -99,10 +98,11 @@ class PermissionsTest(TestCase):
         :param str: a url to test
         :param dict user: function will log in as user with given credentials
         """
-        if user == None:
-            user = {}
-
         c = Client()
+        if user is None:
+            user = {}
+        else:
+            c.login(**user)
         response = c.post(url)
         if response.status_code != 200:
             # if response is not 200 make sure that it redirects to url
@@ -122,10 +122,10 @@ class PermissionsTest(TestCase):
         :param str: a url to test
         :param dict user: function will log in as user with given credentials
         """
-        if user == None:
-            user = {}
         c = Client()
-        if "username" in user:
+        if user is None:
+            user = {}
+        else:
             c.login(**user)
         response = c.get(url)
 
