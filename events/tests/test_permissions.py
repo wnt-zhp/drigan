@@ -62,23 +62,26 @@ class PermissionsTest(TestCase):
 
         self.attraction = Attraction.objects.get(name='attraction1')
 
-    def assertAccessAllowed(self, url, user={}):
+    def assertAccessAllowed(self, url, user=None):
         """
         Asserts the user has access to given url using both POST and GET
 
         :param str: a url to test
         :param dict user: function will log in as user with given credentials
-        """
+         """
         self.assertGETAccessAllowed(url, user)
         self.assertPOSTAccessAllowed(url, user)
 
-    def assertGETAccessAllowed(self, url, user={}):
+    def assertGETAccessAllowed(self, url, user=None):
         """
         Asserts the user has access to given url using GET method
 
         :param str: a url to test
         :param dict user: function will log in as user with given credentials
         """
+        if user == None:
+            user = {}
+
         c = Client()
         if "username" in user:
             c.login(**user)
@@ -89,13 +92,16 @@ class PermissionsTest(TestCase):
             url)
         self.assertEqual(response.status_code, 200, error_msg)
 
-    def assertPOSTAccessAllowed(self, url, user={}):
+    def assertPOSTAccessAllowed(self, url, user=None):
         """
         Asserts the user has access to given url by POST method
 
         :param str: a url to test
         :param dict user: function will log in as user with given credentials
         """
+        if user == None:
+            user = {}
+
         c = Client()
         response = c.post(url)
         if response.status_code != 200:
@@ -109,13 +115,15 @@ class PermissionsTest(TestCase):
             self.assertNotEqual(response.url,
                                 settings.LOGIN_URL + "?next=" + url)
 
-    def assertAccessDenied(self, url, user={}):
+    def assertAccessDenied(self, url, user=None):
         """
         Asserts the user doesn't have access to given url
 
         :param str: a url to test
         :param dict user: function will log in as user with given credentials
         """
+        if user == None:
+            user = {}
         c = Client()
         if "username" in user:
             c.login(**user)
