@@ -17,6 +17,8 @@ from django.contrib.auth.models import User
 from django_hstore import hstore
 from positions import PositionField
 
+from . import default_fieldtypes # For side effect
+
 from .fieldtype import get_field_type_choices, get_field
 
 class FieldNameNotUnique(ValueError): pass

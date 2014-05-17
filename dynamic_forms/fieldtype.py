@@ -125,12 +125,6 @@ def create_dynamic_field_from_django_form(django_type, description):
     register_field_type(clazz.__name__)(clazz)
 
 
-create_dynamic_field_from_django_form(forms.IntegerField, ugettext_lazy('Number Field'))
-create_dynamic_field_from_django_form(forms.CharField, ugettext_lazy('String Field'))
-create_dynamic_field_from_django_form(forms.EmailField, ugettext_lazy('E-mail Field'))
-create_dynamic_field_from_django_form(forms.DateField, ugettext_lazy('Date Field'))
-create_dynamic_field_from_django_form(forms.BooleanField, ugettext_lazy('Yes/No Field'))
-
 @register_field_type("DynamicTextField")
 class DynamicTextField(_DjangoDynamicFieldController):
 
