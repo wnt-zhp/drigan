@@ -114,6 +114,8 @@ class ChoicesField(_DjangoDynamicFieldController):
         :type dynamic_field: :class:`dynamic_forms.models.DynamicFormField`
         :return: List containing possible choices (strings)
         """
+        if dynamic_field.additional_data is None:
+            return []
         json_str = dynamic_field.additional_data.get("choices", "[]")
         return json.loads(json_str)
 
