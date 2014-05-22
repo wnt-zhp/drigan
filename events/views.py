@@ -14,6 +14,7 @@ from guardian.decorators import permission_required
 from guardian.shortcuts import assign_perm
 from dynamic_forms.models import DynamicForm
 from django.contrib.contenttypes.models import ContentType
+from django.views.decorators.http import require_POST
 
 
 def event_details(request, event_id):
@@ -90,11 +91,11 @@ def edit_event(request, event_id):
 
 @login_required
 @permission_required('events.delete_event', (Event, 'id', 'event_id'))
+@require_POST
 def delete_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
-    if request.method == "POST":
-        event.delete()
-        messages.success(request, _('Event has been deleted.'))
+    event.delete()
+    messages.success(request, _('Event has been deleted.'))
     return http.HttpResponseRedirect(reverse(add_event))
 
 
@@ -181,11 +182,11 @@ def edit_attraction(request, event_id, attraction_id):
 @login_required
 @permission_required('events.delete_attraction', (Attraction, 'id',
                                                   'attraction_id'))
+@require_POST
 def delete_attraction(request, event_id, attraction_id):
     attraction = get_object_or_404(Attraction, pk=attraction_id)
     event = attraction.event
-    if request.method == "POST":
-        attraction.delete()
-        messages.success(request, _('Attraction has been deleted.'))
+    attraction.delete()
+    messages.success(request, _('Attraction has been deleted.'))
     return http.HttpResponseRedirect(reverse('events.views.event_details',
                                              args=(event.id,)))
