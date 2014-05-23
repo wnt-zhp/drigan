@@ -99,6 +99,21 @@ def delete_event(request, event_id):
     return http.HttpResponseRedirect(reverse(add_event))
 
 
+@login_required
+@permission_required('events.change_event',
+                     (Event, 'id', 'object_id'))
+def change_event_logo(request, object_id):
+    return change_logo(request, object_id, Event, event_details)
+
+
+@login_required
+@permission_required('events.change_attraction',
+                     (Attraction, 'id', 'object_id'))
+def change_attraction_logo(request, object_id):
+    return change_logo(request, object_id, Attraction, attraction_details)
+
+
+@login_required
 def change_logo(request, object_id, model_cls, reverse_view):
     if request.method == "POST":
         obj = get_object_or_404(model_cls, pk=object_id)
