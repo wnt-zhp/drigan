@@ -25,6 +25,5 @@ urlpatterns = patterns('',
         name='dynamic_forms.views.fill_form'),
     url(r'^list/(?P<dynamic_form_id>\d+)/$',
         views.ParticipantList.as_view(),
-        name="dynamic_forms.views.participants_list"),
-    (r'^add-simple$', views.add_dynamic_form_simple),
+        name="dynamic_forms.views.participants_list")
 )

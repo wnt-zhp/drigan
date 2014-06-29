@@ -150,7 +150,11 @@ class AddFieldTests(TestCase):
             kwargs={'field_id': df.pk}
         )
 
-        self.assertTrue(response['Location'].endswith(redirect))
+        self.assertTrue(
+            response['Location'].endswith(redirect),
+            "Response does not redirect to expected location '{}' but to {}".format(
+                redirect, response["Location"]
+            ))
 
 
 class AddChoicesToChoiceField(TestCase):

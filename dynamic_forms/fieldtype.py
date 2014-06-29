@@ -8,6 +8,7 @@ from django.forms.fields import ChoiceField, Field
 from django.forms.widgets import Textarea
 from django.utils.translation import ugettext_lazy
 
+
 _FIELD_TYPES_DICT = {}
 
 _FIELD_TYPE_CHOICES = []
@@ -22,9 +23,11 @@ __all__ = [
 #TODO: We really should store types and instantiate them during
 # DynamicFormField.field_type property call, in this case
 # to DynamicFormField could be stored inside instance of new class.
+# Now we store instances --- which could wreak havoc if any of them
+# store request state.
 def register_field_type(name):
     """
-    Registers field type for name. If you decorate a type with it
+    Registers field type for name if you decorate a type with it
 
     >>> @register_field_type("OtherChoicesField")
     ... class OtherChoicesField(ChoicesField): pass
@@ -33,7 +36,6 @@ def register_field_type(name):
     True
 
     :param name: Name under which to store decorated type
-    :return:
     """
     def wrapper(clazz):
         clazz.FIELD_NAME = name
@@ -62,13 +64,24 @@ def get_field_type_choices():
 
 class DynamicFieldController(object, metaclass=abc.ABCMeta):
 
+    """
+    Main class of this API. It is responsible for creating dynamic fields
+    from the database.
+
+    """
+
     FIELD_NAME = None
+    """
+    A class variable. subclasses **must** override this
+    as this field defines type of the field that particular subclass
+    will create. This is a string.
+    """
 
     @abc.abstractmethod
     def get_type_description(self):
         """
 
-        :return: Returns human redable diescription of this controller.
+        :return: Returns human redable description of this controller.
         :rtype: :class:`str`
         """
         return None
@@ -76,10 +89,12 @@ class DynamicFieldController(object, metaclass=abc.ABCMeta):
     def load_field(self, dynamic_field):
         """
         Creates django field from this dynamic field. This metod takes
-        care of common operations done for all dields. Subclasses need
+        care of common operations done for all fields. Subclasses need
         to override :meth:`DynamicFieldController._create_field`.
+
         :param dynamic_field:
         :return: Django field
+        :rtype: Subclass of :class:`django.forms.fields.Field`
         """
         field = self._create_field()
         field.required = dynamic_field.required
@@ -92,7 +107,9 @@ class DynamicFieldController(object, metaclass=abc.ABCMeta):
         directly in favour of: :meth:`DynamicFieldController.load_field`.
 
         This should be overriden.
-        :return:
+
+        :return: Django field
+        :rtype: Subclass of :class:`django.forms.fields.Field`
         """
         return None
 

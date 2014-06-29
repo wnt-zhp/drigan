@@ -18,7 +18,7 @@ from dynamic_forms.fieldtype import ChoicesField
 from dynamic_forms.forms import AddDynamicFormField, BaseDynamicForm,\
     AddChoices
 from dynamic_forms.models import DynamicForm, DynamicFormData, DynamicFormField, \
-    FieldNameNotUnique
+    FieldNameNotUniqueError
 
 
 class AddDynamicForm(LoginRequiredMixin, View):
@@ -35,14 +35,6 @@ class AddDynamicForm(LoginRequiredMixin, View):
         return http.HttpResponseRedirect(reverse(
             'dynamic_forms.views.add_dynamic_form_field',
             args=(dynamic_form.id,)))
-
-
-@login_required
-def add_dynamic_form_simple(request):
-    dynamic_form = DynamicForm.objects.create()
-    return http.HttpResponseRedirect(reverse(
-        'dynamic_forms.views.add_dynamic_form_field',
-        args=(dynamic_form.id,)))
 
 
 class EditDynamicForm(LoginRequiredMixin, DetailView):
@@ -96,10 +88,16 @@ class AddDynamicFormFieldView(LoginRequiredMixin, CreateView):
             field.save()
             messages.success(self.request,
                              _('Field has been added successfully.'))
-        except FieldNameNotUnique:
+        except FieldNameNotUniqueError:
             messages.error(self.request,
                            _('Field with this name already exists.'))
             return self.form_invalid(form)
+
+        if field.field_type == 'DynamicChoicesField':
+            # TODO: This should really be handled somewhere else
+            return http.HttpResponseRedirect(reverse(
+                'dynamic_forms.views.add_choices_to_choicefield',
+                args=(field.id,)))
 
         # Zmiana po prezentacji --- dwa razy był wykonywany save.
         # Dlaczego nie robi to błędów?

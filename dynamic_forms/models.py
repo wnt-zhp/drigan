@@ -14,14 +14,15 @@ from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy, ugettext
 from django_hstore import hstore
 from positions import PositionField
 
-
 from .fieldtype import get_field_type_choices, get_field
+from . import default_fieldtypes  # For side effect
 
 
-class FieldNameNotUnique(ValueError):
+class FieldNameNotUniqueError(ValueError):
     pass
 
 
@@ -42,8 +43,8 @@ class DynamicForm(models.Model):
 
     def add_field_to_form(self, field):
 
-        if self.fields.filter(name__iexact = field.name).exists():
-            raise FieldNameNotUnique("Field with the same name is already added to a form")
+        if self.fields.filter(name__iexact=field.name).exists():
+            raise FieldNameNotUniqueError("Field with the same name is already added to a form")
 
         field.form = self
 
@@ -55,19 +56,20 @@ class DynamicFormField(models.Model):
     """
     name = models.CharField(
         max_length=100,
-        help_text="Name of the field, it will be displayed as label "
-                  "for this question")
+        help_text=ugettext_lazy("Name of the field, it will be displayed as "
+                                "label for this question"))
 
     field_type = models.CharField(
         max_length=100, choices=get_field_type_choices(),
-        help_text = "Type of data this field stores")
+        help_text=ugettext("Type of data this field stores"))
 
     required = models.BooleanField(default=True)
     form = models.ForeignKey(DynamicForm, related_name='fields')
     """
     Form for which this object
     """
-    additional_data = hstore.DictionaryField(blank=True, null=False, default=lambda : {})
+    additional_data = hstore.DictionaryField(
+        blank=True, null=False, default=lambda: {})
     """
     Dictionary of additional data, contents are defined by:
     :attr:`DynamicFormField.field_type`
@@ -92,6 +94,7 @@ class DynamicFormField(models.Model):
 
     class Meta:
         ordering = ['position']
+
 
 class DynamicFormData(models.Model):
     """
