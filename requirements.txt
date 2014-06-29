@@ -1,7 +1,7 @@
 django>=1.6.0
 git+https://github.com/zeroos/django-categories.git
 psycopg2
-django-registration==1.0
+hg+https://bitbucket.org/patchfly/django-registration@default#egg=django-registration
 django-imagekit==3.2
 django-softdelete==0.3.4
 django-hstore==1.2.2

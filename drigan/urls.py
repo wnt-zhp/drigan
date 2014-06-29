@@ -8,7 +8,7 @@ from drigan.views import StartView
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', StartView.as_view()),
+    url(r'^$', StartView.as_view(), name="drigan-start"),
     url(r'^events/', include('events.urls')),
     url(r'^forms/', include('dynamic_forms.urls')),
 
