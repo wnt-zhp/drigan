@@ -1,7 +1,5 @@
-from categories import fields
 from django.forms.fields import IntegerField
 from django.forms.widgets import Textarea
-from django.test import TestCase
 
 # Create your tests here.
 
@@ -9,6 +7,7 @@ from unittest import TestCase
 from dynamic_forms.models import DynamicFormField, DynamicForm
 
 from ..fieldtype import get_field, get_field_type_choices, DynamicFieldController, register_field_type
+
 
 class TestFieldtype(TestCase):
 
@@ -48,7 +47,7 @@ class TestFieldtype(TestCase):
 
         dynamic = DynamicFormField.objects.create(
             name="Foo",
-            field_type = "DynamicIntegerField",
+            field_type="DynamicIntegerField",
             required=False,
             form=form
         )
@@ -74,4 +73,3 @@ class TestDynamicFieldTypeBehaviour(TestCase):
 
     def test_create_field(self):
         self.assertIsNone(self.DynamicFieldTypeDefault()._create_field())
-

@@ -1,7 +1,7 @@
 from drigan.forms import DriganModelForm
 from django import forms
 from dynamic_forms.models import DynamicFormField
-import json
+
 
 class AddDynamicFormField(DriganModelForm):
 

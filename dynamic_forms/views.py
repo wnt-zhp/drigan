@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
 from django.views.generic.base import View
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import FormView, \
     DeleteView, CreateView
 from django.views.generic.list import ListView
-
-from django.template import RequestContext
 from django import http
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
@@ -14,11 +12,9 @@ from django.utils.translation import ugettext as _
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
-
-
 from guardian.mixins import LoginRequiredMixin
-from dynamic_forms.fieldtype import ChoicesField
 
+from dynamic_forms.fieldtype import ChoicesField
 from dynamic_forms.forms import AddDynamicFormField, BaseDynamicForm,\
     AddChoices
 from dynamic_forms.models import DynamicForm, DynamicFormData, DynamicFormField, \
@@ -36,18 +32,18 @@ class AddDynamicForm(LoginRequiredMixin, View):
         dynamic_form = DynamicForm.objects.create(content_type=content_type,
                                                   object_id=object_id)
 
-
-
         return http.HttpResponseRedirect(reverse(
             'dynamic_forms.views.add_dynamic_form_field',
             args=(dynamic_form.id,)))
+
 
 @login_required
 def add_dynamic_form_simple(request):
     dynamic_form = DynamicForm.objects.create()
     return http.HttpResponseRedirect(reverse(
-            'dynamic_forms.views.add_dynamic_form_field',
-            args=(dynamic_form.id,)))
+        'dynamic_forms.views.add_dynamic_form_field',
+        args=(dynamic_form.id,)))
+
 
 class EditDynamicForm(LoginRequiredMixin, DetailView):
 
@@ -55,7 +51,7 @@ class EditDynamicForm(LoginRequiredMixin, DetailView):
     pk_url_kwarg = 'dynamic_form_id'
     model = DynamicForm
     template_name = "dynamic_forms/dynamic_form_edit.html"
-    context_object_name="dynamic_form"
+    context_object_name = "dynamic_form"
 
 
 class ChangeFieldOrder(LoginRequiredMixin, View):
@@ -69,7 +65,7 @@ class ChangeFieldOrder(LoginRequiredMixin, View):
         messages.success(request, _('Order has been changed.'))
         return http.HttpResponseRedirect(reverse(
             'dynamic_forms.views.edit_dynamic_form',
-                args=(field.form.id,)))
+            args=(field.form.id,)))
 
 
 class AddDynamicFormFieldView(LoginRequiredMixin, CreateView):
@@ -89,9 +85,9 @@ class AddDynamicFormFieldView(LoginRequiredMixin, CreateView):
         return kwargs
 
     def get_success_url(self):
-        return reverse('dynamic_forms.views.add_dynamic_form_field',
-                                kwargs={"dynamic_form_id":self.dynamic_form.id})
-
+        return reverse(
+            'dynamic_forms.views.add_dynamic_form_field',
+            kwargs={"dynamic_form_id": self.dynamic_form.id})
 
     def form_valid(self, form):
         field = form.save(commit=False)
@@ -105,13 +101,10 @@ class AddDynamicFormFieldView(LoginRequiredMixin, CreateView):
                            _('Field with this name already exists.'))
             return self.form_invalid(form)
 
-        if field.field_type == ChoicesField.FIELD_NAME:
-            # TODO: This should really be handled somewhere else
-            return http.HttpResponseRedirect(reverse(
-                'dynamic_forms.views.add_choices_to_choicefield',
-            args=(field.id,)))
+        # Zmiana po prezentacji --- dwa razy był wykonywany save.
+        # Dlaczego nie robi to błędów?
+        return HttpResponseRedirect(self.get_success_url())
 
-        return super().form_valid(form)
 
 class DeleteDynamicFormField(LoginRequiredMixin, DeleteView):
 
@@ -143,7 +136,7 @@ class AddChoicesToChoiceField(LoginRequiredMixin, FormView):
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             dynamic_form_id=self.dynamic_form_id,
-            field_id = self.kwargs['field_id'],
+            field_id=self.kwargs['field_id'],
             **kwargs
         )
 
@@ -161,8 +154,9 @@ class AddChoicesToChoiceField(LoginRequiredMixin, FormView):
             return super().form_valid(form)
         else:
             messages.error(self.request,
-                               _('This choice already exists.'))
+                           _('This choice already exists.'))
             return super().form_invalid(form)
+
 
 class FillForm(LoginRequiredMixin, FormView):
 
@@ -171,7 +165,7 @@ class FillForm(LoginRequiredMixin, FormView):
 
     def get_success_url(self):
         return reverse('dynamic_forms.views.participants_list',
-                args=(self.dynamic_form.pk,))
+                       args=(self.dynamic_form.pk,))
 
     def dispatch(self, request, *args, **kwargs):
         self.dynamic_form = get_object_or_404(DynamicForm, pk=kwargs['dynamic_form_id'])
@@ -189,6 +183,7 @@ class FillForm(LoginRequiredMixin, FormView):
         messages.success(self.request,
                          _('Form has been filled successfully.'))
         return super().form_valid(form)
+
 
 class ParticipantList(LoginRequiredMixin, ListView):
 

@@ -17,11 +17,13 @@ from django.contrib.auth.models import User
 from django_hstore import hstore
 from positions import PositionField
 
-from . import default_fieldtypes # For side effect
 
 from .fieldtype import get_field_type_choices, get_field
 
-class FieldNameNotUnique(ValueError): pass
+
+class FieldNameNotUnique(ValueError):
+    pass
+
 
 class DynamicForm(models.Model):
 
@@ -29,7 +31,6 @@ class DynamicForm(models.Model):
     Represents a dynamic form that is a form for which fields
     can be added dynamically.
     """
-
 
     content_type = models.ForeignKey(ContentType, null=True)
     object_id = models.PositiveIntegerField(null=True)
@@ -45,6 +46,7 @@ class DynamicForm(models.Model):
             raise FieldNameNotUnique("Field with the same name is already added to a form")
 
         field.form = self
+
 
 class DynamicFormField(models.Model):
 
@@ -90,8 +92,6 @@ class DynamicFormField(models.Model):
 
     class Meta:
         ordering = ['position']
-
-
 
 class DynamicFormData(models.Model):
     """

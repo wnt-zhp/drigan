@@ -4,7 +4,7 @@ import abc
 import json
 
 from django import forms
-from django.forms.fields import ChoiceField
+from django.forms.fields import ChoiceField, Field
 from django.forms.widgets import Textarea
 from django.utils.translation import ugettext_lazy
 
@@ -17,6 +17,7 @@ __all__ = [
     'DynamicFieldController',
     'ChoiceField'
 ]
+
 
 #TODO: We really should store types and instantiate them during
 # DynamicFormField.field_type property call, in this case
@@ -42,6 +43,7 @@ def register_field_type(name):
         return clazz
     return wrapper
 
+
 def get_field(name):
     """
     :param str name:
@@ -50,11 +52,13 @@ def get_field(name):
     """
     return _FIELD_TYPES_DICT[name]
 
+
 def get_field_type_choices():
     """
     Returns django choices dictionary containing dynamic fields.
     """
     return _FIELD_TYPE_CHOICES
+
 
 class DynamicFieldController(object, metaclass=abc.ABCMeta):
 
@@ -92,21 +96,26 @@ class DynamicFieldController(object, metaclass=abc.ABCMeta):
         """
         return None
 
+
 class _DjangoDynamicFieldController(DynamicFieldController):
     """
     DynamicFormController that simply wraps a DjangoField.
+
+    :cvar type DJANGO_FIELD_TYPE: Type of the django field stored by this
+        Controller.
+    :cvar str DESCRIPTION: Human readable description of the field.
     """
 
     DESCRIPTION = None
 
-    DJANGO_FIELD_TYPE = None
+    DJANGO_FIELD_TYPE = Field
 
     def get_type_description(self):
         return self.DESCRIPTION
 
-
     def _create_field(self):
         return self.DJANGO_FIELD_TYPE()
+
 
 def create_dynamic_field_from_django_form(django_type, description):
 
@@ -117,7 +126,7 @@ def create_dynamic_field_from_django_form(django_type, description):
     :return: None
     """
 
-    clazz = type("Dynamic"+django_type.__name__, (_DjangoDynamicFieldController, ), {
+    clazz = type("Dynamic" + django_type.__name__, (_DjangoDynamicFieldController, ), {
         "DESCRIPTION": description,
         "DJANGO_FIELD_TYPE": django_type
     })
@@ -132,9 +141,10 @@ class DynamicTextField(_DjangoDynamicFieldController):
     DJANGO_FIELD_TYPE = forms.CharField
 
     def _create_field(self):
-        field =  super()._create_field()
+        field = super()._create_field()
         field.widget = Textarea()
         return field
+
 
 @register_field_type("DynamicChoicesField")
 class ChoicesField(_DjangoDynamicFieldController):
@@ -167,7 +177,6 @@ class ChoicesField(_DjangoDynamicFieldController):
 
         dynamic_field.additional_data['choices'] = choices
 
-
     def add_choice(self, dynamic_field, choice):
 
         if self.has_choice(dynamic_field, choice):
@@ -177,12 +186,10 @@ class ChoicesField(_DjangoDynamicFieldController):
         choices.append(choice)
         self.set_choices(dynamic_field, choices)
 
-
     def load_field(self, dynamic_field):
         choice_field = super().load_field(dynamic_field)
         choices = [(c, c) for c in self.get_choices(dynamic_field)]
         if not dynamic_field.required:
-            choices.insert(0, ('', "-"*7))
+            choices.insert(0, ('', "-" * 7))
         choice_field.choices = choices
         return choice_field
-
