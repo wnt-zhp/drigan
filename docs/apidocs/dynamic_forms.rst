@@ -1,6 +1,13 @@
 dynamic_forms package
 =====================
 
+Subpackages
+-----------
+
+.. toctree::
+
+    dynamic_forms.tests
+
 Submodules
 ----------
 
@@ -8,6 +15,14 @@ dynamic_forms.admin module
 --------------------------
 
 .. automodule:: dynamic_forms.admin
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+dynamic_forms.fieldtype module
+------------------------------
+
+.. automodule:: dynamic_forms.fieldtype
     :members:
     :undoc-members:
     :show-inheritance:
@@ -24,14 +39,6 @@ dynamic_forms.models module
 ---------------------------
 
 .. automodule:: dynamic_forms.models
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-dynamic_forms.tests module
---------------------------
-
-.. automodule:: dynamic_forms.tests
     :members:
     :undoc-members:
     :show-inheritance:

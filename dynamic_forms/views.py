@@ -1,8 +1,10 @@
-from django.shortcuts import render_to_response
-from dynamic_forms.forms import AddDynamicFormField, BaseDynamicForm,\
-    AddChoices
-from dynamic_forms.models import DynamicForm, DynamicFormData, DynamicFormField
-from django.template import RequestContext
+# -*- coding: utf-8 -*-
+from django.http import HttpResponseRedirect
+from django.views.generic.base import View
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import FormView, \
+    DeleteView, CreateView
+from django.views.generic.list import ListView
 from django import http
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
@@ -10,138 +12,187 @@ from django.utils.translation import ugettext as _
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
-import json
+from guardian.mixins import LoginRequiredMixin
+
+from dynamic_forms.fieldtype import ChoicesField
+from dynamic_forms.forms import AddDynamicFormField, BaseDynamicForm,\
+    AddChoices
+from dynamic_forms.models import DynamicForm, DynamicFormData, DynamicFormField, \
+    FieldNameNotUniqueError
 
 
-@login_required
-def add_dynamic_form(request, content_type_model, object_id):
-    if request.method == 'POST':
+class AddDynamicForm(LoginRequiredMixin, View):
+
+    http_method_names = ['post']
+
+    def post(self, request, content_type_model, object_id):
+
         content_type = ContentType.objects.get(model=content_type_model)
+        get_object_or_404(content_type.model_class(), pk=object_id)
         dynamic_form = DynamicForm.objects.create(content_type=content_type,
                                                   object_id=object_id)
+
         return http.HttpResponseRedirect(reverse(
             'dynamic_forms.views.add_dynamic_form_field',
             args=(dynamic_form.id,)))
 
 
-@login_required
-def edit_dynamic_form(request, dynamic_form_id):
-    dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
-    return render_to_response("dynamic_forms/dynamic_form_edit.html",
-                              {"dynamic_form": dynamic_form},
-                              context_instance=RequestContext(request))
+class EditDynamicForm(LoginRequiredMixin, DetailView):
+
+    http_method_names = ['get']
+    pk_url_kwarg = 'dynamic_form_id'
+    model = DynamicForm
+    template_name = "dynamic_forms/dynamic_form_edit.html"
+    context_object_name = "dynamic_form"
 
 
-@login_required
-def change_field_order(request, field_id, direction):
-    field = get_object_or_404(DynamicFormField, pk=field_id)
-    if request.method == "POST":
+class ChangeFieldOrder(LoginRequiredMixin, View):
+
+    http_method_names = ['post']
+
+    def post(self, request, field_id, direction):
+        field = get_object_or_404(DynamicFormField, pk=field_id)
         field.position += int(direction)
         field.save()
         messages.success(request, _('Order has been changed.'))
-    return http.HttpResponseRedirect(reverse(
-        'dynamic_forms.views.edit_dynamic_form',
-        args=(field.form.id,)))
+        return http.HttpResponseRedirect(reverse(
+            'dynamic_forms.views.edit_dynamic_form',
+            args=(field.form.id,)))
 
 
-@login_required
-def add_dynamic_form_field(request, dynamic_form_id):
-    dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
-    if request.method == 'POST':
-        form = AddDynamicFormField(request.POST)
-        if form.is_valid():
-            field = form.save(commit=False)
-            if not DynamicFormField.objects.filter(name__iexact=field.name):
-                field.form = dynamic_form
-                field.save()
-                form.save()
-                if field.field_type == 'ChoiceField':
-                    field.additional_data = {'choices': []}
-                    field.save()
-                    return http.HttpResponseRedirect(reverse(
-                        'dynamic_forms.views.add_choices_to_choicefield',
-                        args=(field.id,)))
-                form = AddDynamicFormField()
-                messages.success(request,
-                                 _('Field has been added successfully.'))
-            else:
-                messages.error(request,
-                               _('Field with this name already exists.'))
-    else:
-        form = AddDynamicFormField()
-    dynamic_form_form = BaseDynamicForm(dynamic_form)
-    return render_to_response("dynamic_forms/dynamic_form_add.html",
-                              {"form": form,
-                               "dynamic_form": dynamic_form,
-                               "dynamic_form_form": dynamic_form_form},
-                              context_instance=RequestContext(request))
+class AddDynamicFormFieldView(LoginRequiredMixin, CreateView):
 
+    template_name = "dynamic_forms/dynamic_form_add.html"
+    form_class = AddDynamicFormField
 
-@login_required
-def delete_dynamic_form_field(request, field_id):
-    dynamic_form_field = get_object_or_404(DynamicFormField, pk=field_id)
-    if request.method == "POST":
-        dynamic_form_field.delete()
-        messages.success(request, _('Field has been deleted.'))
-    return http.HttpResponseRedirect(reverse(
-        'dynamic_forms.views.edit_dynamic_form',
-        args=(dynamic_form_field.form.id,)))
+    def dispatch(self, request, *args, **kwargs):
+        self.dynamic_form = get_object_or_404(DynamicForm, pk=kwargs['dynamic_form_id'])
+        return super().dispatch(request, *args, **kwargs)
 
+    def get_context_data(self, **kwargs):
+        kwargs.update({
+            'dynamic_form': self.dynamic_form,
+            'dynamic_form_form': BaseDynamicForm(self.dynamic_form)
+        })
+        return kwargs
 
-@login_required
-def add_choices_to_choicefield(request, field_id):
-    choice_field = get_object_or_404(DynamicFormField, pk=field_id)
-    if request.method == 'POST':
-        form = AddChoices(request.POST)
-        if form.is_valid():
-            new_choice = form.cleaned_data['name']
-            choices = json.loads(choice_field.additional_data['choices'])
-            choices_lowercase = [choice.lower() for choice in choices]
-            if not new_choice.lower() in choices_lowercase:
-                choices.append(new_choice)
-                choice_field.additional_data['choices'] = choices
-                choice_field.save()
-                form = AddChoices()
-                messages.success(request,
-                                 _('Choice has been added successfully.'))
-            else:
-                messages.error(request,
-                               _('This choice already exists.'))
+    def get_success_url(self):
+        return reverse(
+            'dynamic_forms.views.add_dynamic_form_field',
+            kwargs={"dynamic_form_id": self.dynamic_form.id})
 
-    else:
-        form = AddChoices()
-    return render_to_response("dynamic_forms/choices_add.html",
-                              {"form": form,
-                               "dynamic_form_id": choice_field.form.id},
-                              context_instance=RequestContext(request))
+    def form_valid(self, form):
+        field = form.save(commit=False)
+        try:
+            self.dynamic_form.add_field_to_form(field)
+            field.save()
+            messages.success(self.request,
+                             _('Field has been added successfully.'))
+        except FieldNameNotUniqueError:
+            messages.error(self.request,
+                           _('Field with this name already exists.'))
+            return self.form_invalid(form)
 
-
-@login_required
-def fill_form(request, dynamic_form_id):
-    dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
-    if request.method == 'POST':
-        form = BaseDynamicForm(dynamic_form, request.POST)
-        if form.is_valid():
-            DynamicFormData.objects.create(form=dynamic_form,
-                                           user=request.user,
-                                           data=form.cleaned_data)
-            messages.success(request,
-                             _('Form has been filled successfully.'))
+        if field.field_type == 'DynamicChoicesField':
+            # TODO: This should really be handled somewhere else
             return http.HttpResponseRedirect(reverse(
-                'dynamic_forms.views.participants_list',
-                args=(dynamic_form_id,)))
-    else:
-        form = BaseDynamicForm(dynamic_form)
-    return render_to_response("dynamic_forms/form_fill.html",
-                              {"dynamic_form": dynamic_form,
-                               "dynamic_form_form": form},
-                              context_instance=RequestContext(request))
+                'dynamic_forms.views.add_choices_to_choicefield',
+                args=(field.id,)))
+
+        # Zmiana po prezentacji --- dwa razy był wykonywany save.
+        # Dlaczego nie robi to błędów?
+        return HttpResponseRedirect(self.get_success_url())
 
 
-@login_required
-def participants_list(request, dynamic_form_id):
-    dynamic_form = get_object_or_404(DynamicForm, pk=dynamic_form_id)
-    participants = DynamicFormData.objects.all().filter(form=dynamic_form)
-    return render_to_response("dynamic_forms/list.html",
-                              {"participants": participants},
-                              context_instance=RequestContext(request))
+class DeleteDynamicFormField(LoginRequiredMixin, DeleteView):
+
+    http_method_names = ['post']
+    pk_url_kwarg = 'field_id'
+    model = DynamicFormField
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, _('Field has been deleted.'))
+        return super().delete(request, *args, **kwargs)
+
+    def get_success_url(self):
+        return reverse('dynamic_forms.views.edit_dynamic_form', args=(self.object.form.pk,))
+
+
+class AddChoicesToChoiceField(LoginRequiredMixin, FormView):
+
+    http_method_names = ['get', 'post']
+    pk_url_kwarg = 'field_id'
+    model = DynamicFormField
+    form_class = AddChoices
+    template_name = "dynamic_forms/choices_add.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        self.choice_field = get_object_or_404(DynamicFormField, pk=kwargs['field_id'], field_type=ChoicesField.FIELD_NAME)
+        self.dynamic_form_id = self.choice_field.form.id
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            dynamic_form_id=self.dynamic_form_id,
+            field_id=self.kwargs['field_id'],
+            **kwargs
+        )
+
+    def get_success_url(self):
+        return self.request.path
+
+    def form_valid(self, form):
+        new_choice = form.cleaned_data['name']
+        choice_field = self.choice_field
+        if not choice_field.dynamic_field.has_choice(choice_field, new_choice):
+            choice_field.dynamic_field.add_choice(choice_field, new_choice)
+            choice_field.save()
+            messages.success(self.request,
+                             _('Choice has been added successfully.'))
+            return super().form_valid(form)
+        else:
+            messages.error(self.request,
+                           _('This choice already exists.'))
+            return super().form_invalid(form)
+
+
+class FillForm(LoginRequiredMixin, FormView):
+
+    form_class = BaseDynamicForm
+    template_name = "dynamic_forms/form_fill.html"
+
+    def get_success_url(self):
+        return reverse('dynamic_forms.views.participants_list',
+                       args=(self.dynamic_form.pk,))
+
+    def dispatch(self, request, *args, **kwargs):
+        self.dynamic_form = get_object_or_404(DynamicForm, pk=kwargs['dynamic_form_id'])
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['dynamic_form'] = self.dynamic_form
+        return kwargs
+
+    def form_valid(self, form):
+        DynamicFormData.objects.create(form=self.dynamic_form,
+                                       user=self.request.user,
+                                       data=form.cleaned_data)
+        messages.success(self.request,
+                         _('Form has been filled successfully.'))
+        return super().form_valid(form)
+
+
+class ParticipantList(LoginRequiredMixin, ListView):
+
+    http_method_names = ['get']
+    template_name = "dynamic_forms/list.html"
+    context_object_name = "participants"
+
+    def dispatch(self, request, *args, **kwargs):
+        self.dynamic_form = get_object_or_404(DynamicForm, pk=kwargs['dynamic_form_id'])
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        return DynamicFormData.objects.filter(form=self.dynamic_form)
+
