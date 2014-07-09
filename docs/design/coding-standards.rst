@@ -79,7 +79,7 @@ and *always* use this namespace to reverse urls, eg.:
 
 .. code-block:: python
 
-    url(r"^pattern/", include('my_super_app.urls', namespace='my_super_app'))
+    url(r"^pattern/", include('my_super_app.urls', app_name='my_super_app'))
 
 And then when you reverse urls from this app:
 
