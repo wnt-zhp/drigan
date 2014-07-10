@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.forms import Field, ChoiceField
+from django.forms import ChoiceField
 from django.utils.translation import ugettext_lazy
 from dynamic_forms.fieldtype import create_dynamic_field_from_django_form
 

@@ -1,4 +1,3 @@
 
-# Side-effect
-from . import polish_fieldtypes
-from . import scout_fieldtypes
+from . import polish_fieldtypes  # Side-effect
+from . import scout_fieldtypes # Side-effect
