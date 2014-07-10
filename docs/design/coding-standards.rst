@@ -53,4 +53,37 @@ Django stuff
 * Try to keep inter application dependencies to minimum
 * Separate scout code with generic code
 
+Named urls
+----------
+
+All urls should be named and referenced only by its name and application
+namespace. 
+
+There is no clearly defined convention for naming urls in Django. Even across 
+documentation there are different standards. In Drigan, we have determined
+some simple url-naming rules:
+
+* Try to keep the url name short and simple
+* Always use hyphen (-) to separate words
+* Use this set of words in a correct place to describe actions:
+  * sufixes:
+    * list (*not* index)
+    * detail
+  * prefixes:
+    * create
+    * update
+    * delete
+
+Furthermore, *always* specify application namespace in urls configuration 
+and *always* use this namespace to reverse urls, eg.:
+
+.. code-block:: python
+
+    url(r"^pattern/", include('my_super_app.urls', app_name='my_super_app'))
+
+And then when you reverse urls from this app:
+
+.. code-block:: python
+
+    reverse("my_supper_app:view-name")
 
