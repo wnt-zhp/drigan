@@ -1,9 +1,10 @@
 from django.forms.fields import IntegerField
-from django.forms.widgets import Textarea
+from django.forms.widgets import Textarea, Select
 
 # Create your tests here.
 
 from unittest import TestCase
+from dynamic_forms.fieldtype import create_dynamic_field_from_django_form
 from dynamic_forms.models import DynamicFormField, DynamicForm
 
 from ..fieldtype import get_field, get_field_type_choices, DynamicFieldController, register_field_type
@@ -56,6 +57,11 @@ class TestFieldtype(TestCase):
 
         self.assertIsInstance(field, IntegerField)
         self.assertFalse(field.required)
+
+    def test_error_when_passing_invalid_class(self):
+
+        with self.assertRaises(ValueError):
+            create_dynamic_field_from_django_form(Select, "Will throw")
 
 
 class TestDynamicFieldTypeBehaviour(TestCase):

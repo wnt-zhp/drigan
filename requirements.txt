@@ -9,3 +9,4 @@ django-guardian==1.1.1
 pillow==2.3.0
 django-positions==0.5.1
 sphinx
+django-localflavor

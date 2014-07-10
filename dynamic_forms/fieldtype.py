@@ -143,9 +143,32 @@ def create_dynamic_field_from_django_form(django_type, description):
     :return: None
     """
 
+    if not issubclass(django_type, Field):
+        raise ValueError("You are creating a dynamic field from a something that "
+                         "does not derive from django field.")
+
     clazz = type("Dynamic" + django_type.__name__, (_DjangoDynamicFieldController, ), {
         "DESCRIPTION": description,
         "DJANGO_FIELD_TYPE": django_type
+    })
+
+    register_field_type(clazz.__name__)(clazz)
+
+
+def create_dynamic_field_from_a_callable(callable, FieldName, description):
+    """
+    Creates dynamic field type (identical to one created by
+    :meth:`create_dynamic_field_from_django_form` by specifying a callable
+    field name and a description.
+
+    :param callable callable:
+    :param str FieldName:
+    :param str description:
+    """
+
+    clazz = type("Dynamic" + FieldName, (_DjangoDynamicFieldController, ), {
+        "DESCRIPTION": description,
+        "DJANGO_FIELD_TYPE": callable
     })
 
     register_field_type(clazz.__name__)(clazz)
