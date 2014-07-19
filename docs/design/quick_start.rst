@@ -4,6 +4,10 @@ Quick start
 Installation
 ------------
 
+This document describes the process of setting up the environment. At the end 
+of it there is an attachement with a quick list of commands that you need to 
+run on some systems to get started even faster.
+
 Pre-requirements
 ^^^^^^^^^^^^^^^^
 
@@ -165,3 +169,33 @@ this extension.**
 .. code-block:: bash
 
     psql template1 -c 'create extension hstore;'
+
+
+List of commands needed to configure environment on some systems
+================================================================
+
+Debian/Ubuntu
+-------------
+
+.. code-block:: bash
+
+    sudo apt-get install python3.4-dev
+    sudo apt-get install python-pip
+    sudo pip install -U pip
+    sudo apt-get install postgresql-9.3
+    sudo apt-get install postgresql-contrib-9.3
+    sudo apt-get install postgresql-server-dev-9.3
+    sudo su - postgres
+    psql -d template1 -c 'create extension hstore;'
+    # <ctrl+D> to logout from postgres
+    sudo apt-get install mercurial
+    sudo apt-get install git
+    sudo apt-get install python-virtualenv
+    mkdir ~/Drigan
+    cd ~/Drigan
+    virtualenv --python=/usr/bin/python3.4 environment
+    cd ~/Drigan/environment/
+    source bin/activate
+    git clone https://bitbucket.org/zeroos/drigan.git
+    cd drigan
+    pip install -r requirements.txt
