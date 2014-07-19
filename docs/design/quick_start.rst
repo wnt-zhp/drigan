@@ -14,6 +14,7 @@ Altough most requirements will be installed for you automatically using
  * `PostgreSQL <http://www.postgresql.org/>`_ >= 9.3.4 with `HStore
    <http://www.postgresql.org/docs/9.0/static/hstore.html>`_ enabled
  * `git <http://git-scm.com/>`_
+ * `Mercurial <http://mercurial.selenic.com/>`_
 
 Enabling HStore
 """""""""""""""
