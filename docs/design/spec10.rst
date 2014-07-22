@@ -29,8 +29,8 @@ Role w systemie
 
 .. _spec-v10-organizer:
 
-Organizator
-***********
+Organizator (Organizer)
+***********************
 
 By stworzyć jakieś wydarzenie należy podać jego organizatora, przy czym:
 organizator nijak nie ma się do osób kont użytkowników.
@@ -50,8 +50,8 @@ oprogramowanie. Zawsze organizator będzie zawierał takie dane:
 
 .. _spec-v10-event:
 
-Wydarzenie
-**********
+Wydarzenie (Event)
+******************
 
 Wydarzenie jest zbiorem podwydarzeń, rejestrujemy się na podwydarzenia.
 
@@ -59,6 +59,9 @@ Wydarzenie jest zbiorem podwydarzeń, rejestrujemy się na podwydarzenia.
 
     W języku Harcerskim wydarzeniem będzie na przykład: Zlot Kadry 2012,
     mial on podwydarzenia: LAS, Zlot harcmistrzów, Zlot Akademików itp.
+    Ogólnie może to na przykład być festiwal filmów, muzyki, biegów, lub
+    nawet po prostu pojedynczy bieg, w ramach którego główną atrakcją
+    też będzie ten bieg.
 
 Podstawowe dane wydarzenia:
 
@@ -75,8 +78,8 @@ Podstawowe dane wydarzenia:
 
 .. _spec-v10-subevent:
 
-Podwydarzenie
-*************
+Podwydarzenie/atrakcja (Attraction)
+***********************************
 
 Podwydarzenia są czymś na co uczestnicy się rejestrują. Podwydarzenie ma takie pola:
 
@@ -105,9 +108,9 @@ Podwydarzenia są czymś na co uczestnicy się rejestrują. Podwydarzenie ma 
         * Manualnej rejestracji wpłat.
         * Automatycznego rejestrowania przekazów pocztowych
 
-**Podpinanie dynamicznej ankiety**
+**Podpinanie dynamicznych formularzy (dynamic forms)**
 
-Każde podwydarzenie ma możliwość podopięcia dynamicznej ankiety zbierającej
+Każde podwydarzenie ma możliwość podopięcia dynamicznego formularza zbierającego
 dodatkowe (wpisane przez Organizatora) dane o uczestnikach.
 
 Informacje o tej funkcjonalności w :ref:`spec-v10-dynamic-forms`.
