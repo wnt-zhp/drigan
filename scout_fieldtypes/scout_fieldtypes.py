@@ -31,5 +31,7 @@ class StopienHarcerskiField(ChoiceField):
     def __init__(self, *args, **kwargs):
         super().__init__(self.stopien_choices, *args, **kwargs)
 
-create_dynamic_field_from_django_form(StopienInstruktorski, ugettext_lazy('Stopień Harcerski'))
-create_dynamic_field_from_django_form(StopienHarcerskiField, ugettext_lazy('Stopień Instruktorski'))
+
+def create_fieldtypes():
+    create_dynamic_field_from_django_form(StopienInstruktorski, ugettext_lazy('Stopień Harcerski'))
+    create_dynamic_field_from_django_form(StopienHarcerskiField, ugettext_lazy('Stopień Instruktorski'))

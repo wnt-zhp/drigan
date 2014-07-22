@@ -54,15 +54,17 @@ class NipOrPeselField(forms.Field):
             raise ValidationError(self.error_messages['invalid'])
 
 
-create_dynamic_field_from_django_form(plforms.PLPESELField, ugettext_lazy('PESEL number'))
-create_dynamic_field_from_django_form(plforms.PLNIPField, ugettext_lazy('NIP number'))
-create_dynamic_field_from_django_form(plforms.PLPostalCodeField, ugettext_lazy('Postal number'))
-create_dynamic_field_from_django_form(plforms.PLNationalIDCardNumberField, ugettext_lazy('Polish ID card number'))
-create_dynamic_field_from_django_form(NipOrPeselField, ugettext_lazy('PESEL or NIP number'))
-create_dynamic_field_from_a_callable(
-    partial(ChoiceField, choices=VOIVODESHIP_CHOICES),
-    "PolishProvince", ugettext_lazy('Polish Province'))
-create_dynamic_field_from_a_callable(
-    partial(ChoiceField,
-            choices=sorted(ADMINISTRATIVE_UNIT_CHOICES, key=itemgetter(0))),
-    "PolishCounty", ugettext_lazy('Polish County'))
+def create_fieldtypes():
+
+    create_dynamic_field_from_django_form(plforms.PLPESELField, ugettext_lazy('PESEL number'))
+    create_dynamic_field_from_django_form(plforms.PLNIPField, ugettext_lazy('NIP number'))
+    create_dynamic_field_from_django_form(plforms.PLPostalCodeField, ugettext_lazy('Postal number'))
+    create_dynamic_field_from_django_form(plforms.PLNationalIDCardNumberField, ugettext_lazy('Polish ID card number'))
+    create_dynamic_field_from_django_form(NipOrPeselField, ugettext_lazy('PESEL or NIP number'))
+    create_dynamic_field_from_a_callable(
+        partial(ChoiceField, choices=VOIVODESHIP_CHOICES),
+        "PolishProvince", ugettext_lazy('Polish Province'))
+    create_dynamic_field_from_a_callable(
+        partial(ChoiceField,
+                choices=sorted(ADMINISTRATIVE_UNIT_CHOICES, key=itemgetter(0))),
+        "PolishCounty", ugettext_lazy('Polish County'))

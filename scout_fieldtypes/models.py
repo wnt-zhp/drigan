@@ -1,3 +1,6 @@
 
-from . import polish_fieldtypes  # Side-effect
-from . import scout_fieldtypes # Side-effect
+from .polish_fieldtypes import create_fieldtypes as pl_fieldtypes
+from .scout_fieldtypes import create_fieldtypes as scout_filedtypes
+
+pl_fieldtypes()
+scout_filedtypes()
